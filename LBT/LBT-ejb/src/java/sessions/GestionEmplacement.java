@@ -1,8 +1,10 @@
 package sessions;
 
+import entities.CategorieCarte;
 import entities.Emplacement;
 import entities.Ingredient;
 import entities.Produit;
+import entities.Propriete;
 import javax.ejb.Stateless;
 
 /**
@@ -30,7 +32,9 @@ public class GestionEmplacement implements GestionEmplacementLocal {
 
     }
 
+    @Override
     public void jeuxEssaiTable() {
+        //============================================================  EMPLACEMENTS
         Emplacement e01 = new Emplacement(1L, "salle01");
         Emplacement e02 = new Emplacement(2L, "salle01");
         Emplacement e03 = new Emplacement(3L, "salle01");
@@ -54,47 +58,121 @@ public class GestionEmplacement implements GestionEmplacementLocal {
         Emplacement e21 = new Emplacement(21L, "salle03");
         Emplacement e22 = new Emplacement(22L, "salle03");
         
+        //============================================================  PRODUITS
         Produit p01 = new Produit("Magret de canard", 
                 "belle pièce poelée nappée de miel", 11.9F, null);
             Produit p011 = new Produit("Pièce de canard", 
                     "composant du magret de canard", 0F, null);
-            Produit p012 = new Produit("Haricots verts", 
+            Produit p001 = new Produit("Pommes frites", 
+                    "Accompagnement frite", 0F, null);
+            Produit p002 = new Produit("Haricots verts", 
                     "Accompagnement H-V", 0F, null);
-            Produit p013 = new Produit("Gratin dauphinois", 
+            Produit p003 = new Produit("Gratin dauphinois", 
                     "Accompagnement gratin", 0F, null);
-            Produit p014 = new Produit("Pollenta", 
+            Produit p004 = new Produit("Pollenta", 
                     "Accompagnement Poll.", 0F, null);
-                p01.getProduitEnfants().add(p011);
-                p01.getProduitEnfants().add(p012);
-                p01.getProduitEnfants().add(p013);
-                p01.getProduitEnfants().add(p014);
-                    Ingredient i01 = new Ingredient("magret", "canard");
-                    Ingredient i02 = new Ingredient("miel", "accomp. cuisson");
-                    Ingredient i03 = new Ingredient("haricots verts", "accompagnement légumes");
-                    Ingredient i04 = new Ingredient("haricots blancs", "accompagnement légumes");
-                    Ingredient i05 = new Ingredient("pomme de terre", "accompagnement");
-                    Ingredient i06 = new Ingredient("pollenta", "accompagnement");
-                    Ingredient i07 = new Ingredient("oranges pressées", "accompagnement déglaçage");
-                    Ingredient i08 = new Ingredient("béchamel", "accompagnement sauce");
-                    Ingredient i09 = new Ingredient("ementhal", "accompagnement sauce");
-                        p011.getIngredients().add(i01);
-                        p011.getIngredients().add(i02);
-                        p011.getIngredients().add(i07);
-                        p012.getIngredients().add(i03);
-                        p013.getIngredients().add(i05);
-                        p013.getIngredients().add(i08);
-                        p013.getIngredients().add(i09);
+            Produit p005 = new Produit("Flageolets", 
+                    "Accompagnement haricots blancs", 0F, null);
+            Produit p006 = new Produit("Riz basmati", 
+                    "Accompagnement riz blancs", 0F, null);
         Produit p02 = new Produit("Bavette d'Aloyo", 
                 "belle pièce de boeuf et sa sauce", 12.6F, null);
             Produit p021 = new Produit("Bavette", 
                     "pièce de boeuf", 0F, null);
+
+        Produit p03 = new Produit("Tournedos de boeuf", 
+                "belle pièce de boeuf et son accompagnement", 12.9F, null);  
+            Produit p031 = new Produit("Tournedos", 
+                    "pièce de boeuf", 0F, null);            
+                //============================================================  Collect° PRODUITS
+                p01.getProduitEnfants().add(p011);
+                p01.getProduitEnfants().add(p001);
+                p01.getProduitEnfants().add(p002);
+                p01.getProduitEnfants().add(p003);
+                p01.getProduitEnfants().add(p004);
+                p01.getProduitEnfants().add(p005);
+                p01.getProduitEnfants().add(p006);
+                
                 p02.getProduitEnfants().add(p021);
-                p02.getProduitEnfants().add(p012);
-                p02.getProduitEnfants().add(p013);
-                p02.getProduitEnfants().add(p014);
-                    Ingredient i10 = new Ingredient("bavette", "boeuf");
-                    Ingredient i11 = new Ingredient("oignons", "émincés");
-                        p02.getIngredients().add(i10);
-                        p02.getIngredients().add(i11);
+                p02.getProduitEnfants().add(p002);
+                p02.getProduitEnfants().add(p003);
+                p02.getProduitEnfants().add(p004);
+                p02.getProduitEnfants().add(p005);
+                p02.getProduitEnfants().add(p006);
+                
+                p03.getProduitEnfants().add(p031);
+                p03.getProduitEnfants().add(p002);
+                p03.getProduitEnfants().add(p003);
+                p03.getProduitEnfants().add(p004);
+                p03.getProduitEnfants().add(p005);
+                p03.getProduitEnfants().add(p006);
+                    //============================================================  INGREDIENTS
+                    Ingredient i001 = new Ingredient("magret", "canard");
+                    Ingredient i002 = new Ingredient("miel", "accomp. cuisson");
+                    Ingredient i003 = new Ingredient("haricots verts", "accompagnement légumes");
+                    Ingredient i004 = new Ingredient("haricots blancs", "accompagnement légumes");
+                    Ingredient i005 = new Ingredient("pomme de terre", "accompagnement");
+                    Ingredient i006 = new Ingredient("pollenta", "accompagnement");
+                    Ingredient i007 = new Ingredient("oranges pressées", "accompagnement déglaçage");
+                    Ingredient i008 = new Ingredient("béchamel", "accompagnement sauce");
+                    Ingredient i009 = new Ingredient("ementhal", "accompagnement sauce");
+                    Ingredient i013 = new Ingredient("basmati", "accompagnement riz");     
+                    
+                    Ingredient i010 = new Ingredient("bavette", "boeuf");
+                    Ingredient i011 = new Ingredient("oignons", "émincés");
+                    
+                    Ingredient i012 = new Ingredient("tournedos", "boeuf");
+                        //============================================================  Collect° INGREDIENTS
+                        p011.getIngredients().add(i001);
+                        p011.getIngredients().add(i002);
+                        p011.getIngredients().add(i007);
+                        
+                        p001.getIngredients().add(i005);
+                        
+                        p002.getIngredients().add(i003);
+                        
+                        p003.getIngredients().add(i005);
+                        p003.getIngredients().add(i008);
+                        p003.getIngredients().add(i009);
+                        
+                        p005.getIngredients().add(i004);
+                        
+                        p02.getIngredients().add(i010);
+                        p02.getIngredients().add(i011);
+                        
+                        p031.getIngredients().add(i012);                       
+                                    
+        //============================================================  CATEGORIE CARTE
+        CategorieCarte cc01 = new CategorieCarte("Appéritifs & Digestifs");
+        CategorieCarte cc02 = new CategorieCarte("Boissions chaudes");
+        CategorieCarte cc03 = new CategorieCarte("Boissions fraiches");
+        CategorieCarte cc04 = new CategorieCarte("Vins");
+        CategorieCarte cc05 = new CategorieCarte("Entrées");
+        CategorieCarte cc06 = new CategorieCarte("Grandes salades");
+        CategorieCarte cc07 = new CategorieCarte("Plats");
+        CategorieCarte cc08 = new CategorieCarte("Fromages");
+        CategorieCarte cc09 = new CategorieCarte("Desserts");
+            cc07.getProduits().add(p01);
+            cc07.getProduits().add(p02);
+            cc07.getProduits().add(p03);
+        //============================================================  PROPRIETE
+        Propriete pPrdt001 = new Propriete("cuisson", "bleu", null);
+        Propriete pPrdt002 = new Propriete("cuisson", "saignant", null);
+        Propriete pPrdt003 = new Propriete("cuisson", "à point", null);
+             
+            //============================================================  Collect° PROPRIETE/Produits
+            p01.getProprietes().add(pPrdt001);
+            p01.getProprietes().add(pPrdt002);
+            p01.getProprietes().add(pPrdt003);
+            
+            p02.getProprietes().add(pPrdt001);
+            p02.getProprietes().add(pPrdt002);
+            p02.getProprietes().add(pPrdt003);
+            
+            p03.getProprietes().add(pPrdt001);
+            p03.getProprietes().add(pPrdt002);
+            p03.getProprietes().add(pPrdt003);
+            
+            
     }
 }

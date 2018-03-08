@@ -17,7 +17,6 @@ public class Propriete implements Serializable {
     private String nom;
     @Column(nullable=false)
     private String valeur;
-    @Column(nullable=false)
     private String unite;
         //=========== Dependances ================================  
         @ManyToOne
