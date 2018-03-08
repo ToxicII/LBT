@@ -34,15 +34,15 @@ public class Produit implements Serializable {
                 private Collection<Produit> produitEnfants;        
                 @ManyToMany        
                 private Collection<Produit> produitParents;        
-                @ManyToMany        
+        @ManyToMany     //      mappé in Ingredient        
         private Collection<Ingredient> ingredients;        
-        @ManyToMany        
+        @ManyToMany     //    to mappedBy in Parametres
         private Collection<Parametres> parametres;   
         @OneToMany(mappedBy = "produit")
         private Collection<LigneCommande> ligneCommandes;    
-        @ManyToMany        
+        @ManyToMany     //    to mappedBy in ChoixClient
         private Collection<ChoixClient> choixClients;         
-        @ManyToMany        
+        @ManyToMany(mappedBy = "produits")             
         private Collection<CategorieFormule> categorieFormules;   
         @ManyToOne
         private TVA tva;
@@ -50,7 +50,7 @@ public class Produit implements Serializable {
         private Collection<Propriete> proprietes;    
         @ManyToOne
         private CategorieCarte categorieCarte;       
-        @ManyToMany        
+        @ManyToMany(mappedBy = "produits")
         private Collection<Promotion> promotions;   
         //=========== Dependances ================================
 ////////////////////////    CONSTRUCT       ///////////////////////

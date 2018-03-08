@@ -1,6 +1,8 @@
 package sessions;
 
 import entities.Emplacement;
+import entities.Ingredient;
+import entities.Produit;
 import javax.ejb.Stateless;
 
 /**
@@ -51,5 +53,48 @@ public class GestionEmplacement implements GestionEmplacementLocal {
         Emplacement e20 = new Emplacement(20L, "salle03");
         Emplacement e21 = new Emplacement(21L, "salle03");
         Emplacement e22 = new Emplacement(22L, "salle03");
+        
+        Produit p01 = new Produit("Magret de canard", 
+                "belle pièce poelée nappée de miel", 11.9F, null);
+            Produit p011 = new Produit("Pièce de canard", 
+                    "composant du magret de canard", 0F, null);
+            Produit p012 = new Produit("Haricots verts", 
+                    "Accompagnement H-V", 0F, null);
+            Produit p013 = new Produit("Gratin dauphinois", 
+                    "Accompagnement gratin", 0F, null);
+            Produit p014 = new Produit("Pollenta", 
+                    "Accompagnement Poll.", 0F, null);
+                p01.getProduitEnfants().add(p011);
+                p01.getProduitEnfants().add(p012);
+                p01.getProduitEnfants().add(p013);
+                p01.getProduitEnfants().add(p014);
+                    Ingredient i01 = new Ingredient("magret", "canard");
+                    Ingredient i02 = new Ingredient("miel", "accomp. cuisson");
+                    Ingredient i03 = new Ingredient("haricots verts", "accompagnement légumes");
+                    Ingredient i04 = new Ingredient("haricots blancs", "accompagnement légumes");
+                    Ingredient i05 = new Ingredient("pomme de terre", "accompagnement");
+                    Ingredient i06 = new Ingredient("pollenta", "accompagnement");
+                    Ingredient i07 = new Ingredient("oranges pressées", "accompagnement déglaçage");
+                    Ingredient i08 = new Ingredient("béchamel", "accompagnement sauce");
+                    Ingredient i09 = new Ingredient("ementhal", "accompagnement sauce");
+                        p011.getIngredients().add(i01);
+                        p011.getIngredients().add(i02);
+                        p011.getIngredients().add(i07);
+                        p012.getIngredients().add(i03);
+                        p013.getIngredients().add(i05);
+                        p013.getIngredients().add(i08);
+                        p013.getIngredients().add(i09);
+        Produit p02 = new Produit("Bavette d'Aloyo", 
+                "belle pièce de boeuf et sa sauce", 12.6F, null);
+            Produit p021 = new Produit("Bavette", 
+                    "pièce de boeuf", 0F, null);
+                p02.getProduitEnfants().add(p021);
+                p02.getProduitEnfants().add(p012);
+                p02.getProduitEnfants().add(p013);
+                p02.getProduitEnfants().add(p014);
+                    Ingredient i10 = new Ingredient("bavette", "boeuf");
+                    Ingredient i11 = new Ingredient("oignons", "émincés");
+                        p02.getIngredients().add(i10);
+                        p02.getIngredients().add(i11);
     }
 }
