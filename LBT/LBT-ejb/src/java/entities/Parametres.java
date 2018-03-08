@@ -24,6 +24,9 @@ public class Parametres implements Serializable {
     
     @OneToMany(mappedBy = "parametres")
     private Collection<Produit> produits;
+    
+    @OneToMany(mappedBy = "parametre")
+    private Collection<Commande> commandes;
 
     public Parametres() {
     utilisateurs = new ArrayList<>();
