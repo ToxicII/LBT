@@ -10,5 +10,5 @@ package entities;
  * @author CDI118
  */
 public class testClass {
-     //A SUPPRIMER
+     //A SUPPRIMER !
 }
