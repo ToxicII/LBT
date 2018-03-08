@@ -19,10 +19,10 @@ public class Commande implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
-    private Date dateCommande;
     private Long id;
+    
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    private Date dateCommande;    
 
     @OneToMany(mappedBy = "commande")
     private Collection<LigneCommande> ligneCommandes;
