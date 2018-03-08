@@ -1,4 +1,3 @@
-
 package entities;
 
 import java.io.Serializable;
@@ -6,83 +5,81 @@ import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-
 
 @Entity
 public class Parametres implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Id
-    private Long id;
-    private String descripParam;
-    
-    @OneToMany(mappedBy = "parametres")
-    private Collection<Utilisateur> utilisateurs;
-    
-    @OneToMany(mappedBy = "parametre")
-    private Collection<Emplacement> emplacements;
-    
-    @OneToMany(mappedBy = "parametres")
-    private Collection<Produit> produits;
-    
-    @OneToMany(mappedBy = "parametre")
-    private Collection<Commande> commandes;
 
-    public Parametres() {
-    utilisateurs = new ArrayList<>();
-    emplacements = new ArrayList<>();
-    produits = new ArrayList<>();
-    }
+     private static final long serialVersionUID = 1L;
+     @Id
+     private Long id;
+     private String descripParam;
 
-    public Parametres(Long id, String descripParam) {
-        this();
-        this.id = id;
-        this.descripParam = descripParam;
-    }
-    
-    
-    
-    public Long getId() {
-        return id;
-    }
+     @OneToMany(mappedBy = "parametres")
+     private Collection<Utilisateur> utilisateurs;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+     @OneToMany(mappedBy = "parametre")
+     private Collection<Emplacement> emplacements;
 
-    public String getDescripParam() {
-        return descripParam;
-    }
+     @ManyToMany(mappedBy = "parametres")
+     private Collection<Produit> produits;
 
-    public void setDescripParam(String descripParam) {
-        this.descripParam = descripParam;
-    }
+     @OneToMany(mappedBy = "parametre")
+     private Collection<Commande> commandes;
 
-    public Collection<Utilisateur> getUtilisateurs() {
-        return utilisateurs;
-    }
+     public Parametres() {
+          utilisateurs = new ArrayList();
+          emplacements = new ArrayList();
+          produits = new ArrayList();
+          commandes = new ArrayList();
+     }
 
-    public void setUtilisateurs(Collection<Utilisateur> utilisateurs) {
-        this.utilisateurs = utilisateurs;
-    }
+     public Parametres(Long id, String descripParam) {
+          this();
+          this.id = id;
+          this.descripParam = descripParam;
+     }
 
-    public Collection<Emplacement> getEmplacements() {
-        return emplacements;
-    }
+     public Long getId() {
+          return id;
+     }
 
-    public void setEmplacements(Collection<Emplacement> emplacements) {
-        this.emplacements = emplacements;
-    }
+     public void setId(Long id) {
+          this.id = id;
+     }
 
-    public Collection<Produit> getProduits() {
-        return produits;
-    }
+     public String getDescripParam() {
+          return descripParam;
+     }
 
-    public void setProduits(Collection<Produit> produits) {
-        this.produits = produits;
-    }
-    
-    
+     public void setDescripParam(String descripParam) {
+          this.descripParam = descripParam;
+     }
+
+     public Collection<Utilisateur> getUtilisateurs() {
+          return utilisateurs;
+     }
+
+     public void setUtilisateurs(Collection<Utilisateur> utilisateurs) {
+          this.utilisateurs = utilisateurs;
+     }
+
+     public Collection<Emplacement> getEmplacements() {
+          return emplacements;
+     }
+
+     public void setEmplacements(Collection<Emplacement> emplacements) {
+          this.emplacements = emplacements;
+     }
+
+     public Collection<Produit> getProduits() {
+          return produits;
+     }
+
+     public void setProduits(Collection<Produit> produits) {
+          this.produits = produits;
+     }
 
 //    @Override
 //    public int hashCode() {
@@ -103,10 +100,9 @@ public class Parametres implements Serializable {
 //        }
 //        return true;
 //    }
+     @Override
+     public String toString() {
+          return "entities.Parametres[ id=" + id + " ]";
+     }
 
-    @Override
-    public String toString() {
-        return "entities.Parametres[ id=" + id + " ]";
-    }
-    
 }

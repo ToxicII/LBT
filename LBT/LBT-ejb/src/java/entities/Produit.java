@@ -1,6 +1,7 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -51,9 +52,18 @@ public class Produit implements Serializable {
         //=========== Dependances ================================
 ////////////////////////    CONSTRUCT       ///////////////////////
     public Produit() {
+         produits = new ArrayList();
+         ingredients = new ArrayList();
+         parametres = new ArrayList();
+         ligneCommandes = new ArrayList();
+         choixClients = new ArrayList();
+         categorieFormules = new ArrayList();
+         proprietes = new ArrayList();
+         promotions = new ArrayList();
     }
 
     public Produit(String nom, String description, float prixHT, String image) {
+         this();
         this.nom = nom;
         this.description = description;
         this.prixHT = prixHT;

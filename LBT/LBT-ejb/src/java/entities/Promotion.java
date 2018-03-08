@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
 public class Promotion implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Temporal(TemporalType.TIMESTAMP)
@@ -47,9 +47,8 @@ public class Promotion implements Serializable {
         produits = new ArrayList<>();
     }
 
-    public Promotion(Long id, Date dateDebut, Date dateFin, String description, float remise, String image) {
-        this();
-        this.id = id;
+    public Promotion(Date dateDebut, Date dateFin, String description, float remise, String image) {
+        this();        
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.description = description;
