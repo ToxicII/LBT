@@ -1,6 +1,7 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +14,7 @@ import javax.persistence.OneToMany;
 
 /**
  *
- * @author Manuel_cdi113
+ * @author Manuel_R_cdi113
  */
 @Entity
 public class Produit implements Serializable {
@@ -28,13 +29,16 @@ public class Produit implements Serializable {
     @Column(nullable=false)
     private float prixHT;
         //=========== Dependances ================================
-        @ManyToMany        
-        private Collection<Produit> produits;        
-        @ManyToMany        
+                // TO BE CHECKED !!
+                @ManyToMany(mappedBy = "produitParents")        
+                private Collection<Produit> produitEnfants;        
+                @ManyToMany        
+                private Collection<Produit> produitParents;        
+                @ManyToMany        
         private Collection<Ingredient> ingredients;        
         @ManyToMany        
         private Collection<Parametres> parametres;   
-        @OneToMany
+        @OneToMany(mappedBy = "produit")
         private Collection<LigneCommande> ligneCommandes;    
         @ManyToMany        
         private Collection<ChoixClient> choixClients;         
@@ -42,7 +46,7 @@ public class Produit implements Serializable {
         private Collection<CategorieFormule> categorieFormules;   
         @ManyToOne
         private TVA tva;
-        @OneToMany
+        @OneToMany(mappedBy = "produit")
         private Collection<Propriete> proprietes;    
         @ManyToOne
         private CategorieCarte categorieCarte;       
@@ -51,20 +55,36 @@ public class Produit implements Serializable {
         //=========== Dependances ================================
 ////////////////////////    CONSTRUCT       ///////////////////////
     public Produit() {
+        produitEnfants = new ArrayList();
+        ingredients = new ArrayList();
+        parametres = new ArrayList();
+        ligneCommandes = new ArrayList();
+        choixClients = new ArrayList();
+        categorieFormules = new ArrayList();
+        proprietes = new ArrayList();
+        promotions = new ArrayList();
     }
 
     public Produit(String nom, String description, float prixHT, String image) {
+        produitEnfants = new ArrayList();
+        ingredients = new ArrayList();
+        parametres = new ArrayList();
+        ligneCommandes = new ArrayList();
+        choixClients = new ArrayList();
+        categorieFormules = new ArrayList();
+        proprietes = new ArrayList();
+        promotions = new ArrayList();
         this.nom = nom;
         this.description = description;
         this.prixHT = prixHT;
         this.image = image;
     }
 
-    public Produit(String nom, String description, float prixHT, Collection<Produit> produits, Collection<Ingredient> ingredients, Collection<Parametres> parametres, Collection<LigneCommande> ligneCommandes, Collection<ChoixClient> choixClients, Collection<CategorieFormule> categorieFormules, TVA tva, Collection<Propriete> proprietes, CategorieCarte categorieCarte, Collection<Promotion> promotions, String image) {
+    public Produit(String nom, String description, float prixHT, Collection<Produit> produitEnfants, Collection<Ingredient> ingredients, Collection<Parametres> parametres, Collection<LigneCommande> ligneCommandes, Collection<ChoixClient> choixClients, Collection<CategorieFormule> categorieFormules, TVA tva, Collection<Propriete> proprietes, CategorieCarte categorieCarte, Collection<Promotion> promotions, String image) {
         this.nom = nom;
         this.description = description;
         this.prixHT = prixHT;
-        this.produits = produits;
+        this.produitEnfants = produitEnfants;
         this.ingredients = ingredients;
         this.parametres = parametres;
         this.ligneCommandes = ligneCommandes;
@@ -115,11 +135,11 @@ public class Produit implements Serializable {
         this.reference = reference;
     }
 
-    public Collection<Produit> getProduits() {
-        return produits;
+    public Collection<Produit> getProduitEnfants() {
+        return produitEnfants;
     }
-    public void setProduits(Collection<Produit> produits) {
-        this.produits = produits;
+    public void setProduitEnfants(Collection<Produit> produitEnfants) {
+        this.produitEnfants = produitEnfants;
     }
 
     public Collection<Ingredient> getIngredients() {
@@ -143,10 +163,10 @@ public class Produit implements Serializable {
         this.ligneCommandes = ligneCommandes;
     }
 
-    public Collection<ChoixClient> getChoixClients() {
+    public Collection<ChoixClient> getOptions() {
         return choixClients;
     }
-    public void setChoixClients(Collection<ChoixClient> choixClients) {
+    public void setOptions(Collection<ChoixClient> options) {
         this.choixClients = choixClients;
     }
 
