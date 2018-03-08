@@ -22,7 +22,7 @@ public class Emplacement implements Serializable {
     private String secteur; //  ATTENTION   // "secteur" est un mot réservé SQL...
         //=========== Dependances ================================
         @ManyToMany
-        private Collection<Utilisateur> users;
+        private Collection<Utilisateur> utilisateurs;
         @ManyToOne
         private Parametres parametre;
         @OneToMany
@@ -40,17 +40,17 @@ public class Emplacement implements Serializable {
     public Emplacement(Long numero, String secteur, Collection<Utilisateur> users, Parametres parametre, Collection<Commande> commandes) {
         this.numero = numero;
         this.secteur = secteur;
-        this.users = users;
+        this.utilisateurs = users;
         this.parametre = parametre;
         this.commandes = commandes;
     }
 ////////////////////////    CONSTRUCT       ///////////////////////
 ////////////////////////    GET SET      //////////////////////////
     public Collection<Utilisateur> getUsers() {
-        return users;
+        return utilisateurs;
     }
     public void setUsers(Collection<Utilisateur> users) {
-        this.users = users;
+        this.utilisateurs = users;
     }
 
     public Parametres getParametre() {

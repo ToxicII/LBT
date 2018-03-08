@@ -37,7 +37,7 @@ public class Produit implements Serializable {
         @OneToMany
         private Collection<LigneCommande> ligneCommandes;    
         @ManyToMany        
-        private Collection<Option> options;         
+        private Collection<ChoixClient> choixClients;         
         @ManyToMany        
         private Collection<CategorieFormule> categorieFormules;   
         @ManyToOne
@@ -60,7 +60,7 @@ public class Produit implements Serializable {
         this.image = image;
     }
 
-    public Produit(String nom, String description, float prixHT, Collection<Produit> produits, Collection<Ingredient> ingredients, Collection<Parametres> parametres, Collection<LigneCommande> ligneCommandes, Collection<Option> options, Collection<CategorieFormule> categorieFormules, TVA tva, Collection<Propriete> proprietes, CategorieCarte categorieCarte, Collection<Promotion> promotions, String image) {
+    public Produit(String nom, String description, float prixHT, Collection<Produit> produits, Collection<Ingredient> ingredients, Collection<Parametres> parametres, Collection<LigneCommande> ligneCommandes, Collection<ChoixClient> options, Collection<CategorieFormule> categorieFormules, TVA tva, Collection<Propriete> proprietes, CategorieCarte categorieCarte, Collection<Promotion> promotions, String image) {
         this.nom = nom;
         this.description = description;
         this.prixHT = prixHT;
@@ -68,7 +68,7 @@ public class Produit implements Serializable {
         this.ingredients = ingredients;
         this.parametres = parametres;
         this.ligneCommandes = ligneCommandes;
-        this.options = options;
+        this.choixClients = options;
         this.categorieFormules = categorieFormules;
         this.tva = tva;
         this.proprietes = proprietes;
@@ -143,11 +143,11 @@ public class Produit implements Serializable {
         this.ligneCommandes = ligneCommandes;
     }
 
-    public Collection<Option> getOptions() {
-        return options;
+    public Collection<ChoixClient> getOptions() {
+        return choixClients;
     }
-    public void setOptions(Collection<Option> options) {
-        this.options = options;
+    public void setOptions(Collection<ChoixClient> options) {
+        this.choixClients = options;
     }
 
     public Collection<CategorieFormule> getCategorieFormules() {
