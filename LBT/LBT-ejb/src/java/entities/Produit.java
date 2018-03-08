@@ -37,7 +37,7 @@ public class Produit implements Serializable {
         @OneToMany
         private Collection<LigneCommande> ligneCommandes;    
         @ManyToMany        
-        private Collection<ChoixClient> options;         
+        private Collection<ChoixClient> choixClients;         
         @ManyToMany        
         private Collection<CategorieFormule> categorieFormules;   
         @ManyToOne
@@ -68,7 +68,7 @@ public class Produit implements Serializable {
         this.ingredients = ingredients;
         this.parametres = parametres;
         this.ligneCommandes = ligneCommandes;
-        this.options = options;
+        this.choixClients = options;
         this.categorieFormules = categorieFormules;
         this.tva = tva;
         this.proprietes = proprietes;
@@ -144,10 +144,10 @@ public class Produit implements Serializable {
     }
 
     public Collection<ChoixClient> getOptions() {
-        return options;
+        return choixClients;
     }
     public void setOptions(Collection<ChoixClient> options) {
-        this.options = options;
+        this.choixClients = options;
     }
 
     public Collection<CategorieFormule> getCategorieFormules() {
