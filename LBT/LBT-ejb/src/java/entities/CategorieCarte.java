@@ -1,13 +1,11 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -20,16 +18,20 @@ public class CategorieCarte implements Serializable {
     @Id
     private String nom;
         //=========== Dependances ================================
-        @ManyToMany
+        @ManyToMany(mappedBy = "categorieCarte")
         private Collection<Carte> cartes;
-        @OneToMany
+        @OneToMany(mappedBy = "nom")
         private Collection<Produit> produits;
         //=========== Dependances ================================
 ///////////////////////     CONSTRUCT       //////////////////////////
     public CategorieCarte() {
+        cartes = new ArrayList();
+        produits = new ArrayList();
     }
 
     public CategorieCarte(String nom) {
+        cartes = new ArrayList();
+        produits = new ArrayList();
         this.nom = nom;
     }
 
