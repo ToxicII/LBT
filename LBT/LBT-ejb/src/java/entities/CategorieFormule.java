@@ -2,6 +2,8 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -20,6 +22,41 @@ public class CategorieFormule implements Serializable {
     
     @ManyToMany
     private Collection<Produit> produits;
+
+     public CategorieFormule() {
+          produits = new ArrayList();
+     }
+
+     public CategorieFormule(String nom, Formule formule, Collection<Produit> produits) {
+          this.nom = nom;
+          this.formule = formule;
+          this.produits = produits;
+     }
+
+     public String getNom() {
+          return nom;
+     }
+
+     public void setNom(String nom) {
+          this.nom = nom;
+     }
+
+     public Formule getFormule() {
+          return formule;
+     }
+
+     public void setFormule(Formule formule) {
+          this.formule = formule;
+     }
+
+     public Collection<Produit> getProduits() {
+          return produits;
+     }
+
+     public void setProduits(Collection<Produit> produits) {
+          this.produits = produits;
+     }
+        
 
     /*@Override
     public int hashCode() {
@@ -43,7 +80,7 @@ public class CategorieFormule implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.CategorieFormule[ id=" + id + " ]";
+        return nom;
     }
     
 }
