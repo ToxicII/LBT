@@ -35,9 +35,8 @@ public class Parametres implements Serializable {
           commandes = new ArrayList();
      }
 
-     public Parametres(Long id, String descripParam) {
-          this();
-          this.id = id;
+     public Parametres(String descripParam) {
+          this();          
           this.descripParam = descripParam;
      }
 
@@ -102,7 +101,7 @@ public class Parametres implements Serializable {
 //    }
      @Override
      public String toString() {
-          return "entities.Parametres[ id=" + id + " ]";
+          return descripParam;
      }
 
 }
