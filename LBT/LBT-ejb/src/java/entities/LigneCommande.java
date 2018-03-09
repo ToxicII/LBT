@@ -3,11 +3,14 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class LigneCommande implements Serializable {
@@ -25,14 +28,20 @@ public class LigneCommande implements Serializable {
     private Commande commande;
     
     @ManyToOne
+    private LigneCommande ligneCommandeParent;
+    @OneToMany(mappedBy = "ligneCommandeParent")
+    private Collection <LigneCommande> ligneCommandeEnfants;
+    @ManyToOne
     private Produit produit;
     
     
 
     public LigneCommande() {
+        ligneCommandeEnfants = new ArrayList<>();
     }
 
     public LigneCommande(int quantite, float prixHT, float tauxTVA) {
+        this();
         this.quantite = quantite;
         this.prixHT = prixHT;
         this.tauxTVA = tauxTVA;
@@ -71,11 +80,22 @@ public class LigneCommande implements Serializable {
         this.tauxTVA = tauxTVA;
     }
     
-      @Override
-    public String toString() {
-        return "entities.LigneCommande[ quantité : " +quantite+"prix HT : " +prixHT+ "TVA :" +tauxTVA+ "commande :"+commande+"]";
+     public LigneCommande getLigneCommandeParent() {
+        return ligneCommandeParent;
     }
 
+    public void setLigneCommande(LigneCommande ligneCommandeParent) {
+        this.ligneCommandeParent = ligneCommandeParent;
+    }
+
+    public Collection<LigneCommande> getLigneCommandeEnfants() {
+        return ligneCommandeEnfants;
+    }
+
+    public void setLigneCommandeEnfants(Collection<LigneCommande> ligneCommandeEnfants) {
+        this.ligneCommandeEnfants = ligneCommandeEnfants;
+    }
+    
     public Commande getCommande() {
         return commande;
     }
@@ -83,6 +103,17 @@ public class LigneCommande implements Serializable {
     public void setCommande(Commande commande) {
         this.commande = commande;
     }
+    
+    
+      @Override
+    public String toString() {
+        return "entities.LigneCommande[ quantité : " +quantite+"prix HT : " +prixHT+ "TVA :" +
+                tauxTVA+"ligne de commande enfant :"+ligneCommandeEnfants+"ligne commande parent : "
+                +ligneCommandeParent+"commande :"+commande+"]";
+    }
+
+    
+    
     
 //    @Override
 //    public int hashCode() {
@@ -103,6 +134,8 @@ public class LigneCommande implements Serializable {
 //        }
 //        return true;
 //    }
+
+   
 
     
   
