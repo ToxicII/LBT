@@ -21,7 +21,7 @@ public class jeu {
         Promotion p01 = new Promotion(d01, d02, "Foire à la saucisse", 10f, null);
         Promotion p02 = new Promotion(d03, d04, "Hommage à Maite", 15f, null);
         
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("LBT-ejbPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("LBTPU");
         EntityManager em = emf.createEntityManager();
         
         em.persist(p01);

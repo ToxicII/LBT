@@ -2,6 +2,7 @@ package entities;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,9 +23,9 @@ public class Carte implements Serializable {
      @Column(nullable = false)
      private String nom;
      @Temporal(TemporalType.TIMESTAMP)
-     private String dateDebut;
+     private Date dateDebut;
      @Temporal(TemporalType.TIMESTAMP)
-     private String dateFin;
+     private Date dateFin;
 
      @ManyToMany
      private Collection<CategorieCarte> categorieCartes;
@@ -32,7 +33,7 @@ public class Carte implements Serializable {
      public Carte() {
      }
 
-     public Carte(String nom, String dateDebut, String dateFin, Collection<CategorieCarte> categorieCartes) {
+     public Carte(String nom, Date dateDebut, Date dateFin, Collection<CategorieCarte> categorieCartes) {
           this.nom = nom;
           this.dateDebut = dateDebut;
           this.dateFin = dateFin;
@@ -55,19 +56,19 @@ public class Carte implements Serializable {
           this.nom = nom;
      }
 
-     public String getDateDebut() {
+     public Date getDateDebut() {
           return dateDebut;
      }
 
-     public void setDateDebut(String dateDebut) {
+     public void setDateDebut(Date dateDebut) {
           this.dateDebut = dateDebut;
      }
 
-     public String getDateFin() {
+     public Date getDateFin() {
           return dateFin;
      }
 
-     public void setDateFin(String dateFin) {
+     public void setDateFin(Date dateFin) {
           this.dateFin = dateFin;
      }
 
