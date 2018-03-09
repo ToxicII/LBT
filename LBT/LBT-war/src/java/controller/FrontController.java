@@ -2,22 +2,36 @@
 package controller;
 
 import java.io.IOException;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import sessions.CreationJeuTestLocal;
 
 public class FrontController extends HttpServlet {
-   
+     
+     @EJB
+     private CreationJeuTestLocal creationJeuTest;
+             
      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
              throws ServletException, IOException {
           response.setContentType("text/html;charset=UTF-8");
           request.setCharacterEncoding("UTF-8");
-          String page = "";
+          String page = "/WEB-INF/accueil.jsp";
           String section = request.getParameter("section");
           HttpSession session = request.getSession();
           
+          if("jeuTest".equals(section)){
+               try{
+                    creationJeuTest.test();
+                    request.setAttribute("message", "création ok");
+               } catch (Exception ex) {
+                    ex.printStackTrace();
+               }
+               page = "/WEB-INF/accueil.jsp";
+          }
           
           page = response.encodeURL(page);
           getServletContext().getRequestDispatcher(page).include(request, response);
