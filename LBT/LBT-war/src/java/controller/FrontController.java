@@ -28,7 +28,7 @@ public class FrontController extends HttpServlet {
                     creationJeuTest.test();
                     request.setAttribute("message", "création ok");
                } catch (Exception ex) {
-                    ex.printStackTrace();
+                    request.setAttribute("message", "création pas ok");
                }
                page = "/WEB-INF/accueil.jsp";
           }
