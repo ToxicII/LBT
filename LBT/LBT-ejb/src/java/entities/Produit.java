@@ -48,8 +48,8 @@ public class Produit implements Serializable {
         private TVA tva;
         @OneToMany(mappedBy = "produit")
         private Collection<Propriete> proprietes;    
-        @ManyToOne
-        private CategorieCarte categorieCarte;       
+        @ManyToMany(mappedBy = "produits")
+        private Collection<CategorieCarte> categorieCartes;       
         @ManyToMany(mappedBy = "produits")
         private Collection<Promotion> promotions;   
         //=========== Dependances ================================
@@ -80,7 +80,7 @@ public class Produit implements Serializable {
         this.image = image;
     }
 
-    public Produit(String nom, String description, float prixHT, Collection<Produit> produitEnfants, Collection<Ingredient> ingredients, Collection<Parametres> parametres, Collection<LigneCommande> ligneCommandes, Collection<ChoixClient> choixClients, Collection<CategorieFormule> categorieFormules, TVA tva, Collection<Propriete> proprietes, CategorieCarte categorieCarte, Collection<Promotion> promotions, String image) {
+    public Produit(String nom, String description, float prixHT, Collection<Produit> produitEnfants, Collection<Ingredient> ingredients, Collection<Parametres> parametres, Collection<LigneCommande> ligneCommandes, Collection<ChoixClient> choixClients, Collection<CategorieFormule> categorieFormules, TVA tva, Collection<Propriete> proprietes, Collection<CategorieCarte> categorieCartes, Collection<Promotion> promotions, String image) {
         this.nom = nom;
         this.description = description;
         this.prixHT = prixHT;
@@ -92,7 +92,7 @@ public class Produit implements Serializable {
         this.categorieFormules = categorieFormules;
         this.tva = tva;
         this.proprietes = proprietes;
-        this.categorieCarte = categorieCarte;
+        this.categorieCartes = categorieCartes;
         this.promotions = promotions;
         this.image = image;
     }
@@ -191,11 +191,11 @@ public class Produit implements Serializable {
         this.proprietes = proprietes;
     }
 
-    public CategorieCarte getCategorieCarte() {
-        return categorieCarte;
+    public Collection<CategorieCarte> getCategorieCartes() {
+        return categorieCartes;
     }
-    public void setCategorieCarte(CategorieCarte categorieCarte) {
-        this.categorieCarte = categorieCarte;
+    public void setCategorieCartes(Collection<CategorieCarte> categorieCartes) {
+        this.categorieCartes = categorieCartes;
     }
 
     public Collection<Promotion> getPromotions() {

@@ -6,6 +6,8 @@ import entities.Ingredient;
 import entities.Produit;
 import entities.Propriete;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
@@ -14,6 +16,9 @@ import javax.ejb.Stateless;
 @Stateless
 public class GestionEmplacement implements GestionEmplacementLocal {
 
+     @PersistenceContext(unitName = "LBTPU")
+     private EntityManager em;
+     
     @Override
     public void attribuerTable(Emplacement table) {
         //  Méthode pour affecter à une session 
@@ -34,6 +39,7 @@ public class GestionEmplacement implements GestionEmplacementLocal {
 
     @Override
     public void jeuxEssaiTable() {
+
         //============================================================  EMPLACEMENTS
         Emplacement e01 = new Emplacement(1L, "salle01");
         Emplacement e02 = new Emplacement(2L, "salle01");
@@ -58,6 +64,33 @@ public class GestionEmplacement implements GestionEmplacementLocal {
         Emplacement e21 = new Emplacement(21L, "salle03");
         Emplacement e22 = new Emplacement(22L, "salle03");
         
+        em.persist(e01);
+        em.persist(e02);
+        em.persist(e03);
+        em.persist(e04);
+        em.persist(e05);
+        em.persist(e06);
+        em.persist(e07);
+        em.persist(e08);
+        em.persist(e09);
+        em.persist(e10);
+        em.persist(e11);
+        em.persist(e12);
+        em.persist(e13);
+        em.persist(e14);
+        em.persist(e15);
+        em.persist(e16);
+        em.persist(e17);
+        em.persist(e18);
+        em.persist(e19);
+        em.persist(e20);
+        em.persist(e21);
+        em.persist(e22);
+    }    
+    
+    
+    @Override
+    public void jeuxEssaiProduit() {    
         //============================================================  PRODUITS
         Produit p01 = new Produit("Magret de canard", 
                 "belle pièce poelée nappée de miel", 11.9F, null);
@@ -140,8 +173,11 @@ public class GestionEmplacement implements GestionEmplacementLocal {
                         p02.getIngredients().add(i010);
                         p02.getIngredients().add(i011);
                         
-                        p031.getIngredients().add(i012);                       
-                                    
+                        p031.getIngredients().add(i012);             
+            
+//    }             
+//        public void jeuxTestCategorieCarte (){
+            
         //============================================================  CATEGORIE CARTE
         CategorieCarte cc01 = new CategorieCarte("Appéritifs & Digestifs");
         CategorieCarte cc02 = new CategorieCarte("Boissions chaudes");
@@ -173,6 +209,43 @@ public class GestionEmplacement implements GestionEmplacementLocal {
             p03.getProprietes().add(pPrdt002);
             p03.getProprietes().add(pPrdt003);
             
-            
+            em.persist(p01);
+            em.persist(p02);
+            em.persist(p03);
+            em.persist(p011);
+            em.persist(p021);
+            em.persist(p031);
+            em.persist(p001);
+            em.persist(p002);
+            em.persist(p003);
+            em.persist(p004);
+            em.persist(p005);
+            em.persist(p006);
+            em.persist(i001);
+            em.persist(i002);
+            em.persist(i003);
+            em.persist(i004);
+            em.persist(i005);
+            em.persist(i006);
+            em.persist(i007);
+            em.persist(i008);
+            em.persist(i009);
+            em.persist(i010);
+            em.persist(i011);
+            em.persist(i012);
+            em.persist(i013);
+            em.persist(cc01);
+            em.persist(cc02);
+            em.persist(cc03);
+            em.persist(cc04);
+            em.persist(cc05);
+            em.persist(cc06);
+            em.persist(cc07);
+            em.persist(cc08);
+            em.persist(cc09);
+            em.persist(pPrdt001);
+            em.persist(pPrdt002);
+            em.persist(pPrdt003);
     }
+         
 }

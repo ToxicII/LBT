@@ -29,7 +29,7 @@ public class ChoixClient implements Serializable {
     private String description;
     private String type;
     
-    @ManyToMany
+    @ManyToMany(mappedBy = "choixClients")
     private Collection<Produit> produits;
     
     @ManyToMany

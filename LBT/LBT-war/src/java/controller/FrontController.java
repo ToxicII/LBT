@@ -9,11 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import sessions.CreationJeuTestLocal;
+import sessions.GestionEmplacementLocal;
 
 public class FrontController extends HttpServlet {
      
      @EJB
-     private CreationJeuTestLocal creationJeuTest;
+     private GestionEmplacementLocal creationJeuTestTable;
+     @EJB
+     private CreationJeuTestLocal creationJeuTestPromo;
+     
              
      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
              throws ServletException, IOException {
@@ -25,10 +29,12 @@ public class FrontController extends HttpServlet {
           
           if("jeuTest".equals(section)){
                try{
-                    creationJeuTest.test();
+                    creationJeuTestPromo.test();
+                    creationJeuTestTable.jeuxEssaiTable();
+                    creationJeuTestTable.jeuxEssaiProduit();
                     request.setAttribute("message", "création ok");
                } catch (Exception ex) {
-                    request.setAttribute("message", "création pas ok");
+                    request.setAttribute("message", "création pas ok</p><p>" + ex.getMessage() + "</p>");
                }
                page = "/WEB-INF/accueil.jsp";
           }

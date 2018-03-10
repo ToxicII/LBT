@@ -20,5 +20,7 @@ public interface GestionEmplacementLocal {
     public void fusionnerTable(Emplacement table);
 
     public void jeuxEssaiTable();
+
+    public void jeuxEssaiProduit();
     
 }
