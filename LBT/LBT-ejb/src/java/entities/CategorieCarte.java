@@ -18,9 +18,9 @@ public class CategorieCarte implements Serializable {
     @Id
     private String nom;
         //=========== Dependances ================================
-        @ManyToMany(mappedBy = "categorieCarte")
+        @ManyToMany(mappedBy = "categorieCartes")
         private Collection<Carte> cartes;
-        @OneToMany(mappedBy = "nom")
+        @ManyToMany
         private Collection<Produit> produits;
         //=========== Dependances ================================
 ///////////////////////     CONSTRUCT       //////////////////////////

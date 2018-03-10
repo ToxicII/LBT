@@ -24,6 +24,9 @@ public class LigneCommande implements Serializable {
     @ManyToOne
     private Commande commande;
     
+    @ManyToOne
+    private Produit produit;
+    
     
 
     public LigneCommande() {
