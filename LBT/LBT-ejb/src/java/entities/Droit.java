@@ -15,50 +15,45 @@ import javax.persistence.ManyToMany;
 public class Droit implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    private int typeDroit;
-    private String descripDroit;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long typeDroit;
+    private String descriptionDroit;
 
     @ManyToMany(mappedBy = "droits")
     private Collection<Utilisateur> utilisateurs;
 
     public Droit() {
-        utilisateurs = new ArrayList<>();
+        utilisateurs = new ArrayList();
     }
 
-    public Droit(int typeDroit, String descripDroit) {
-        this();
-        this.typeDroit = typeDroit;
-        this.descripDroit = descripDroit;
+    public Droit(String descripDroit) {
+        this();        
+        this.descriptionDroit = descripDroit;
     }
 
-    public int getTypeDroit() {
+    public Long getTypeDroit() {
         return typeDroit;
     }
 
-    public void setTypeDroit(int typeDroit) {
+    public void setTypeDroit(Long typeDroit) {
         this.typeDroit = typeDroit;
     }
 
-    public String getDescripDroit() {
-        return descripDroit;
+    public String getDescriptionDroit() {
+        return descriptionDroit;
     }
 
-    public void setDescripDroit(String descripDroit) {
-        this.descripDroit = descripDroit;
+    public void setDescriptionDroit(String descriptionDroit) {
+        this.descriptionDroit = descriptionDroit;
     }
 
     public Collection<Utilisateur> getUtilisateurs() {
         return utilisateurs;
     }
 
-    public void setUtilisateurs(Collection<Utilisateur> users) {
+    public void setUtilisateurs(Collection<Utilisateur> utilisateurs) {
         this.utilisateurs = utilisateurs;
-    }
-    
-    
-    
-    
-    
+    }                    
 
 //    @Override
 //    public int hashCode() {
@@ -82,7 +77,7 @@ public class Droit implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Droit[ id=";
+        return descriptionDroit;
     }
     
 }

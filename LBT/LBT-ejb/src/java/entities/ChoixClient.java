@@ -6,7 +6,9 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +27,7 @@ public class ChoixClient implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @Column(nullable = false)
     private String nom;
     private String description;
     private String type;
@@ -32,9 +35,21 @@ public class ChoixClient implements Serializable {
     @ManyToMany(mappedBy = "choixClients")
     private Collection<Produit> produits;
     
-    @ManyToMany
+    @ManyToMany(mappedBy = "choixClients")
     private Collection<LigneCommande> ligneCommandes;
 
+    public ChoixClient() {
+        produits = new ArrayList();
+        ligneCommandes = new ArrayList();
+    }
+
+    public ChoixClient(String nom, String description, String type) {
+        this();
+        this.nom = nom;
+        this.description = description;
+        this.type = type;
+    }
+            
     public Long getId() {
         return id;
     }
@@ -43,6 +58,47 @@ public class ChoixClient implements Serializable {
         this.id = id;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Collection<Produit> getProduits() {
+        return produits;
+    }
+
+    public void setProduits(Collection<Produit> produits) {
+        this.produits = produits;
+    }
+
+    public Collection<LigneCommande> getLigneCommandes() {
+        return ligneCommandes;
+    }
+
+    public void setLigneCommandes(Collection<LigneCommande> ligneCommandes) {
+        this.ligneCommandes = ligneCommandes;
+    }
+
+    
     /*@Override
     public int hashCode() {
         int hash = 0;
@@ -65,7 +121,7 @@ public class ChoixClient implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Option[ id=" + id + " ]";
+        return nom;
     }
     
 }

@@ -25,7 +25,7 @@ public class TypeReglement implements Serializable {
     private Collection<Reglement> reglements;
 
     public TypeReglement() {
-        reglements = new ArrayList<>();
+        reglements = new ArrayList();
     }
 
     public TypeReglement(String type) {

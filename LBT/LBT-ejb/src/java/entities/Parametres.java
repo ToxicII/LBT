@@ -14,7 +14,7 @@ public class Parametres implements Serializable {
      private static final long serialVersionUID = 1L;
      @Id
      private Long id;
-     private String descripParam;
+     private String descriptionParametre;
 
      @OneToMany(mappedBy = "parametres")
      private Collection<Utilisateur> utilisateurs;
@@ -37,7 +37,7 @@ public class Parametres implements Serializable {
 
      public Parametres(String descripParam) {
           this();          
-          this.descripParam = descripParam;
+          this.descriptionParametre = descripParam;
      }
 
      public Long getId() {
@@ -48,12 +48,12 @@ public class Parametres implements Serializable {
           this.id = id;
      }
 
-     public String getDescripParam() {
-          return descripParam;
+     public String getDescriptionParametre() {
+          return descriptionParametre;
      }
 
-     public void setDescripParam(String descripParam) {
-          this.descripParam = descripParam;
+     public void setDescriptionParametre(String descriptionParametre) {
+          this.descriptionParametre = descriptionParametre;
      }
 
      public Collection<Utilisateur> getUtilisateurs() {
@@ -80,6 +80,15 @@ public class Parametres implements Serializable {
           this.produits = produits;
      }
 
+    public Collection<Commande> getCommandes() {
+        return commandes;
+    }
+
+    public void setCommandes(Collection<Commande> commandes) {
+        this.commandes = commandes;
+    }
+          
+
 //    @Override
 //    public int hashCode() {
 //        int hash = 0;
@@ -101,7 +110,7 @@ public class Parametres implements Serializable {
 //    }
      @Override
      public String toString() {
-          return descripParam;
+          return descriptionParametre;
      }
 
 }

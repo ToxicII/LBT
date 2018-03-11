@@ -38,8 +38,7 @@ public class Ingredient implements Serializable {
         this.description = description;
     }
 
-    public Ingredient(String nom, String description, Collection<LigneCommande> ligneCommandes, Collection<Produit> produits) {
-        this();
+    public Ingredient(String nom, String description, Collection<LigneCommande> ligneCommandes, Collection<Produit> produits) {        
         this.nom = nom;
         this.description = description;
         this.ligneCommandes = ligneCommandes;
@@ -66,8 +65,7 @@ public class Ingredient implements Serializable {
     }
     public void setProduits(Collection<Produit> produits) {
         this.produits = produits;
-    }
-    
+    }    
 
     public String getNom() {
         return nom;

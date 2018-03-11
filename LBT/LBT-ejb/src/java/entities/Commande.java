@@ -88,6 +88,14 @@ public class Commande implements Serializable {
         this.parametre = parametre;
     }
 
+    public Emplacement getEmplacement() {
+        return emplacement;
+    }
+
+    public void setEmplacement(Emplacement emplacement) {
+        this.emplacement = emplacement;
+    }        
+
     @Override
     public String toString() {
         return "entities.Commande[ date : " + dateCommande + "Ligne de commande : " +

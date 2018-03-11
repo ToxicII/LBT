@@ -39,10 +39,17 @@ public class LigneCommande implements Serializable {
     @ManyToMany
     private Collection<Ingredient> ingredients;
     
+    @ManyToOne
+    private Formule formule;
+    
+    @ManyToMany
+    private Collection<ChoixClient> choixClients;
+    
 
     public LigneCommande() {
         ligneCommandeEnfants = new ArrayList();
         ingredients =  new ArrayList();
+        choixClients =  new ArrayList();
     }
 
     public LigneCommande(int quantite, float prixHT, float tauxTVA) {
@@ -116,14 +123,28 @@ public class LigneCommande implements Serializable {
         this.ingredients = ingredients;
     }
     
-    
-    
     public Commande getCommande() {
         return commande;
     }
 
     public void setCommande(Commande commande) {
         this.commande = commande;
+    }
+
+    public Formule getFormule() {
+        return formule;
+    }
+
+    public void setFormule(Formule formule) {
+        this.formule = formule;
+    }
+
+    public Collection<ChoixClient> getChoixClients() {
+        return choixClients;
+    }
+
+    public void setChoixClients(Collection<ChoixClient> choixClients) {
+        this.choixClients = choixClients;
     }
     
     

@@ -36,12 +36,16 @@ public class Formule implements Serializable {
 
      @OneToMany(mappedBy = "formule")
      private Collection<CategorieFormule> categorieFormules;
+     
+     @OneToMany(mappedBy = "formule")
+     private Collection<LigneCommande> ligneCommandes;
 
      @ManyToOne
      private TVA tva;
 
      public Formule() {
           categorieFormules = new ArrayList();
+          ligneCommandes = new ArrayList();
      }
 
      public Formule(String nom, float PrixHT, String description, int jourDebut, int jourFin, Date heureDebut, Date heureFin) {
@@ -62,6 +66,87 @@ public class Formule implements Serializable {
      public void setId(Long id) {
           this.id = id;
      }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public float getPrixHT() {
+        return PrixHT;
+    }
+
+    public void setPrixHT(float PrixHT) {
+        this.PrixHT = PrixHT;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getJourDebut() {
+        return jourDebut;
+    }
+
+    public void setJourDebut(int jourDebut) {
+        this.jourDebut = jourDebut;
+    }
+
+    public int getJourFin() {
+        return jourFin;
+    }
+
+    public void setJourFin(int jourFin) {
+        this.jourFin = jourFin;
+    }
+
+    public Date getHeureDebut() {
+        return heureDebut;
+    }
+
+    public void setHeureDebut(Date heureDebut) {
+        this.heureDebut = heureDebut;
+    }
+
+    public Date getHeureFin() {
+        return heureFin;
+    }
+
+    public void setHeureFin(Date heureFin) {
+        this.heureFin = heureFin;
+    }
+
+    public Collection<CategorieFormule> getCategorieFormules() {
+        return categorieFormules;
+    }
+
+    public void setCategorieFormules(Collection<CategorieFormule> categorieFormules) {
+        this.categorieFormules = categorieFormules;
+    }
+
+    public Collection<LigneCommande> getLigneCommandes() {
+        return ligneCommandes;
+    }
+
+    public void setLigneCommandes(Collection<LigneCommande> ligneCommandes) {
+        this.ligneCommandes = ligneCommandes;
+    }
+
+    public TVA getTva() {
+        return tva;
+    }
+
+    public void setTva(TVA tva) {
+        this.tva = tva;
+    }
+          
 
      /*@Override
       public int hashCode() {
