@@ -75,7 +75,7 @@ public class Produit implements Serializable {
         this.image = image;
     }
 
-    public Produit(String nom, String description, float prixHT, Collection<Produit> produitEnfants, Collection<Ingredient> ingredients, Collection<Parametres> parametres, Collection<LigneCommande> ligneCommandes, Collection<ChoixClient> choixClients, Collection<CategorieFormule> categorieFormules, TVA tva, Collection<Propriete> proprietes, Collection<CategorieCarte> categorieCartes, Collection<Promotion> promotions, String image) {
+    public Produit(String nom, String description, float prixHT, Collection<Produit> produitEnfants, Collection<Ingredient> ingredients, Collection<Parametres> parametres, Collection<LigneCommande> ligneCommandes, Collection<ChoixClient> choixClients, Collection<CategorieFormule> categorieFormules, TVA tva, Collection<Propriete> proprietes, CategorieCarte categorieCarte, Collection<Promotion> promotions, String image) {
         this.nom = nom;
         this.description = description;
         this.prixHT = prixHT;
@@ -87,7 +87,7 @@ public class Produit implements Serializable {
         this.categorieFormules = categorieFormules;
         this.tva = tva;
         this.proprietes = proprietes;
-        this.categorieCartes = categorieCartes;
+        this.categorieCarte = categorieCarte;
         this.promotions = promotions;
         this.image = image;
     }
