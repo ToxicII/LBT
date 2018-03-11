@@ -1,6 +1,7 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +10,7 @@ import javax.persistence.ManyToMany;
 
 /**
  *
- * @author Manuel_cdi113
+ * @author Manuel_R_cdi113
  */
 @Entity
 public class Ingredient implements Serializable {
@@ -20,21 +21,25 @@ public class Ingredient implements Serializable {
     @Column(nullable=false)
     private String description;
         //=========== Dependances ================================
-        @ManyToMany
+        @ManyToMany(mappedBy = "ingredients") 
         private Collection<LigneCommande> ligneCommandes;
-        @ManyToMany
+        @ManyToMany(mappedBy = "ingredients")
         private Collection<Produit> produits;        
         //=========== Dependances ================================
 ////////////////////////    CONSTRUCT       ///////////////////////
     public Ingredient() {
+        ligneCommandes = new ArrayList();
+        produits = new ArrayList();
     }
 
     public Ingredient(String nom, String description) {
+        this();
         this.nom = nom;
         this.description = description;
     }
 
     public Ingredient(String nom, String description, Collection<LigneCommande> ligneCommandes, Collection<Produit> produits) {
+        this();
         this.nom = nom;
         this.description = description;
         this.ligneCommandes = ligneCommandes;

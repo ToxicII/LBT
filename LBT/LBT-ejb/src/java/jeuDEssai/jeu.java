@@ -2,7 +2,6 @@
 package jeuDEssai;
 
 import entities.Promotion;
-import static entities.Promotion_.remise;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.persistence.EntityManager;

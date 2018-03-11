@@ -1,12 +1,15 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 /**
@@ -14,6 +17,11 @@ import javax.persistence.OneToMany;
  * @author Manuel_cdi113
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "entities.Emplacement.rechercheCommandeTable",
+            query = "select c.id from Emplacement e join e.commandes c where "
+                    + "e.numero = :paramTableAFusionner and c.parametre <> 'reglee' "),
+})
 public class Emplacement implements Serializable {
     private static final long serialVersionUID = 1L;    
     @Id
@@ -21,36 +29,40 @@ public class Emplacement implements Serializable {
     @Column(nullable=false)
     private String secteur; //  ATTENTION   // "secteur" est un mot réservé SQL...
         //=========== Dependances ================================
-        @ManyToMany
+        @ManyToMany(mappedBy = "emplacements")
         private Collection<Utilisateur> utilisateurs;
-        @ManyToOne
+        @ManyToOne     // (mappedBy = sur classe "parametres" )
         private Parametres parametre;
-        @OneToMany
+        @OneToMany(mappedBy = "emplacement")
         private Collection<Commande> commandes;
         //=========== Dependances ================================
 ////////////////////////    CONSTRUCT       ///////////////////////
     public Emplacement() {
+        utilisateurs = new ArrayList();
+        commandes = new ArrayList();
     }
 
     public Emplacement(Long numero, String zone) {
+        utilisateurs = new ArrayList();
+        commandes = new ArrayList();
         this.numero = numero;
         this.secteur = zone;
     }
 
-    public Emplacement(Long numero, String secteur, Collection<Utilisateur> users, Parametres parametre, Collection<Commande> commandes) {
+    public Emplacement(Long numero, String secteur, Collection<Utilisateur> utilisateurs, Parametres parametre, Collection<Commande> commandes) {
         this.numero = numero;
         this.secteur = secteur;
-        this.utilisateurs = users;
+        this.utilisateurs = utilisateurs;
         this.parametre = parametre;
         this.commandes = commandes;
     }
 ////////////////////////    CONSTRUCT       ///////////////////////
 ////////////////////////    GET SET      //////////////////////////
-    public Collection<Utilisateur> getUsers() {
+    public Collection<Utilisateur> getUtilisateurs() {
         return utilisateurs;
     }
-    public void setUsers(Collection<Utilisateur> users) {
-        this.utilisateurs = users;
+    public void setUtilisateurs(Collection<Utilisateur> utilisateurs) {
+        this.utilisateurs = utilisateurs;
     }
 
     public Parametres getParametre() {

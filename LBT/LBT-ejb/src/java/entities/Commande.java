@@ -32,6 +32,9 @@ public class Commande implements Serializable {
     
     @ManyToOne
     private Parametres parametre;
+    
+    @ManyToOne
+    private Emplacement emplacement;
    
     public Commande() {
         ligneCommandes = new ArrayList<>();
