@@ -28,6 +28,7 @@ public class Produit implements Serializable {
     private String description;
     @Column(nullable=false)
     private float prixHT;
+    private String image;
         //=========== Dependances ================================
         // CHECKED !!
             @ManyToMany        
@@ -119,9 +120,7 @@ public class Produit implements Serializable {
     public void setImage(String image) {
         this.image = image;
     }
-    private String image;
     
-
     public Long getReference() {
         return reference;
     }
