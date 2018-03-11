@@ -7,3 +7,9 @@
 /LBT/LBT-war/dist/
 /LBT/build/
 /LBT/dist/
+LBT/LBT-ejb/nbproject/ant-deploy.xml
+LBT/LBT-ejb/nbproject/project.properties
+LBT/LBT-war/nbproject/ant-deploy.xml
+LBT/LBT-war/nbproject/project.properties
+LBT/nbproject/ant-deploy.xml
+LBT/nbproject/project.properties
