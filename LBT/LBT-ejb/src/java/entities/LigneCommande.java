@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -31,13 +32,17 @@ public class LigneCommande implements Serializable {
     private LigneCommande ligneCommandeParent;
     @OneToMany(mappedBy = "ligneCommandeParent")
     private Collection <LigneCommande> ligneCommandeEnfants;
+    
     @ManyToOne
     private Produit produit;
     
+    @ManyToMany
+    private Collection<Ingredient> ingredients;
     
 
     public LigneCommande() {
-        ligneCommandeEnfants = new ArrayList<>();
+        ligneCommandeEnfants = new ArrayList();
+        ingredients =  new ArrayList();
     }
 
     public LigneCommande(int quantite, float prixHT, float tauxTVA) {
@@ -54,7 +59,6 @@ public class LigneCommande implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    
     
     public int getQuantite() {
         return quantite;
@@ -84,7 +88,7 @@ public class LigneCommande implements Serializable {
         return ligneCommandeParent;
     }
 
-    public void setLigneCommande(LigneCommande ligneCommandeParent) {
+    public void setLigneCommandeParent(LigneCommande ligneCommandeParent) {
         this.ligneCommandeParent = ligneCommandeParent;
     }
 
@@ -95,6 +99,24 @@ public class LigneCommande implements Serializable {
     public void setLigneCommandeEnfants(Collection<LigneCommande> ligneCommandeEnfants) {
         this.ligneCommandeEnfants = ligneCommandeEnfants;
     }
+
+    public Produit getProduit() {
+        return produit;
+    }
+
+    public void setProduit(Produit produit) {
+        this.produit = produit;
+    }
+
+    public Collection<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Collection<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+    
+    
     
     public Commande getCommande() {
         return commande;
