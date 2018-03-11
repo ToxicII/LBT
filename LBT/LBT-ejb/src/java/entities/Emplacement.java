@@ -29,7 +29,7 @@ public class Emplacement implements Serializable {
     @Column(nullable=false)
     private String secteur; //  ATTENTION   // "secteur" est un mot réservé SQL...
         //=========== Dependances ================================
-        @ManyToMany     // (mappedBy = sur classe "utilisateur" )
+        @ManyToMany(mappedBy = "emplacements")
         private Collection<Utilisateur> utilisateurs;
         @ManyToOne     // (mappedBy = sur classe "parametres" )
         private Parametres parametre;
