@@ -20,7 +20,7 @@ public class CategorieCarte implements Serializable {
         //=========== Dependances ================================
         @ManyToMany(mappedBy = "categorieCartes")
         private Collection<Carte> cartes;
-        @ManyToMany
+        @OneToMany(mappedBy = "categorieCarte")
         private Collection<Produit> produits;
         //=========== Dependances ================================
 ///////////////////////     CONSTRUCT       //////////////////////////
