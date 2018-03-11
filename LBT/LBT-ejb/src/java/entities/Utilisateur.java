@@ -22,7 +22,7 @@ public class Utilisateur implements Serializable {
     @ManyToMany
     private Collection<Droit> droits;
     
-    @ManyToMany(mappedBy= "utilisateurs")
+    @ManyToMany
     private Collection<Emplacement> emplacements;
 
     @ManyToOne
