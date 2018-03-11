@@ -29,11 +29,11 @@ public class Produit implements Serializable {
     @Column(nullable=false)
     private float prixHT;
         //=========== Dependances ================================
-                // TO BE CHECKED !!
-                @ManyToMany(mappedBy = "produitParents")        
-                private Collection<Produit> produitEnfants;        
-                @ManyToMany        
-                private Collection<Produit> produitParents;        
+        // CHECKED !!
+            @ManyToMany        
+            private Collection<Produit> produitEnfants;        
+            @ManyToMany(mappedBy = "produitEnfants")   
+            private Collection<Produit> produitParents;        
         @ManyToMany     //      mappé in Ingredient        
         private Collection<Ingredient> ingredients;        
         @ManyToMany     //    to mappedBy in Parametres
@@ -48,14 +48,15 @@ public class Produit implements Serializable {
         private TVA tva;
         @OneToMany(mappedBy = "produit")
         private Collection<Propriete> proprietes;    
-        @ManyToMany(mappedBy = "produits")
-        private Collection<CategorieCarte> categorieCartes;       
+        @ManyToOne
+        private CategorieCarte categorieCarte;       
         @ManyToMany(mappedBy = "produits")
         private Collection<Promotion> promotions;   
         //=========== Dependances ================================
 ////////////////////////    CONSTRUCT       ///////////////////////
     public Produit() {
         produitEnfants = new ArrayList();
+        produitParents = new ArrayList();
         ingredients = new ArrayList();
         parametres = new ArrayList();
         ligneCommandes = new ArrayList();
@@ -66,14 +67,7 @@ public class Produit implements Serializable {
     }
 
     public Produit(String nom, String description, float prixHT, String image) {
-        produitEnfants = new ArrayList();
-        ingredients = new ArrayList();
-        parametres = new ArrayList();
-        ligneCommandes = new ArrayList();
-        choixClients = new ArrayList();
-        categorieFormules = new ArrayList();
-        proprietes = new ArrayList();
-        promotions = new ArrayList();
+        this();
         this.nom = nom;
         this.description = description;
         this.prixHT = prixHT;
@@ -141,6 +135,13 @@ public class Produit implements Serializable {
     public void setProduitEnfants(Collection<Produit> produitEnfants) {
         this.produitEnfants = produitEnfants;
     }
+    
+    public Collection<Produit> getProduitParents() {
+        return produitParents;
+    }
+    public void setProduitParents(Collection<Produit> produitParents) {
+        this.produitParents = produitParents;
+    }
 
     public Collection<Ingredient> getIngredients() {
         return ingredients;
@@ -191,11 +192,11 @@ public class Produit implements Serializable {
         this.proprietes = proprietes;
     }
 
-    public Collection<CategorieCarte> getCategorieCartes() {
-        return categorieCartes;
+    public CategorieCarte getCategorieCarte() {
+        return categorieCarte;
     }
-    public void setCategorieCartes(Collection<CategorieCarte> categorieCartes) {
-        this.categorieCartes = categorieCartes;
+    public void setCategorieCarte(CategorieCarte categorieCarte) {
+        this.categorieCarte = categorieCarte;
     }
 
     public Collection<Promotion> getPromotions() {
