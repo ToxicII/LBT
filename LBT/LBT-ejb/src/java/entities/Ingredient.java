@@ -21,22 +21,25 @@ public class Ingredient implements Serializable {
     @Column(nullable=false)
     private String description;
         //=========== Dependances ================================
-        @ManyToMany     //mappedBy à mettre sur PROMOTION
+        @ManyToMany(mappedBy = "ingredients") 
         private Collection<LigneCommande> ligneCommandes;
         @ManyToMany(mappedBy = "ingredients")
         private Collection<Produit> produits;        
         //=========== Dependances ================================
 ////////////////////////    CONSTRUCT       ///////////////////////
     public Ingredient() {
+        ligneCommandes = new ArrayList();
+        produits = new ArrayList();
     }
 
     public Ingredient(String nom, String description) {
-        ligneCommandes = new ArrayList();
+        this();
         this.nom = nom;
         this.description = description;
     }
 
     public Ingredient(String nom, String description, Collection<LigneCommande> ligneCommandes, Collection<Produit> produits) {
+        this();
         this.nom = nom;
         this.description = description;
         this.ligneCommandes = ligneCommandes;
