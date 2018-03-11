@@ -1,6 +1,7 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Column;
@@ -31,6 +32,7 @@ public class Carte implements Serializable {
      private Collection<CategorieCarte> categorieCartes;
 
      public Carte() {
+         categorieCartes = new ArrayList();
      }
 
      public Carte(String nom, Date dateDebut, Date dateFin, Collection<CategorieCarte> categorieCartes) {

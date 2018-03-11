@@ -30,8 +30,7 @@ public class CategorieCarte implements Serializable {
     }
 
     public CategorieCarte(String nom) {
-        cartes = new ArrayList();
-        produits = new ArrayList();
+        this();
         this.nom = nom;
     }
 

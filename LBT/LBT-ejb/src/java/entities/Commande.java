@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 @Entity
 public class Commande implements Serializable {
@@ -21,7 +23,7 @@ public class Commande implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dateCommande;    
 
     @OneToMany(mappedBy = "commande")
@@ -86,9 +88,18 @@ public class Commande implements Serializable {
         this.parametre = parametre;
     }
 
+    public Emplacement getEmplacement() {
+        return emplacement;
+    }
+
+    public void setEmplacement(Emplacement emplacement) {
+        this.emplacement = emplacement;
+    }        
+
     @Override
     public String toString() {
-        return "entities.Commande[ date : " + dateCommande + "Ligne de commande : " + ligneCommandes + "reglement :" + reglements + " ]";
+        return "entities.Commande[ date : " + dateCommande + "Ligne de commande : " +
+                ligneCommandes + "reglement :" + reglements +"parametre : "+parametre+" ]";
     }
 
 //    @Override

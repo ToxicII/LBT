@@ -5,8 +5,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -22,7 +20,7 @@ public class Utilisateur implements Serializable {
     @ManyToMany
     private Collection<Droit> droits;
     
-    @ManyToMany(mappedBy= "utilisateurs")
+    @ManyToMany
     private Collection<Emplacement> emplacements;
 
     @ManyToOne
@@ -41,8 +39,7 @@ public class Utilisateur implements Serializable {
         this.parametres = parametres;
     }
 
-    
-
+   
     public String getCode() {
         return code;
     }
@@ -115,7 +112,7 @@ public class Utilisateur implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.User[ id=";
+        return prenom + " " + nom;
     }
     
 }

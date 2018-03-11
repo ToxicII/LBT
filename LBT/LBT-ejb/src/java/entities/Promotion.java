@@ -44,7 +44,7 @@ public class Promotion implements Serializable {
     }
 
     public Promotion() {
-        produits = new ArrayList<>();
+        produits = new ArrayList();
     }
 
     public Promotion(Date dateDebut, Date dateFin, String description, float remise, String image) {

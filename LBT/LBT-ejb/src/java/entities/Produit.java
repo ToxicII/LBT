@@ -75,11 +75,12 @@ public class Produit implements Serializable {
         this.image = image;
     }
 
-    public Produit(String nom, String description, float prixHT, Collection<Produit> produitEnfants, Collection<Ingredient> ingredients, Collection<Parametres> parametres, Collection<LigneCommande> ligneCommandes, Collection<ChoixClient> choixClients, Collection<CategorieFormule> categorieFormules, TVA tva, Collection<Propriete> proprietes, CategorieCarte categorieCarte, Collection<Promotion> promotions, String image) {
+    public Produit(String nom, String description, float prixHT, Collection<Produit> produitEnfants, Collection<Produit> produitParents, Collection<Ingredient> ingredients, Collection<Parametres> parametres, Collection<LigneCommande> ligneCommandes, Collection<ChoixClient> choixClients, Collection<CategorieFormule> categorieFormules, TVA tva, Collection<Propriete> proprietes, CategorieCarte categorieCarte, Collection<Promotion> promotions, String image) {
         this.nom = nom;
         this.description = description;
         this.prixHT = prixHT;
         this.produitEnfants = produitEnfants;
+        this.produitParents = produitParents;
         this.ingredients = ingredients;
         this.parametres = parametres;
         this.ligneCommandes = ligneCommandes;
@@ -163,10 +164,10 @@ public class Produit implements Serializable {
         this.ligneCommandes = ligneCommandes;
     }
 
-    public Collection<ChoixClient> getOptions() {
+    public Collection<ChoixClient> getChoixClients() {
         return choixClients;
     }
-    public void setOptions(Collection<ChoixClient> options) {
+    public void setChoixClients(Collection<ChoixClient> choixClients) {
         this.choixClients = choixClients;
     }
 

@@ -27,7 +27,7 @@ public class Emplacement implements Serializable {
     @Id
     private Long numero;
     @Column(nullable=false)
-    private String secteur; //  ATTENTION   // "secteur" est un mot réservé SQL...
+    private String secteur; //  ATTENTION   // "zone" est un mot réservé SQL...
         //=========== Dependances ================================
         @ManyToMany(mappedBy = "emplacements")
         private Collection<Utilisateur> utilisateurs;
@@ -42,11 +42,10 @@ public class Emplacement implements Serializable {
         commandes = new ArrayList();
     }
 
-    public Emplacement(Long numero, String zone) {
-        utilisateurs = new ArrayList();
-        commandes = new ArrayList();
+    public Emplacement(Long numero, String secteur) {
+        this();
         this.numero = numero;
-        this.secteur = zone;
+        this.secteur = secteur;
     }
 
     public Emplacement(Long numero, String secteur, Collection<Utilisateur> utilisateurs, Parametres parametre, Collection<Commande> commandes) {
