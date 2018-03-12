@@ -14,6 +14,6 @@ import javax.ejb.Local;
 @Local
 public interface CreationJeuTestLocal {
 
-     public void jeuTest();
+     public void jeuTest()throws Exception;
     
 }

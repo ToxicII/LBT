@@ -29,7 +29,7 @@ public class FrontController extends HttpServlet {
                     creationJeuTest.jeuTest();
                     request.setAttribute("message", "création ok");
                } catch (Exception ex) {
-                    request.setAttribute("message", "création pas ok</p><p>" + ex.getMessage() + "</p>");
+                    request.setAttribute("message", "création pas ok<p>" + ex.getMessage() + "</p>");
                }
                page = "/WEB-INF/accueil.jsp";
           }

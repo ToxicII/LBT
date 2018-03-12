@@ -27,7 +27,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
      private EntityManager em;
 
      @Override
-     public void jeuTest() {
+     public void jeuTest() throws Exception{
 
 // INSTACIATION D'OBJETS========================================================
 //////////// CARTE          
