@@ -36,8 +36,8 @@ public class GestionCommande implements GestionCommandeLocal {
     @Override
     public Commande addProduit(Commande commande, Long reference) {
         
-        Query q01 = em.createNamedQuery("entites.produit.selectByRef");
-        q01.setParameter("paramref", reference);
+        Query q01 = em.createNamedQuery("entities.Produit.selectByReference");
+        q01.setParameter("reference", reference);
         Produit p = (Produit) q01.getSingleResult();
         
         LigneCommande lc = new LigneCommande();
