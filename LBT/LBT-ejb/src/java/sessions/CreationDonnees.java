@@ -15,6 +15,7 @@ public class CreationDonnees implements CreationDonneesLocal {
 
     @Override
     public void creerDonnees() {
+         
         LigneCommande lc01 = new LigneCommande(1, 10, 5.5f);
         LigneCommande lc02 = new LigneCommande(2, 15, 5.5f);
         LigneCommande lc03 = new LigneCommande(1, 20, 18.6f);

@@ -29,7 +29,7 @@ public class FrontController extends HttpServlet {
           
           if("jeuTest".equals(section)){
                try{
-                    creationJeuTestPromo.test();
+                    creationJeuTestPromo.promotion();
                     creationJeuTestTable.jeuxEssaiTable();
                     creationJeuTestTable.jeuxEssaiProduit();
                     request.setAttribute("message", "création ok");

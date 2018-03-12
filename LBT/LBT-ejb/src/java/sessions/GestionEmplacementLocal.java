@@ -17,10 +17,6 @@ public interface GestionEmplacementLocal {
 
     public void attribuerTable(Emplacement table);
 
-    public void fusionnerTable(Emplacement table);
-
-    public void jeuxEssaiTable();
-
-    public void jeuxEssaiProduit();
+    public void fusionnerTable(Emplacement table);  
     
 }

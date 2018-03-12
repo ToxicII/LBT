@@ -28,10 +28,16 @@ public class CategorieFormule implements Serializable {
      }
 
      public CategorieFormule(String nom, Formule formule, Collection<Produit> produits) {
+          this();
           this.nom = nom;
           this.formule = formule;
           this.produits = produits;
      }
+
+     public CategorieFormule(String nom) {
+          this();
+          this.nom = nom;
+     }          
 
      public String getNom() {
           return nom;

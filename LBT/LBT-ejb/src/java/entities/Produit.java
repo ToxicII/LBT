@@ -30,7 +30,7 @@ public class Produit implements Serializable {
     private float prixHT;
     private String image;
         //=========== Dependances ================================
-        // CHECKED !!
+        // CHECKED !! 
             @ManyToMany        
             private Collection<Produit> produitEnfants;        
             @ManyToMany(mappedBy = "produitEnfants")   

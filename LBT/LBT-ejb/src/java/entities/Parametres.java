@@ -35,6 +35,12 @@ public class Parametres implements Serializable {
           commandes = new ArrayList();
      }
 
+     public Parametres(Long id, String descriptionParametre) {
+          this();
+          this.id = id;
+          this.descriptionParametre = descriptionParametre;
+     }
+          
      public Parametres(String descripParam) {
           this();          
           this.descriptionParametre = descripParam;
