@@ -30,6 +30,11 @@ public class TVA implements Serializable {
           produits = new ArrayList();
      }
 
+     public TVA(float tauxTVA) {
+          this();
+          this.tauxTVA = tauxTVA;
+     }
+          
      public TVA(float tauxTVA, Collection<Formule> formules, Collection<Produit> produits) {        
           this.tauxTVA = tauxTVA;
           this.formules = formules;

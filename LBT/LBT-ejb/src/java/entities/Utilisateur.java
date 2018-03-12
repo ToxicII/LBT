@@ -1,4 +1,3 @@
-
 package entities;
 
 import java.io.Serializable;
@@ -11,84 +10,89 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Utilisateur implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Id
-    private String code;
-    private String nom;
-    private String prenom;
-    
-    @ManyToMany
-    private Collection<Droit> droits;
-    
-    @ManyToMany
-    private Collection<Emplacement> emplacements;
 
-    @ManyToOne
-    private Parametres parametres;
-    
-    public Utilisateur() {
-        droits = new ArrayList<>();
-        emplacements = new ArrayList<>();
-    }
+     private static final long serialVersionUID = 1L;
+     @Id
+     private String code;
+     private String nom;
+     private String prenom;
 
-    public Utilisateur(String code, String nom, String prenom, Parametres parametres) {
-        this();
-        this.code = code;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.parametres = parametres;
-    }
+     @ManyToMany
+     private Collection<Droit> droits;
 
-   
-    public String getCode() {
-        return code;
-    }
+     @ManyToMany
+     private Collection<Emplacement> emplacements;
 
-    public void setCode(String code) {
-        this.code = code;
-    }
+     @ManyToOne
+     private Parametres parametres;
 
-    public String getNom() {
-        return nom;
-    }
+     public Utilisateur() {
+          droits = new ArrayList<>();
+          emplacements = new ArrayList<>();
+     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+     public Utilisateur(String code, String nom, String prenom) {
+          this();
+          this.code = code;
+          this.nom = nom;
+          this.prenom = prenom;
+     }
 
-    public String getPrenom() {
-        return prenom;
-    }
+     public Utilisateur(String code, String nom, String prenom, Parametres parametres) {
+          this();
+          this.code = code;
+          this.nom = nom;
+          this.prenom = prenom;
+          this.parametres = parametres;
+     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
+     public String getCode() {
+          return code;
+     }
 
-    public Collection<Droit> getDroits() {
-        return droits;
-    }
+     public void setCode(String code) {
+          this.code = code;
+     }
 
-    public void setDroits(Collection<Droit> droits) {
-        this.droits = droits;
-    }
+     public String getNom() {
+          return nom;
+     }
 
-    public Collection<Emplacement> getEmplacements() {
-        return emplacements;
-    }
+     public void setNom(String nom) {
+          this.nom = nom;
+     }
 
-    public void setEmplacements(Collection<Emplacement> emplacements) {
-        this.emplacements = emplacements;
-    }
+     public String getPrenom() {
+          return prenom;
+     }
 
-    public Parametres getParametres() {
-        return parametres;
-    }
+     public void setPrenom(String prenom) {
+          this.prenom = prenom;
+     }
 
-    public void setParametres(Parametres parametres) {
-        this.parametres = parametres;
-    }
-    
-    
+     public Collection<Droit> getDroits() {
+          return droits;
+     }
+
+     public void setDroits(Collection<Droit> droits) {
+          this.droits = droits;
+     }
+
+     public Collection<Emplacement> getEmplacements() {
+          return emplacements;
+     }
+
+     public void setEmplacements(Collection<Emplacement> emplacements) {
+          this.emplacements = emplacements;
+     }
+
+     public Parametres getParametres() {
+          return parametres;
+     }
+
+     public void setParametres(Parametres parametres) {
+          this.parametres = parametres;
+     }
 
 //    @Override
 //    public int hashCode() {
@@ -109,10 +113,9 @@ public class Utilisateur implements Serializable {
 //        }
 //        return true;
 //    }
+     @Override
+     public String toString() {
+          return prenom + " " + nom;
+     }
 
-    @Override
-    public String toString() {
-        return prenom + " " + nom;
-    }
-    
 }

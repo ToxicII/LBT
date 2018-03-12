@@ -12,6 +12,8 @@ import entities.Parametres;
 import entities.Produit;
 import entities.Promotion;
 import entities.Propriete;
+import entities.TVA;
+import entities.Utilisateur;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.ejb.Stateless;
@@ -23,7 +25,6 @@ public class CreationJeuTest implements CreationJeuTestLocal {
 
      @PersistenceContext(unitName = "LBTPU")
      private EntityManager em;
-     
 
      @Override
      public void jeuTest() {
@@ -42,11 +43,15 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           CategorieCarte cc02 = new CategorieCarte("Boissions chaudes");
           CategorieCarte cc03 = new CategorieCarte("Boissions fraiches");
           CategorieCarte cc04 = new CategorieCarte("Vins");
-          CategorieCarte cc05 = new CategorieCarte("Entrées");
+          //CategorieCarte cc05 = new CategorieCarte("Entrées");
+          CategorieCarte cc05 = new CategorieCarte("Viandes");          
           CategorieCarte cc06 = new CategorieCarte("Grandes salades");
-          CategorieCarte cc07 = new CategorieCarte("Plats");
+          CategorieCarte cc07 = new CategorieCarte("Poissons");
           CategorieCarte cc08 = new CategorieCarte("Fromages");
           CategorieCarte cc09 = new CategorieCarte("Desserts");
+          CategorieCarte cc010 = new CategorieCarte("Fruits de Mer");          
+          CategorieCarte cc011 = new CategorieCarte("Hamburgers");          
+          CategorieCarte cc012 = new CategorieCarte("Pizzas");          
 
 /////////// CATEGORIEFORMULE          
           CategorieFormule cfe01 = new CategorieFormule("Entrées");
@@ -62,7 +67,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           CategorieFormule cfb01 = new CategorieFormule("Boissons");
           CategorieFormule cfb02 = new CategorieFormule("Boissons");
           CategorieFormule cfb03 = new CategorieFormule("Boissons");
-          
+
 //////////// CHOIXCLIENT          
           ChoixClient chc01 = new ChoixClient("bleu", null, "cuisson");
           ChoixClient chc02 = new ChoixClient("saignant", null, "cuisson");
@@ -74,14 +79,14 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           ChoixClient chc08 = new ChoixClient("béarnaise", null, "sauce");
           ChoixClient chc09 = new ChoixClient("estragon", null, "sauce");
           ChoixClient chc010 = new ChoixClient("barbecue", null, "sauce");
-                    
+
 //////////// COMMANDE
           
 //////////// DROIT  
           Droit dr01 = new Droit("service");
           Droit dr02 = new Droit("cuisine");
           Droit dr03 = new Droit("caisse");
-                              
+
 //////////// EMPLACEMENT
           Emplacement e01 = new Emplacement(1L, "salle01");
           Emplacement e02 = new Emplacement(2L, "salle01");
@@ -137,9 +142,8 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           Ingredient i011 = new Ingredient("oignons", "émincés");
 
           Ingredient i012 = new Ingredient("tournedos", "boeuf");
-          
+
 //////////// LIGNECOMMANDE
-          
 //////////// PARAMETRE  
           Parametres parP01 = new Parametres(1L, "disponible");
           Parametres parP02 = new Parametres(2L, "indisponible");
@@ -152,26 +156,26 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           Parametres parU03 = new Parametres(202L, "démissionaire");
           Parametres parE01 = new Parametres(300L, "ocuppée");
           Parametres parE02 = new Parametres(301L, "libre");
-                    
+
 //////////// PRODUIT          
           Produit p01 = new Produit("Magret de canard",
-                  "belle pièce poelée nappée de miel", 11.9F, null);
+                  "belle pièce poelée nappée de miel", 11.9f, null);
           Produit p011 = new Produit("Pièce de canard",
-                  "composant du magret de canard", 0F, null);
+                  "composant du magret de canard", 0f, null);
           Produit p001 = new Produit("Pommes frites",
-                  "Accompagnement frite", 0F, null);
+                  "Accompagnement frite", 0f, null);
           Produit p002 = new Produit("Haricots verts",
-                  "Accompagnement H-V", 0F, null);
+                  "Accompagnement H-V", 0f, null);
           Produit p003 = new Produit("Gratin dauphinois",
-                  "Accompagnement gratin", 0F, null);
+                  "Accompagnement gratin", 0f, null);
           Produit p004 = new Produit("Pollenta",
-                  "Accompagnement Poll.", 0F, null);
+                  "Accompagnement Poll.", 0f, null);
           Produit p005 = new Produit("Flageolets",
-                  "Accompagnement haricots blancs", 0F, null);
+                  "Accompagnement haricots blancs", 0f, null);
           Produit p006 = new Produit("Riz basmati",
-                  "Accompagnement riz blancs", 0F, null);
+                  "Accompagnement riz blancs", 0f, null);
           Produit p02 = new Produit("Bavette d'Aloyo",
-                  "belle pièce de boeuf et sa sauce", 12.6F, null);
+                  "belle pièce de boeuf et sa sauce", 12.6f, null);
           Produit p021 = new Produit("Bavette",
                   "pièce de boeuf", 0F, null);
 
@@ -179,6 +183,11 @@ public class CreationJeuTest implements CreationJeuTestLocal {
                   "belle pièce de boeuf et son accompagnement", 12.9F, null);
           Produit p031 = new Produit("Tournedos",
                   "pièce de boeuf", 0F, null);
+
+          Produit p04 = new Produit("Spaghettis de légumes à la bolognaise",
+                  "spaghettis végétariens", 10.5F, null);
+          
+          //Produit p05 = new Produit("", null, prixHT, null);
 
 //////////// PROMOTION
           Date d01 = new GregorianCalendar(2011, 1, 25, 14, 34, 20).getTime();
@@ -189,21 +198,30 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           Promotion prom01 = new Promotion(d01, d02, "Foire à la saucisse", 10f, null);
           Promotion prom02 = new Promotion(d03, d04, "Hommage à Maite", 15f, null);
 
-//////////// PROPRIETE          
-          Propriete pPrdt001 = new Propriete("cuisson", "bleu", null);
-          Propriete pPrdt002 = new Propriete("cuisson", "saignant", null);
-          Propriete pPrdt003 = new Propriete("cuisson", "à point", null);
-          
+//////////// PROPRIETE               
+          Propriete pPrdt001 = new Propriete("poid", "125", "grammes");
+          /*Propriete pPrdt002 = new Propriete("cuisson", "saignant", null);
+          Propriete pPrdt003 = new Propriete("cuisson", "à point", null);*/
+
 //////////// REGLEMENT
-          
 //////////// TVA
-          
+          TVA tv01 = new TVA(10f);
+          TVA tv02 = new TVA(20f);
+          TVA tv03 = new TVA(15.6f);
+          TVA tv04 = new TVA(9.6f);
+
 //////////// TYPEREGLEMENT
-          
-//////////// UTILISATEUR          
+//////////// UTILISATEUR  
+          Utilisateur u01 = new Utilisateur("1234", "Peuplus", "Jean");
+          Utilisateur u02 = new Utilisateur("2345", "Neymar", "Jean");
+          Utilisateur u03 = new Utilisateur("9876", "Bon de Parme", "Jean");
+          Utilisateur u04 = new Utilisateur("4567", "Moulin", "Jean");
+          Utilisateur u05 = new Utilisateur("9632", "Jaurès", "Jean");
+          Utilisateur u06 = new Utilisateur("9510", "de La Fontain", "Jean");
+          Utilisateur u07 = new Utilisateur("3021", "Marc Morandini", "Jean");
+          Utilisateur u08 = new Utilisateur("4561", "Luc Mélenchon", "Jean");
 
 // DEPENDANCES==================================================================
-          
 //////////// CARTE -> CATEGORIECARTE          
           ca02.getCategorieCartes().add(cc01);
           ca02.getCategorieCartes().add(cc02);
@@ -213,49 +231,74 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           ca02.getCategorieCartes().add(cc06);
           ca02.getCategorieCartes().add(cc07);
           ca02.getCategorieCartes().add(cc08);
-          ca02.getCategorieCartes().add(cc09);                 
-     
+          ca02.getCategorieCartes().add(cc09);
+          ca02.getCategorieCartes().add(cc010);
+          ca02.getCategorieCartes().add(cc011);
+          ca02.getCategorieCartes().add(cc012);
+
 //////////// CATEGORIEFORMULE -> FORMULE
           cfe01.setFormule(f01);
           cfe02.setFormule(f02);
           cfe03.setFormule(f03);
-          
+
           cfp01.setFormule(f01);
           cfp02.setFormule(f02);
           cfp03.setFormule(f03);
           cfp04.setFormule(f04);
-          
+
           cfd01.setFormule(f01);
           cfd02.setFormule(f02);
           cfd03.setFormule(f04);
-          
+
           cfb01.setFormule(f01);
           cfb02.setFormule(f02);
           cfb03.setFormule(f04);
-          
+
 //////////// CATEGORIEFORMULE -> PRODUIT          
-          
 //////////// COMMANDE -> EMPLACEMENT          
 //////////// COMMANDE -> PARAMETRE     
-          
-//////////// EMPLACEMENT -> PARAMETRE    
-          
-//////////// FORMULE -> TVA          
-        
+//////////// EMPLACEMENT -> PARAMETRE 
+          e01.setParametre(parE01);
+          e02.setParametre(parE01);
+          e03.setParametre(parE01);
+          e04.setParametre(parE01);
+          e05.setParametre(parE01);
+          e06.setParametre(parE01);
+          e07.setParametre(parE01);
+          e08.setParametre(parE01);
+          e09.setParametre(parE01);
+          e10.setParametre(parE01);
+          e11.setParametre(parE01);
+          e12.setParametre(parE01);
+          e13.setParametre(parE01);
+          e14.setParametre(parE01);
+          e15.setParametre(parE01);
+          e16.setParametre(parE01);
+          e17.setParametre(parE01);
+          e18.setParametre(parE01);
+          e19.setParametre(parE01);
+          e20.setParametre(parE01);
+          e21.setParametre(parE01);
+          e22.setParametre(parE01);
+
+//////////// FORMULE -> TVA  
+          f01.setTva(tv01);
+          f02.setTva(tv01);
+          f03.setTva(tv03);
+          f04.setTva(tv04);
+
 //////////// LIGNECOMMANDE -> CHOIXCLIENT          
 //////////// LIGNECOMMANDE -> COMMANDE
 //////////// LIGNECOMMANDE -> FORMULE
 //////////// LIGNECOMMANDE -> INGREDIENT          
 //////////// LIGNECOMMANDE -> LIGNECOMMANDE
 //////////// LIGNECOMMANDE -> PRODUIT          
-          
 //////////// PRODUIT -> CATEGORIECARTE
           p01.setCategorieCarte(cc07);
           p02.setCategorieCarte(cc07);
-          p03.setCategorieCarte(cc07);  
-          
+          p03.setCategorieCarte(cc07);
+
 //////////// PRODUIT -> CHOIXCLIENT         
-                  
 //////////// PRODUIT -> INGREDIENT          
           p011.getIngredients().add(i001);
           p011.getIngredients().add(i002);
@@ -299,36 +342,75 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           p03.getProduitEnfants().add(p004);
           p03.getProduitEnfants().add(p005);
           p03.getProduitEnfants().add(p006);
-          
-//////////// PRODUIT -> TVA          
 
+//////////// PRODUIT -> TVA          
 //////////// PROMOTION -> PRODUIT          
-          
 //////////// PROPRIETE -> PRODUIT          
-          pPrdt001.setProduit(p01);
+          /*pPrdt001.setProduit(p01);
           pPrdt001.setProduit(p02);
-          pPrdt001.setProduit(p03);
+          pPrdt001.setProduit(p03);*/
+
+          pPrdt001.setProduit(p02);
           
-          pPrdt002.setProduit(p01);
-          pPrdt002.setProduit(p02);
-          pPrdt002.setProduit(p03);
-          
-          pPrdt003.setProduit(p01);
+
+          /*pPrdt003.setProduit(p01);
           pPrdt003.setProduit(p02);
-          pPrdt003.setProduit(p03);    
-          
+          pPrdt003.setProduit(p03);*/
+
 //////////// REGLEMENT -> COMMANDE
 //////////// REGLEMENT -> TYPEREGLEMENT         
-          
-//////////// UTILISATEUR -> DROIT      
-//////////// UTILISATEUR -> EMPLACEMENT      
-//////////// UTILISATEUR -> PARAMETRE      
-          
+//////////// UTILISATEUR -> DROIT    
+          u01.getDroits().add(dr01);
+          u01.getDroits().add(dr02);
+          u02.getDroits().add(dr01);
+          u08.getDroits().add(dr01);
+          u03.getDroits().add(dr02);
+          u04.getDroits().add(dr02);
+          u05.getDroits().add(dr02);
+          u06.getDroits().add(dr01);
+          u07.getDroits().add(dr03);
+
+//////////// UTILISATEUR -> EMPLACEMENT   
+          u01.getEmplacements().add(e01);
+          u01.getEmplacements().add(e02);
+          u01.getEmplacements().add(e03);
+          u01.getEmplacements().add(e04);
+          u01.getEmplacements().add(e05);
+          u01.getEmplacements().add(e06);
+
+          u02.getEmplacements().add(e07);
+          u02.getEmplacements().add(e08);
+          u02.getEmplacements().add(e09);
+          u02.getEmplacements().add(e10);
+          u02.getEmplacements().add(e11);
+          u02.getEmplacements().add(e12);
+          u02.getEmplacements().add(e13);
+          u02.getEmplacements().add(e14);
+          u02.getEmplacements().add(e15);
+
+          u08.getEmplacements().add(e16);
+          u08.getEmplacements().add(e17);
+          u08.getEmplacements().add(e18);
+          u08.getEmplacements().add(e19);
+          u08.getEmplacements().add(e20);
+          u08.getEmplacements().add(e21);
+          u08.getEmplacements().add(e22);
+
+//////////// UTILISATEUR -> PARAMETRE  
+          u01.setParametres(parU01);
+          u02.setParametres(parU01);
+          u03.setParametres(parU01);
+          u04.setParametres(parU01);
+          u05.setParametres(parU01);
+          u06.setParametres(parU02);
+          u07.setParametres(parU03);
+          u08.setParametres(parU01);
+
 // PERSIST======================================================================
           // CARTE
           em.persist(ca01);
           em.persist(ca02);
-          
+
           // CATEGORIECARTE
           em.persist(cc01);
           em.persist(cc02);
@@ -339,11 +421,14 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(cc07);
           em.persist(cc08);
           em.persist(cc09);
-          
+          em.persist(cc010);
+          em.persist(cc011);
+          em.persist(cc012);
+
           // CATEGORIEFORMULE
           em.persist(cfb01);
           em.persist(cfb02);
-          em.persist(cfb03);          
+          em.persist(cfb03);
           em.persist(cfe01);
           em.persist(cfe02);
           em.persist(cfe03);
@@ -354,7 +439,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(cfd01);
           em.persist(cfd02);
           em.persist(cfd03);
-          
+
           // CHOIXCLIENT
           em.persist(chc01);
           em.persist(chc02);
@@ -366,14 +451,13 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(chc08);
           em.persist(chc09);
           em.persist(chc010);
-          
+
           //COMMANDE
-          
           // DROIT
           em.persist(dr01);
           em.persist(dr02);
           em.persist(dr03);
-          
+
           // EMPLACEMENT
           em.persist(e01);
           em.persist(e02);
@@ -403,7 +487,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(f02);
           em.persist(f03);
           em.persist(f04);
-          
+
           // INGREDIENT
           em.persist(i001);
           em.persist(i002);
@@ -418,9 +502,8 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(i011);
           em.persist(i012);
           em.persist(i013);
-          
+
           // LIGNECOMMANDE
-          
           // PARAMETRE
           em.persist(parP01);
           em.persist(parP02);
@@ -433,11 +516,12 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(parU03);
           em.persist(parE01);
           em.persist(parE02);
-          
+
           // PRODUIT                    
           em.persist(p01);
           em.persist(p02);
           em.persist(p03);
+          em.persist(p04);
           em.persist(p011);
           em.persist(p021);
           em.persist(p031);
@@ -447,24 +531,33 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(p004);
           em.persist(p005);
           em.persist(p006);
-          
+
           // PROMOTIONS
           em.persist(prom01);
           em.persist(prom02);
 
           // PROPRIETE
           em.persist(pPrdt001);
-          em.persist(pPrdt002);
-          em.persist(pPrdt003);
-          
+          /*em.persist(pPrdt002);
+          em.persist(pPrdt003);*/
+
           // REGLEMENT
-          
           // TVA
-          
+          em.persist(tv01);
+          em.persist(tv02);
+          em.persist(tv03);
+          em.persist(tv04);
+
           // TYPEREGLEMENT
-          
           // UTILISATEUR
-          
+          em.persist(u01);
+          em.persist(u02);
+          em.persist(u03);
+          em.persist(u04);
+          em.persist(u05);
+          em.persist(u06);
+          em.persist(u07);
+          em.persist(u08);
      }
-     
+
 }
