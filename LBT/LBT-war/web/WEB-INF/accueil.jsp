@@ -11,5 +11,11 @@
         <a href="${frontJT}">création du jeu de test</a><br><br>
         
         ${message}
+        <br>
+        <c:url var="frontCT" value="FrontController?section=creationDonnees" />
+        <a href="${frontCT}">création du jeu de test G</a><br><br>
+        
+        ${message}
+        
     </body>
 </html>

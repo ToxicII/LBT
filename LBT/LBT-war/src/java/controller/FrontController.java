@@ -8,10 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import sessions.CreationDonneesLocal;
 import sessions.CreationJeuTestLocal;
 
 public class FrontController extends HttpServlet {
           
+    @EJB
+    private CreationDonneesLocal creationDonnees;
+     
      @EJB
      private CreationJeuTestLocal creationJeuTest;
      
@@ -32,7 +36,18 @@ public class FrontController extends HttpServlet {
                     request.setAttribute("message", "création pas ok<p>" + ex.getMessage() + "</p>");
                }
                page = "/WEB-INF/accueil.jsp";
+               
           }
+          
+          if ("creationDonnees".equals(section)) {
+              try{
+             creationDonnees.creerDonnees();
+             request.setAttribute("message", "création ok");
+              }catch (Exception ex) {
+                  request.setAttribute("message", "création pas ok</p><p>" + ex.getMessage() + "</p>");
+              }
+              page = "/WEB-INF/accueil.jsp";
+         }
           
           page = response.encodeURL(page);
           getServletContext().getRequestDispatcher(page).include(request, response);
