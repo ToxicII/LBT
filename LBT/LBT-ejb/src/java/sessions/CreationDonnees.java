@@ -2,6 +2,7 @@
 package sessions;
 
 import entities.Commande;
+import entities.Emplacement;
 import entities.LigneCommande;
 import entities.Reglement;
 import entities.TypeReglement;
@@ -36,7 +37,26 @@ public class CreationDonnees implements CreationDonneesLocal {
         Commande c03 = new Commande(d02);
         Commande c04 = new Commande(d02);
         Commande c05 = new Commande(d03);
-
+        
+        Emplacement e01 = new Emplacement(1L, "salle01");
+        Emplacement e02 = new Emplacement(2L, "salle01");
+        Emplacement e03 = new Emplacement(3L, "salle01");
+        Emplacement e04 = new Emplacement(4L, "salle01");
+        Emplacement e05 = new Emplacement(5L, "salle01");
+        
+        c01.setEmplacement(e01); // assoc commande emplacement
+        c02.setEmplacement(e02); // assoc commande emplacement
+        c03.setEmplacement(e03); // assoc commande emplacement
+        c04.setEmplacement(e04); // assoc commande emplacement
+        c05.setEmplacement(e05); // assoc commande emplacement
+        
+        c01.setParametre(null);
+        c02.setParametre(null);
+        c03.setParametre(null);
+        c04.setParametre(null);
+        c05.setParametre(null);
+        
+        
         TypeReglement tr01 = new TypeReglement("espèce");
         TypeReglement tr02 = new TypeReglement("carte");
         TypeReglement tr03 = new TypeReglement("chèque restaurant");
@@ -54,12 +74,19 @@ public class CreationDonnees implements CreationDonneesLocal {
         r05.setTypeReglement(tr02); // assoc typeReglement reglement
         
         
-        r01.setCommande(c01); // assoc typeReglement commande
-        r02.setCommande(c02); // assoc typeReglement commande
-        r03.setCommande(c03); // assoc typeReglement commande
-        r04.setCommande(c04); // assoc typeReglement commande
-        r05.setCommande(c05); // assoc typeReglement commande
-
+                
+        r01.setCommande(c01); // assoc Reglement commande
+        r02.setCommande(c02); // assoc Reglement commande
+        r03.setCommande(c03); // assoc Reglement commande
+        r04.setCommande(c04); // assoc Reglement commande
+        r05.setCommande(c05); // assoc Reglement commande
+        
+        em.persist(e01);
+        em.persist(e02);
+        em.persist(e03);
+        em.persist(e04);
+        em.persist(e05);
+        
         em.persist(lc01);
         em.persist(lc02);
         em.persist(lc03);
