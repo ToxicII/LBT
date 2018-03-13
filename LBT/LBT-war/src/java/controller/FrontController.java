@@ -9,14 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import sessions.CreationJeuTestLocal;
-import sessions.GestionEmplacementLocal;
 
 public class FrontController extends HttpServlet {
-     
+          
      @EJB
-     private GestionEmplacementLocal creationJeuTestTable;
-     @EJB
-     private CreationJeuTestLocal creationJeuTestPromo;
+     private CreationJeuTestLocal creationJeuTest;
      
              
      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -29,12 +26,10 @@ public class FrontController extends HttpServlet {
           
           if("jeuTest".equals(section)){
                try{
-                    creationJeuTestPromo.test();
-                    creationJeuTestTable.jeuxEssaiTable();
-                    creationJeuTestTable.jeuxEssaiProduit();
+                    creationJeuTest.jeuTest();
                     request.setAttribute("message", "création ok");
                } catch (Exception ex) {
-                    request.setAttribute("message", "création pas ok</p><p>" + ex.getMessage() + "</p>");
+                    request.setAttribute("message", "création pas ok<p>" + ex.getMessage() + "</p>");
                }
                page = "/WEB-INF/accueil.jsp";
           }

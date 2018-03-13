@@ -23,9 +23,9 @@ public class Carte implements Serializable {
 
      @Column(nullable = false)
      private String nom;
-     @Temporal(TemporalType.TIMESTAMP)
+     @Temporal(TemporalType.DATE)
      private Date dateDebut;
-     @Temporal(TemporalType.TIMESTAMP)
+     @Temporal(TemporalType.DATE)
      private Date dateFin;
 
      @ManyToMany
@@ -35,7 +35,15 @@ public class Carte implements Serializable {
          categorieCartes = new ArrayList();
      }
 
+     public Carte(String nom, Date dateDebut, Date dateFin) {
+          this();
+          this.nom = nom;
+          this.dateDebut = dateDebut;
+          this.dateFin = dateFin;
+     }          
+
      public Carte(String nom, Date dateDebut, Date dateFin, Collection<CategorieCarte> categorieCartes) {
+          this();
           this.nom = nom;
           this.dateDebut = dateDebut;
           this.dateFin = dateFin;
