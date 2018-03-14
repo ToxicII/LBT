@@ -29,7 +29,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
      @Override
      public void jeuTest() throws Exception{
 
-// INSTACIATION D'OBJETS========================================================
+// INSTANCIATION D'OBJETS========================================================
 //////////// CARTE          
           Date dcarte01 = new GregorianCalendar(2002, 5, 1).getTime();
           Date dcarte02 = new GregorianCalendar(2002, 8, 30).getTime();
@@ -42,16 +42,17 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           CategorieCarte cc01 = new CategorieCarte("Appéritifs & Digestifs");
           CategorieCarte cc02 = new CategorieCarte("Boissions chaudes");
           CategorieCarte cc03 = new CategorieCarte("Boissions fraiches");
-          CategorieCarte cc04 = new CategorieCarte("Vins");      
-          CategorieCarte cc13 = new CategorieCarte("Entrées");
+          CategorieCarte cc04 = new CategorieCarte("Vins");    
           CategorieCarte cc05 = new CategorieCarte("Viandes");          
           CategorieCarte cc06 = new CategorieCarte("Grandes salades");
-          CategorieCarte cc07 = new CategorieCarte("Poissons");
-          CategorieCarte cc010 = new CategorieCarte("Fruits de Mer");          
-          CategorieCarte cc011 = new CategorieCarte("Hamburgers");          
-          CategorieCarte cc012 = new CategorieCarte("Pizzas");    
+          CategorieCarte cc07 = new CategorieCarte("Poissons"); 
           CategorieCarte cc08 = new CategorieCarte("Fromages");
           CategorieCarte cc09 = new CategorieCarte("Desserts");
+          CategorieCarte cc010 = new CategorieCarte("Fruits de Mer");          
+          CategorieCarte cc011 = new CategorieCarte("Hamburgers");          
+          CategorieCarte cc012 = new CategorieCarte("Pizzas");
+          CategorieCarte cc013 = new CategorieCarte("Entrées");
+          CategorieCarte cc014 = new CategorieCarte("Accompagnement");
 
 /////////// CATEGORIEFORMULE          
           CategorieFormule cfe01 = new CategorieFormule("Entrées");
@@ -329,6 +330,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           ca02.getCategorieCartes().add(cc010);
           ca02.getCategorieCartes().add(cc011);
           ca02.getCategorieCartes().add(cc012);
+          ca02.getCategorieCartes().add(cc013);
 
 //////////// CATEGORIEFORMULE -> FORMULE
           cfe01.setFormule(f01);
@@ -393,7 +395,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           p03.setCategorieCarte(cc05);
           p04.setCategorieCarte(cc05);
 
-            p05.setCategorieCarte(cc012); //==> ajout Manu
+            p05.setCategorieCarte(cc07); //==> ajout Manu
             p06.setCategorieCarte(cc012);
             p07.setCategorieCarte(cc012);
             p08.setCategorieCarte(cc011);
@@ -401,10 +403,10 @@ public class CreationJeuTest implements CreationJeuTestLocal {
             p10.setCategorieCarte(cc06);
             p11.setCategorieCarte(cc06);
 
-            p12.setCategorieCarte(cc13);	
-            p13.setCategorieCarte(cc13);
-            p14.setCategorieCarte(cc13);
-            p15.setCategorieCarte(cc13);
+            p12.setCategorieCarte(cc013);	
+            p13.setCategorieCarte(cc013);
+            p14.setCategorieCarte(cc013);
+            p15.setCategorieCarte(cc013);
 
             p16.setCategorieCarte(cc09);
             p17.setCategorieCarte(cc09);
@@ -442,7 +444,15 @@ public class CreationJeuTest implements CreationJeuTestLocal {
             p65.setCategorieCarte(cc01);
             p66.setCategorieCarte(cc01);
             p67.setCategorieCarte(cc01);
-            p68.setCategorieCarte(cc01); //==> ajout Manu
+            p68.setCategorieCarte(cc01); 
+
+            p001.setCategorieCarte(cc014);
+            p002.setCategorieCarte(cc014); 
+            p003.setCategorieCarte(cc014); 
+            p004.setCategorieCarte(cc014); 
+            p005.setCategorieCarte(cc014); 
+            p006.setCategorieCarte(cc014); 
+            p007.setCategorieCarte(cc014);            // ==> ajout Manu
 //////////// PRODUIT -> CHOIXCLIENT         
 //////////// PRODUIT -> INGREDIENT          
           p011.getIngredients().add(i001);
@@ -463,14 +473,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           p02.getIngredients().add(i011);
 
           p031.getIngredients().add(i012);
-            p05.getProduitEnfants().add(p051); //  ==> ajout Manu
-            p05.getProduitEnfants().add(p001);
-            p05.getProduitEnfants().add(p002);
-            p05.getProduitEnfants().add(p003);
-            p05.getProduitEnfants().add(p004);
-            p05.getProduitEnfants().add(p005);
-            p05.getProduitEnfants().add(p006);
-            p051.getIngredients().add(i015);
+            p051.getIngredients().add(i015); //  ==> ajout Manu
             p051.getIngredients().add(i016);
             p06.getIngredients().add(i017);
             p06.getIngredients().add(i018);
@@ -493,9 +496,6 @@ public class CreationJeuTest implements CreationJeuTestLocal {
             p081.getIngredients().add(i030);
             p081.getIngredients().add(i031);
             p081.getIngredients().add(i032);
-            p08.getProduitEnfants().add(p081);
-            p08.getProduitEnfants().add(p001);
-            p08.getProduitEnfants().add(p007);	
             p09.getIngredients().add(i026);
             p09.getIngredients().add(i028);
             p09.getIngredients().add(i033);
@@ -533,8 +533,8 @@ public class CreationJeuTest implements CreationJeuTestLocal {
         p05.getParametres().add(parP01);
                 p06.getParametres().add(parP02);
         p07.getParametres().add(parP01);
-                p08.getParametres().add(parP01);
-        p09.getParametres().add(parP02);
+        p08.getParametres().add(parP01);
+                p09.getParametres().add(parP02);
         p10.getParametres().add(parP01);
         p11.getParametres().add(parP01);
         p12.getParametres().add(parP01);
@@ -600,8 +600,74 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           p03.getProduitEnfants().add(p004);
           p03.getProduitEnfants().add(p005);
           p03.getProduitEnfants().add(p006);
+            p05.getProduitEnfants().add(p051); //  ==> ajout Manu
+            p05.getProduitEnfants().add(p001);
+            p05.getProduitEnfants().add(p002);
+            p05.getProduitEnfants().add(p003);
+            p05.getProduitEnfants().add(p004);
+            p05.getProduitEnfants().add(p005);
+            p05.getProduitEnfants().add(p006);
+            p08.getProduitEnfants().add(p081);
+            p08.getProduitEnfants().add(p001);
+            p08.getProduitEnfants().add(p007);	 //  ==> ajout Manu
 
-//////////// PRODUIT -> TVA          
+//////////// PRODUIT -> TVA      
+            p001.setTva(tv01);   //  ==> ajout Manuel
+            p002.setTva(tv01);
+            p003.setTva(tv01);
+            p004.setTva(tv01);
+            p005.setTva(tv01);
+            p006.setTva(tv01);
+            p007.setTva(tv01);
+            p01.setTva(tv01);
+            p02.setTva(tv01);
+            p03.setTva(tv01);
+            p04.setTva(tv01);
+            p05.setTva(tv01);
+            p06.setTva(tv01);
+            p07.setTva(tv01);
+            p08.setTva(tv01);
+            p09.setTva(tv01);
+            p10.setTva(tv01);
+            p11.setTva(tv01);
+            p12.setTva(tv01);
+            p13.setTva(tv01);
+            p14.setTva(tv01);
+            p15.setTva(tv01);
+            p16.setTva(tv01);
+            p17.setTva(tv01);
+            p18.setTva(tv01);
+            p30.setTva(tv01);
+            p31.setTva(tv01);
+            p32.setTva(tv01);
+            p33.setTva(tv01);
+            p34.setTva(tv01);
+            p35.setTva(tv01);
+            p36.setTva(tv01);
+            p37.setTva(tv01);
+            p38.setTva(tv01);
+            p39.setTva(tv01);
+            p40.setTva(tv01);
+            p41.setTva(tv01);
+            p42.setTva(tv01);
+            p43.setTva(tv01);
+            
+            p50.setTva(tv02);
+            p51.setTva(tv02);
+            p52.setTva(tv02);
+            p53.setTva(tv02);
+            p54.setTva(tv02);
+            p55.setTva(tv02);
+            p56.setTva(tv02);
+            p60.setTva(tv02);
+            p61.setTva(tv02);
+            p62.setTva(tv02);
+            p63.setTva(tv02);
+            p64.setTva(tv02);
+            p65.setTva(tv02);
+            p66.setTva(tv02);
+            p67.setTva(tv02);
+            p68.setTva(tv02);   //  ==> ajout Manuel
 //////////// PROMOTION -> PRODUIT          
 //////////// PROPRIETE -> PRODUIT          
           /*pPrdt001.setProduit(p01);
@@ -682,6 +748,8 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(cc010);
           em.persist(cc011);
           em.persist(cc012);
+          em.persist(cc013); 
+          em.persist(cc014); //  ==> ajout Manu
 
           // CATEGORIEFORMULE
           em.persist(cfb01);
@@ -831,6 +899,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(p06);
           em.persist(p07);
           em.persist(p08);
+          em.persist(p081);
             em.persist(p09);
             em.persist(p10);
             em.persist(p11);
