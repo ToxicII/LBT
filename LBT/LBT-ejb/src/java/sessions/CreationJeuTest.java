@@ -29,7 +29,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
      @Override
      public void jeuTest() throws Exception{
 
-// INSTACIATION D'OBJETS========================================================
+// INSTANCIATION D'OBJETS========================================================
 //////////// CARTE          
           Date dcarte01 = new GregorianCalendar(2002, 5, 1).getTime();
           Date dcarte02 = new GregorianCalendar(2002, 8, 30).getTime();
@@ -42,16 +42,17 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           CategorieCarte cc01 = new CategorieCarte("Appéritifs & Digestifs");
           CategorieCarte cc02 = new CategorieCarte("Boissions chaudes");
           CategorieCarte cc03 = new CategorieCarte("Boissions fraiches");
-          CategorieCarte cc04 = new CategorieCarte("Vins");
-          //CategorieCarte cc05 = new CategorieCarte("Entrées");
+          CategorieCarte cc04 = new CategorieCarte("Vins");    
           CategorieCarte cc05 = new CategorieCarte("Viandes");          
           CategorieCarte cc06 = new CategorieCarte("Grandes salades");
-          CategorieCarte cc07 = new CategorieCarte("Poissons");
+          CategorieCarte cc07 = new CategorieCarte("Poissons"); 
           CategorieCarte cc08 = new CategorieCarte("Fromages");
           CategorieCarte cc09 = new CategorieCarte("Desserts");
           CategorieCarte cc010 = new CategorieCarte("Fruits de Mer");          
           CategorieCarte cc011 = new CategorieCarte("Hamburgers");          
-          CategorieCarte cc012 = new CategorieCarte("Pizzas");          
+          CategorieCarte cc012 = new CategorieCarte("Pizzas");
+          CategorieCarte cc013 = new CategorieCarte("Entrées");
+          CategorieCarte cc014 = new CategorieCarte("Accompagnement");
 
 /////////// CATEGORIEFORMULE          
           CategorieFormule cfe01 = new CategorieFormule("Entrées");
@@ -136,13 +137,48 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           Ingredient i007 = new Ingredient("oranges pressées", "accompagnement déglaçage");
           Ingredient i008 = new Ingredient("béchamel", "accompagnement sauce");
           Ingredient i009 = new Ingredient("ementhal", "accompagnement sauce");
-          Ingredient i013 = new Ingredient("basmati", "accompagnement riz");
 
           Ingredient i010 = new Ingredient("bavette", "boeuf");
           Ingredient i011 = new Ingredient("oignons", "émincés");
 
           Ingredient i012 = new Ingredient("tournedos", "boeuf");
+          Ingredient i013 = new Ingredient("basmati", "accompagnement riz");
 
+		Ingredient i015 = new Ingredient ("pièce de sole", "poisson");
+		Ingredient i016 = new Ingredient ( "sauce meunière" , "sauce");
+		Ingredient i017 = new Ingredient ("base tomate", "base pizza");
+		Ingredient i018 = new Ingredient ("origan", "base pizza");
+		Ingredient i019 = new Ingredient ("mozzarella", "fromage");
+		Ingredient i020 = new Ingredient ("jambon", "acc. pizza");
+		Ingredient i021 = new Ingredient ("capres", "acc. pizza");
+		Ingredient i022 = new Ingredient ("champignon", "acc. pizza");
+		Ingredient i023 = new Ingredient ("artichaud", "acc. pizza");
+		Ingredient i024 = new Ingredient ("poivron", "acc. pizza");
+		Ingredient i025 = new Ingredient ("mortadelle", "acc. pizza");
+		Ingredient i026 = new Ingredient ("tomates confites", "acc. pizza");
+		Ingredient i027 = new Ingredient ("tomates", "tranches");
+		Ingredient i028 = new Ingredient ("salade", "accomp.");
+		Ingredient i029 = new Ingredient ("cornichon", "accomp.");
+		Ingredient i030 = new Ingredient ("ketchup", "sauce");
+		Ingredient i031 = new Ingredient ("moutarde", "sauce");
+		Ingredient i032 = new Ingredient ("conté", "tranche");
+		Ingredient i033 = new Ingredient ("blanc de poulet", "acc. salade");
+		Ingredient i034 = new Ingredient ("crouton", "acc. salade");
+		Ingredient i035 = new Ingredient ("chèvre", "acc. salade");
+		Ingredient i036 = new Ingredient ("lardon", "acc. salade");
+		Ingredient i037 = new Ingredient ("thon", "acc. salade");
+		Ingredient i038 = new Ingredient ("olives", "acc. salade");
+		Ingredient i039 = new Ingredient ("anchois", "acc. salade");
+		Ingredient i040 = new Ingredient ("oeufs", "acc. salade");
+		Ingredient i041 = new Ingredient ("avocat", "acc. salade");
+		Ingredient i042 = new Ingredient ("asperge", "acc. salade");
+		Ingredient i043 = new Ingredient ("chocolat", "dessert");
+		Ingredient i044 = new Ingredient ("pomme", "dessert");
+		Ingredient i045 = new Ingredient ("pate sablé", "dessert");
+		Ingredient i046 = new Ingredient ("pate feuillettée", "dessert");
+		Ingredient i047 = new Ingredient ("oeuf en neige", "dessert");
+		Ingredient i048 = new Ingredient ("crème anglaise", "crème dessert");
+		Ingredient i049 = new Ingredient ("Steack façon bouchère", "base burger");
 //////////// LIGNECOMMANDE
 //////////// PARAMETRE  
           Parametres parP01 = new Parametres(1L, "disponible");
@@ -160,34 +196,93 @@ public class CreationJeuTest implements CreationJeuTestLocal {
 //////////// PRODUIT          
           Produit p01 = new Produit("Magret de canard",
                   "belle pièce poelée nappée de miel", 11.9f, null);
-          Produit p011 = new Produit("Pièce de canard",
+            Produit p011 = new Produit("Pièce de canard",
                   "composant du magret de canard", 0f, null);
-          Produit p001 = new Produit("Pommes frites",
+                Produit p001 = new Produit("Pommes frites",
                   "Accompagnement frite", 0f, null);
-          Produit p002 = new Produit("Haricots verts",
-                  "Accompagnement H-V", 0f, null);
-          Produit p003 = new Produit("Gratin dauphinois",
-                  "Accompagnement gratin", 0f, null);
-          Produit p004 = new Produit("Pollenta",
-                  "Accompagnement Poll.", 0f, null);
-          Produit p005 = new Produit("Flageolets",
-                  "Accompagnement haricots blancs", 0f, null);
-          Produit p006 = new Produit("Riz basmati",
-                  "Accompagnement riz blancs", 0f, null);
+                Produit p002 = new Produit("Haricots verts",
+                        "Accompagnement H-V", 0f, null);
+                Produit p003 = new Produit("Gratin dauphinois",
+                        "Accompagnement gratin", 0f, null);
+                Produit p004 = new Produit("Pollenta",
+                        "Accompagnement Poll.", 0f, null);
+                Produit p005 = new Produit("Flageolets",
+                        "Accompagnement haricots blancs", 0f, null);
+                Produit p006 = new Produit("Riz basmati",
+                        "Accompagnement riz blancs", 0f, null);
           Produit p02 = new Produit("Bavette d'Aloyo",
                   "belle pièce de boeuf et sa sauce", 12.6f, null);
-          Produit p021 = new Produit("Bavette",
+            Produit p021 = new Produit("Bavette",
                   "pièce de boeuf", 0F, null);
 
           Produit p03 = new Produit("Tournedos de boeuf",
                   "belle pièce de boeuf et son accompagnement", 12.9F, null);
-          Produit p031 = new Produit("Tournedos",
+            Produit p031 = new Produit("Tournedos",
                   "pièce de boeuf", 0F, null);
 
           Produit p04 = new Produit("Spaghettis de légumes à la bolognaise",
                   "spaghettis végétariens", 10.5F, null);
           
-          //Produit p05 = new Produit("", null, prixHT, null);
+          	Produit p007 = new Produit("Salade", "Accompagnement salade",0F,null);
+
+	Produit p05 = new Produit("sole meunière", 
+		"reine de nos rivières", 11.35F, null);
+	    Produit p051 = new Produit("pièce de sole", "composant sole meunière", 0F, null);
+
+	Produit p06 = new Produit("pizza reine","tomate, origan, mozzarella, jambon, champignon, "
+                + "tomates confites", 8.35F, null);
+	Produit p07 = new Produit("pizza belle table","tomate, origan, mozzarella, "
+                + "jambon, capres,; poivron, mortadelle, champignon", 8.35F, null);
+	Produit p08 = new Produit("Burger de la table", 
+		"LE burger et ses frites maison ", 14.15F, null);		
+	     Produit p081 = new Produit("Burger Maison", "compos. Burger", 0F,null);
+	Produit p09 = new Produit("Salade César", "salade, tomates confites, poulet", 8.9F, null);
+	Produit p10 = new Produit("Salade Chèvre", "salade, tomate, chèvre, lardons, crouton", 8.9F, null);
+	Produit p11 = new Produit("Salade Niçoise", "salade, tomate, thon, anchois, olives", 8.9F, null);
+	Produit p12 = new Produit("oeufs mayonnaise", "l'entrée idéale", 4.55F, null);
+	Produit p13 = new Produit("petite salade mixte", "l'entrée fraicheur", 4.95F, null);
+	Produit p14 = new Produit("avocat-thon", "l'entrée énergétique", 4.65F, null);
+	Produit p15 = new Produit("asperge et sa tranche de jambon", "l'entrée équilibre", 5.15F, null);
+
+	Produit p16 = new Produit("tarte tatin", "la douceur", 4.25F, null);
+	Produit p17 = new Produit("sablé chocolat", "le plaisir", 5.15F, null);
+	Produit p18 = new Produit("île flottante", "l'entrée énergétique", 5.95F, null);	
+
+	Produit p30 = new Produit("carafe d'eau", "eau", 0F, null);
+	Produit p31 = new Produit("Evian", "eau plate", 1.84F, null);
+	Produit p32 = new Produit("St-Yorres", "eau gazeuse", 1.76F, null);
+	Produit p33 = new Produit("jus de pomme", "jus fruit", 2.2F, null);
+	Produit p34 = new Produit("jus de pêche", "jus fruit", 2.2F, null);
+	Produit p35 = new Produit("jus d'orange", "jus fruit", 2.2F, null);
+	Produit p36 = new Produit("virgin cola", "sodas", 2.3F, null);
+	Produit p37 = new Produit("fanta orange", "sodas", 2.3F, null);
+	Produit p38 = new Produit("fanta citron", "sodas", 2.3F, null);
+	Produit p39 = new Produit("ice tea", "sodas", 1.95F, null);
+
+	Produit p40 = new Produit("café", "boisson chaude", 2.1F, null);
+	Produit p41 = new Produit("café double", "boisson chaude", 2.1F, null);
+	Produit p42 = new Produit("thé", "boisson chaude", 2.1F, null);
+	Produit p43 = new Produit("chocolat", "boisson chaude", 2.1F, null);
+
+	Produit p50 = new Produit("champagne", "mousseux blanc", 18.65F, null);
+	Produit p51 = new Produit("sancerre", "vallée de loire blanc", 18.65F, null);
+	Produit p52 = new Produit("Château Saint Roch", "Côtes du Rhône blanc", 19.65F, null);
+	Produit p53 = new Produit("chablis", "bourgogne blanc", 17.85F, null);
+	Produit p54 = new Produit("grave", "bordeau rouge", 16.85F, null);
+	Produit p55 = new Produit("pommerol", "bordeau rouge", 14.35F, null);
+	Produit p56 = new Produit("chinon", "vallée de loire rouge", 14.35F, null);
+
+	Produit p60 = new Produit("Get27", "alcool", 6.65F, null);
+	Produit p61 = new Produit("whisky", "alcool", 6.65F, null);
+	Produit p62 = new Produit("vodka", "alcool", 6.65F, null);
+	Produit p63 = new Produit("martini", "alcool", 6.65F, null);
+	Produit p64 = new Produit("porto", "alcool", 6.65F, null);
+	Produit p65 = new Produit("cognac", "alcool", 6.65F, null);
+	Produit p66 = new Produit("armagnac", "alcool", 6.65F, null);
+	Produit p67 = new Produit("manzana", "liqueur", 6.65F, null);
+	Produit p68 = new Produit("mandarine impériale", "liqueur", 6.65F, null);
+        
+            //Produit p05 = new Produit("", null, prixHT, null);
 
 //////////// PROMOTION
           Date d01 = new GregorianCalendar(2011, 1, 25, 14, 34, 20).getTime();
@@ -235,6 +330,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           ca02.getCategorieCartes().add(cc010);
           ca02.getCategorieCartes().add(cc011);
           ca02.getCategorieCartes().add(cc012);
+          ca02.getCategorieCartes().add(cc013);
 
 //////////// CATEGORIEFORMULE -> FORMULE
           cfe01.setFormule(f01);
@@ -294,10 +390,69 @@ public class CreationJeuTest implements CreationJeuTestLocal {
 //////////// LIGNECOMMANDE -> LIGNECOMMANDE
 //////////// LIGNECOMMANDE -> PRODUIT          
 //////////// PRODUIT -> CATEGORIECARTE
-          p01.setCategorieCarte(cc07);
-          p02.setCategorieCarte(cc07);
-          p03.setCategorieCarte(cc07);
+          p01.setCategorieCarte(cc05);
+          p02.setCategorieCarte(cc05);
+          p03.setCategorieCarte(cc05);
+          p04.setCategorieCarte(cc05);
 
+            p05.setCategorieCarte(cc07); //==> ajout Manu
+            p06.setCategorieCarte(cc012);
+            p07.setCategorieCarte(cc012);
+            p08.setCategorieCarte(cc011);
+            p09.setCategorieCarte(cc06);
+            p10.setCategorieCarte(cc06);
+            p11.setCategorieCarte(cc06);
+
+            p12.setCategorieCarte(cc013);	
+            p13.setCategorieCarte(cc013);
+            p14.setCategorieCarte(cc013);
+            p15.setCategorieCarte(cc013);
+
+            p16.setCategorieCarte(cc09);
+            p17.setCategorieCarte(cc09);
+            p18.setCategorieCarte(cc09);
+            
+            p30.setCategorieCarte(cc03);
+            p31.setCategorieCarte(cc03);
+            p32.setCategorieCarte(cc03);
+            p33.setCategorieCarte(cc03);
+            p34.setCategorieCarte(cc03);
+            p35.setCategorieCarte(cc03);
+            p36.setCategorieCarte(cc03);
+            p37.setCategorieCarte(cc03);
+            p38.setCategorieCarte(cc03);
+            p39.setCategorieCarte(cc03);
+            
+            p40.setCategorieCarte(cc02);
+            p41.setCategorieCarte(cc02);
+            p42.setCategorieCarte(cc02);
+            p43.setCategorieCarte(cc02);
+            
+            p50.setCategorieCarte(cc04);
+            p51.setCategorieCarte(cc04);
+            p52.setCategorieCarte(cc04);
+            p53.setCategorieCarte(cc04);
+            p54.setCategorieCarte(cc04);
+            p55.setCategorieCarte(cc04);
+            p56.setCategorieCarte(cc04);
+            
+            p60.setCategorieCarte(cc01);
+            p61.setCategorieCarte(cc01);
+            p62.setCategorieCarte(cc01);
+            p63.setCategorieCarte(cc01);
+            p64.setCategorieCarte(cc01);
+            p65.setCategorieCarte(cc01);
+            p66.setCategorieCarte(cc01);
+            p67.setCategorieCarte(cc01);
+            p68.setCategorieCarte(cc01); 
+
+            p001.setCategorieCarte(cc014);
+            p002.setCategorieCarte(cc014); 
+            p003.setCategorieCarte(cc014); 
+            p004.setCategorieCarte(cc014); 
+            p005.setCategorieCarte(cc014); 
+            p006.setCategorieCarte(cc014); 
+            p007.setCategorieCarte(cc014);            // ==> ajout Manu
 //////////// PRODUIT -> CHOIXCLIENT         
 //////////// PRODUIT -> INGREDIENT          
           p011.getIngredients().add(i001);
@@ -318,8 +473,111 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           p02.getIngredients().add(i011);
 
           p031.getIngredients().add(i012);
-
+            p051.getIngredients().add(i015); //  ==> ajout Manu
+            p051.getIngredients().add(i016);
+            p06.getIngredients().add(i017);
+            p06.getIngredients().add(i018);
+            p06.getIngredients().add(i019);
+            p06.getIngredients().add(i020);
+            p06.getIngredients().add(i022);		
+            p07.getIngredients().add(i017);
+            p07.getIngredients().add(i018);
+            p07.getIngredients().add(i019);
+            p07.getIngredients().add(i020);
+            p07.getIngredients().add(i021);
+            p07.getIngredients().add(i022);
+            p07.getIngredients().add(i024);
+            p07.getIngredients().add(i025);
+            p07.getIngredients().add(i026);
+            p081.getIngredients().add(i049);
+            p081.getIngredients().add(i027);
+            p081.getIngredients().add(i028);
+            p081.getIngredients().add(i029);
+            p081.getIngredients().add(i030);
+            p081.getIngredients().add(i031);
+            p081.getIngredients().add(i032);
+            p09.getIngredients().add(i026);
+            p09.getIngredients().add(i028);
+            p09.getIngredients().add(i033);
+            p09.getIngredients().add(i034);
+            p10.getIngredients().add(i027);
+            p10.getIngredients().add(i028);
+            p10.getIngredients().add(i034);
+            p10.getIngredients().add(i035);
+            p10.getIngredients().add(i036);
+            p11.getIngredients().add(i027);
+            p11.getIngredients().add(i028);
+            p11.getIngredients().add(i037);
+            p11.getIngredients().add(i038);
+            p11.getIngredients().add(i039);
+            p12.getIngredients().add(i040);
+            p12.getIngredients().add(i028);
+            p13.getIngredients().add(i027);
+            p13.getIngredients().add(i028);
+            p14.getIngredients().add(i037);
+            p14.getIngredients().add(i041);
+            p15.getIngredients().add(i020);
+            p15.getIngredients().add(i042);
+            p16.getIngredients().add(i044);
+            p16.getIngredients().add(i046);
+            p17.getIngredients().add(i043);
+            p17.getIngredients().add(i045);
+            p18.getIngredients().add(i047);
+            p18.getIngredients().add(i048); //  ==> ajout Manu
 //////////// PRODUIT -> PARAMETRE          
+          
+        p01.getParametres().add(parP01);
+        p02.getParametres().add(parP01);
+        p03.getParametres().add(parP01);
+                p04.getParametres().add(parP02);
+        p05.getParametres().add(parP01);
+                p06.getParametres().add(parP02);
+        p07.getParametres().add(parP01);
+        p08.getParametres().add(parP01);
+                p09.getParametres().add(parP02);
+        p10.getParametres().add(parP01);
+        p11.getParametres().add(parP01);
+        p12.getParametres().add(parP01);
+        p13.getParametres().add(parP01);
+        p14.getParametres().add(parP01);
+        p15.getParametres().add(parP01);
+        p16.getParametres().add(parP01);
+        p17.getParametres().add(parP01);
+        p18.getParametres().add(parP01);
+
+        p30.getParametres().add(parP01);
+        p31.getParametres().add(parP01);
+        p32.getParametres().add(parP01);
+        p33.getParametres().add(parP01);
+        p34.getParametres().add(parP01);
+        p35.getParametres().add(parP01);
+        p36.getParametres().add(parP01);
+        p37.getParametres().add(parP01);
+        p38.getParametres().add(parP01);
+        p39.getParametres().add(parP01);
+
+        p40.getParametres().add(parP01);
+        p41.getParametres().add(parP01);
+        p42.getParametres().add(parP01);
+        p43.getParametres().add(parP01);
+
+        p50.getParametres().add(parP01);
+        p51.getParametres().add(parP01);
+        p52.getParametres().add(parP01);
+        p53.getParametres().add(parP01);
+        p54.getParametres().add(parP01);
+        p55.getParametres().add(parP01);
+        p56.getParametres().add(parP01);
+
+        p60.getParametres().add(parP01);
+        p61.getParametres().add(parP01);
+        p62.getParametres().add(parP01);
+        p63.getParametres().add(parP01);
+        p64.getParametres().add(parP01);
+        p65.getParametres().add(parP01);
+        p66.getParametres().add(parP01);
+        p67.getParametres().add(parP01);
+        p68.getParametres().add(parP01);
 //////////// PRODUIT -> PRODUIT         
           p01.getProduitEnfants().add(p011);
           p01.getProduitEnfants().add(p001);
@@ -342,8 +600,74 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           p03.getProduitEnfants().add(p004);
           p03.getProduitEnfants().add(p005);
           p03.getProduitEnfants().add(p006);
+            p05.getProduitEnfants().add(p051); //  ==> ajout Manu
+            p05.getProduitEnfants().add(p001);
+            p05.getProduitEnfants().add(p002);
+            p05.getProduitEnfants().add(p003);
+            p05.getProduitEnfants().add(p004);
+            p05.getProduitEnfants().add(p005);
+            p05.getProduitEnfants().add(p006);
+            p08.getProduitEnfants().add(p081);
+            p08.getProduitEnfants().add(p001);
+            p08.getProduitEnfants().add(p007);	 //  ==> ajout Manu
 
-//////////// PRODUIT -> TVA          
+//////////// PRODUIT -> TVA      
+            p001.setTva(tv01);   //  ==> ajout Manuel
+            p002.setTva(tv01);
+            p003.setTva(tv01);
+            p004.setTva(tv01);
+            p005.setTva(tv01);
+            p006.setTva(tv01);
+            p007.setTva(tv01);
+            p01.setTva(tv01);
+            p02.setTva(tv01);
+            p03.setTva(tv01);
+            p04.setTva(tv01);
+            p05.setTva(tv01);
+            p06.setTva(tv01);
+            p07.setTva(tv01);
+            p08.setTva(tv01);
+            p09.setTva(tv01);
+            p10.setTva(tv01);
+            p11.setTva(tv01);
+            p12.setTva(tv01);
+            p13.setTva(tv01);
+            p14.setTva(tv01);
+            p15.setTva(tv01);
+            p16.setTva(tv01);
+            p17.setTva(tv01);
+            p18.setTva(tv01);
+            p30.setTva(tv01);
+            p31.setTva(tv01);
+            p32.setTva(tv01);
+            p33.setTva(tv01);
+            p34.setTva(tv01);
+            p35.setTva(tv01);
+            p36.setTva(tv01);
+            p37.setTva(tv01);
+            p38.setTva(tv01);
+            p39.setTva(tv01);
+            p40.setTva(tv01);
+            p41.setTva(tv01);
+            p42.setTva(tv01);
+            p43.setTva(tv01);
+            
+            p50.setTva(tv02);
+            p51.setTva(tv02);
+            p52.setTva(tv02);
+            p53.setTva(tv02);
+            p54.setTva(tv02);
+            p55.setTva(tv02);
+            p56.setTva(tv02);
+            p60.setTva(tv02);
+            p61.setTva(tv02);
+            p62.setTva(tv02);
+            p63.setTva(tv02);
+            p64.setTva(tv02);
+            p65.setTva(tv02);
+            p66.setTva(tv02);
+            p67.setTva(tv02);
+            p68.setTva(tv02);   //  ==> ajout Manuel
 //////////// PROMOTION -> PRODUIT          
 //////////// PROPRIETE -> PRODUIT          
           /*pPrdt001.setProduit(p01);
@@ -424,6 +748,8 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(cc010);
           em.persist(cc011);
           em.persist(cc012);
+          em.persist(cc013); 
+          em.persist(cc014); //  ==> ajout Manu
 
           // CATEGORIEFORMULE
           em.persist(cfb01);
@@ -502,6 +828,42 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(i011);
           em.persist(i012);
           em.persist(i013);
+          em.persist(i015);
+          em.persist(i016);
+            em.persist(i017);   //  ==> ajout Manu
+            em.persist(i018);
+            em.persist(i019);
+            em.persist(i020);
+            em.persist(i021);
+            em.persist(i022);
+            em.persist(i023);
+            em.persist(i024);
+            em.persist(i025);
+            em.persist(i026);
+            em.persist(i027);
+            em.persist(i028);
+            em.persist(i029);
+            em.persist(i030);
+            em.persist(i031);
+            em.persist(i032);
+            em.persist(i033);
+            em.persist(i034);
+            em.persist(i035);
+            em.persist(i036);
+            em.persist(i037);
+            em.persist(i038);
+            em.persist(i039);
+            em.persist(i040);
+            em.persist(i041);
+            em.persist(i042);
+            em.persist(i043);
+            em.persist(i044);
+            em.persist(i045);
+            em.persist(i046);
+            em.persist(i047);
+            em.persist(i048);
+            em.persist(i049);  //  ==> ajout Manu
+
 
           // LIGNECOMMANDE
           // PARAMETRE
@@ -531,6 +893,53 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(p004);
           em.persist(p005);
           em.persist(p006);
+          em.persist(p007); //  ==>ajout Manu
+          em.persist(p05);
+          em.persist(p051);
+          em.persist(p06);
+          em.persist(p07);
+          em.persist(p08);
+          em.persist(p081);
+            em.persist(p09);
+            em.persist(p10);
+            em.persist(p11);
+            em.persist(p12);
+            em.persist(p13);
+            em.persist(p14);
+            em.persist(p15);
+            em.persist(p16);
+            em.persist(p17);
+            em.persist(p18);
+            em.persist(p30);
+            em.persist(p31);
+            em.persist(p32);
+            em.persist(p33);
+            em.persist(p34);
+            em.persist(p35);
+            em.persist(p36);
+            em.persist(p37);
+            em.persist(p38);
+            em.persist(p39);
+            em.persist(p40);
+            em.persist(p41);
+            em.persist(p42);
+            em.persist(p43);
+            em.persist(p50);
+            em.persist(p51);
+            em.persist(p52);
+            em.persist(p53);
+            em.persist(p54);
+            em.persist(p55);
+            em.persist(p56);
+            em.persist(p60);
+            em.persist(p61);
+            em.persist(p62);
+            em.persist(p63);
+            em.persist(p64);
+            em.persist(p65);
+            em.persist(p66);
+            em.persist(p67);
+            em.persist(p68);//  ==>ajout Manu
 
           // PROMOTIONS
           em.persist(prom01);
