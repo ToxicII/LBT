@@ -197,10 +197,10 @@ public class CreationJeuTest implements CreationJeuTestLocal {
         LigneCommande lc02 = new LigneCommande(2, 15, 10);
         LigneCommande lc03 = new LigneCommande(1, 20, 10);
         LigneCommande lc04 = new LigneCommande(2, 25, 20);
-        LigneCommande lc05 = new LigneCommande(1, 12, 20);
+        LigneCommande lc05 = new LigneCommande(1, 20, 20);
         LigneCommande lc06 = new LigneCommande(1, 13, 10);
-        LigneCommande lc07 = new LigneCommande(3, 22, 9.6f);
-
+        LigneCommande lc07 = new LigneCommande(3, 20, 9.6f);
+       
 //////////// PARAMETRE  
         Parametres parP01 = new Parametres(1L, "disponible");
         Parametres parP02 = new Parametres(2L, "indisponible");
@@ -467,6 +467,9 @@ public class CreationJeuTest implements CreationJeuTestLocal {
         lc05.getLigneCommandeEnfants().add(lc05);
         lc06.getLigneCommandeEnfants().add(lc06);
         lc07.getLigneCommandeEnfants().add(lc07);
+        lc03.setLigneCommandeParent(lc03);
+        lc05.setLigneCommandeParent(lc05);
+        lc07.setLigneCommandeParent(lc07);
      
 //////////// LIGNECOMMANDE -> PRODUIT       
         lc01.setProduit(p01);
