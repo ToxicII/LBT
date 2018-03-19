@@ -1,10 +1,6 @@
 package sessions;
 
-import entities.CategorieCarte;
 import entities.Emplacement;
-import entities.Ingredient;
-import entities.Produit;
-import entities.Propriete;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
