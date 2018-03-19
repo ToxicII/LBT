@@ -19,36 +19,37 @@ import sessions.GestionProduitLocal;
  *
  * @author Manuel_R_cdi113
  */
-public class AfficherCarte  implements ControleurInterface, Serializable {
-    @Override
-    public String executer(HttpServletRequest request, HttpServletResponse response) {
-        GestionProduitLocal gestionProduit = lookupGestionProduitLocal();
-        GestionCategorieCarteLocal gestionCategorieCarte = lookupCategorieCarteLocal();
-        List<CategorieCarte> lcc = gestionCategorieCarte.getCategoCarte();
-            request.setAttribute("categorie", lcc);
-            List<Produit> lp = gestionProduit.getAllProduits();
-            request.setAttribute("catalogue", lp);
-        return "creationDonnees";
-    }
+public class AfficherCarte implements ControleurInterface, Serializable {
 
-    private GestionProduitLocal lookupGestionProduitLocal() {
-        try {
-            Context c = new InitialContext();
-            return (GestionProduitLocal) c.lookup("java:global/LBT/LBT-ejb/GestionProduit!sessions.GestionProduitLocal");
-        } catch (NamingException ne) {
-            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
-            throw new RuntimeException(ne);
-        }
-    }
+     @Override
+     public String executer(HttpServletRequest request, HttpServletResponse response) {
+          GestionProduitLocal gestionProduit = lookupGestionProduitLocal();
+          GestionCategorieCarteLocal gestionCategorieCarte = lookupCategorieCarteLocal();
+          List<CategorieCarte> lcc = gestionCategorieCarte.getCategoCarte();
+          request.setAttribute("categorie", lcc);
+          List<Produit> lp = gestionProduit.getAllProduits();          
+          request.setAttribute("catalogue", lp);
+          return "creationDonnees";
+     }
 
-    private GestionCategorieCarteLocal lookupCategorieCarteLocal() {
-        try {
-            Context c = new InitialContext();
-            return (GestionCategorieCarteLocal) c.lookup("java:global/LBT/LBT-ejb/GestionCategorieCarte!sessions.GestionCategorieCarteLocal");
-        } catch (NamingException ne) {
-            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
-            throw new RuntimeException(ne);
-        }
-    }
+     private GestionProduitLocal lookupGestionProduitLocal() {
+          try {
+               Context c = new InitialContext();
+               return (GestionProduitLocal) c.lookup("java:global/LBT/LBT-ejb/GestionProduit!sessions.GestionProduitLocal");
+          } catch (NamingException ne) {
+               Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+               throw new RuntimeException(ne);
+          }
+     }
+
+     private GestionCategorieCarteLocal lookupCategorieCarteLocal() {
+          try {
+               Context c = new InitialContext();
+               return (GestionCategorieCarteLocal) c.lookup("java:global/LBT/LBT-ejb/GestionCategorieCarte!sessions.GestionCategorieCarteLocal");
+          } catch (NamingException ne) {
+               Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+               throw new RuntimeException(ne);
+          }
+     }
 
 }

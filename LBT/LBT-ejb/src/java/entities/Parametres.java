@@ -6,9 +6,15 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "entities.Parametres.selectById", 
+            query = "SELECT p FROM Parametres p WHERE p.id = :id")
+})
 public class Parametres implements Serializable {
 
      private static final long serialVersionUID = 1L;

@@ -61,10 +61,10 @@
                             <tr>
                                 <td>${p.nom}</td>
                                 <td><p>${p.description}</p>
-                                    <%--  <p>${p.getProprietes()}</p>
-                                    <c:forEach var="pp" items="${p.getProprietes()}">
-                                        <p><label>${pp.toString()}</label></p>
-                                    </c:forEach>  --%>   </td>
+                                    <%--  <p>${p.getProprietes()}</p>--%>
+                                    <c:forEach var="pp" items="${p.proprietes}">
+                                        <p><label>${pp}</label></p>
+                                    </c:forEach>     </td>
                                 <td><c:forEach var="pa" items="${p.getParametres()}">
                                     <p><label>${pa.toString()}</label></p>
                                 </c:forEach></td>
