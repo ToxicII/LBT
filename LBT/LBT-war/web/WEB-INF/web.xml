@@ -2,15 +2,51 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>FrontController</servlet-name>
-        <servlet-class>controller.FrontController</servlet-class>
+        <servlet-class>controller.FrontController</servlet-class>   
+        <init-param>
+            <param-name>jeuTest</param-name>
+            <param-value>controller.secondaire.CreerJeuTest</param-value>
+        </init-param>
+        <init-param>
+            <param-name>Catalogue</param-name>
+            <param-value>controller.secondaire.AfficherCarte</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ParseCatalogue</param-name>
+            <param-value>controller.secondaire.AfficherParseCarte</param-value>
+        </init-param>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>FrontController</servlet-name>
-        <url-pattern>/FrontController</url-pattern>
-    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <servlet-mapping>
+        <servlet-name>FrontController</servlet-name>
+        <url-pattern>/FrontController</url-pattern>
+    </servlet-mapping>
+    <ejb-local-ref>
+        <ejb-ref-name>CreationJeuTest</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.CreationJeuTestLocal</local>
+        <ejb-link>LBT-ejb.jar#CreationJeuTest</ejb-link>
+    </ejb-local-ref>  
+    <ejb-local-ref>
+        <ejb-ref-name>GestionCategorieCarte</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionCategorieCarteLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionCategorieCarte</ejb-link>
+    </ejb-local-ref>  
+    <ejb-local-ref>
+        <ejb-ref-name>GestionEmplacement</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionEmplacementLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionEmplacement</ejb-link>
+    </ejb-local-ref>  
+    <ejb-local-ref>
+        <ejb-ref-name>GestionProduit</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionProduitLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionProduit</ejb-link>
+    </ejb-local-ref>
 </web-app>

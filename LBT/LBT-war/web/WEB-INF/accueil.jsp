@@ -8,14 +8,12 @@
     </head>
     <body>
         <c:url var="frontJT" value="FrontController?section=jeuTest" />
-        <a href="${frontJT}">création du jeu de test</a><br><br>
-        
-        ${message}
-        <br>
-        <c:url var="frontCT" value="FrontController?section=creationDonnees" />
-        <a href="${frontCT}">création du jeu de test G</a><br><br>
-        
-        ${message}
+        <a href="${frontJT}">création du jeu de test</a><br><br> 
+        <p>${message}</p>
+         
+        <c:url var="frontCat" value="FrontController?section=Catalogue" />
+        <a href="${frontCat}">afficher catalogue</a><br><br>
+        <p>${messageCat}</p>
         
     </body>
 </html>

@@ -85,7 +85,8 @@ public class Propriete implements Serializable {
 ////////////////////////    STRING       //////////////////////////
     @Override
     public String toString() {
-        return "Propriete : " + nom + " ; ";
+//        return "Propriete : " + nom + " ; " ;
+        return nom + " : " + valeur + " " + unite;
     }
 ////////////////////////    STRING       //////////////////////////
 //    @Override

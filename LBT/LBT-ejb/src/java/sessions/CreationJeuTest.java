@@ -216,92 +216,92 @@ public class CreationJeuTest implements CreationJeuTestLocal {
 
 //////////// PRODUIT          
           Produit p01 = new Produit("Magret de canard",
-                  "belle pièce poelée nappée de miel", 11.9f, null);
+                  "belle pièce poelée nappée de miel", 11.9f, "Image/PlatMagretCanard.jpg");
             Produit p011 = new Produit("Pièce de canard",
                   "composant du magret de canard", 0f, null);
                 Produit p001 = new Produit("Pommes frites",
-                  "Accompagnement frite", 0f, null);
+                  "Accompagnement frite", 0f, "Image/AccFrite.jpg");
                 Produit p002 = new Produit("Haricots verts",
-                        "Accompagnement H-V", 0f, null);
+                        "Accompagnement H-V", 0f, "Image/AccHaricotVert.jpg");
                 Produit p003 = new Produit("Gratin dauphinois",
-                        "Accompagnement gratin", 0f, null);
+                        "Accompagnement gratin", 0f, "Image/AccGratinDauphinois.jpg");
                 Produit p004 = new Produit("Pollenta",
-                        "Accompagnement Poll.", 0f, null);
+                        "Accompagnement Poll.", 0f, "Image/AccPolenta.jpg");
                 Produit p005 = new Produit("Flageolets",
-                        "Accompagnement haricots blancs", 0f, null);
+                        "Accompagnement haricots blancs", 0f, "Image/AccFlageolet.jpg");
                 Produit p006 = new Produit("Riz basmati",
-                        "Accompagnement riz blancs", 0f, null);
+                        "Accompagnement riz blancs", 0f, "Image/AccRizBasmati.jpg");
           Produit p02 = new Produit("Bavette d'Aloyo",
-                  "belle pièce de boeuf et sa sauce", 12.6f, null);
+                  "belle pièce de boeuf et sa sauce", 12.6f, "Image/PlatBavette_dAloyau.jpg");
             Produit p021 = new Produit("Bavette",
                   "pièce de boeuf", 0F, null);
 
           Produit p03 = new Produit("Tournedos de boeuf",
-                  "belle pièce de boeuf et son accompagnement", 12.9F, null);
+                  "belle pièce de boeuf et son accompagnement", 12.9F, "Image/PlatTournedos.jpg");
             Produit p031 = new Produit("Tournedos",
                   "pièce de boeuf", 0F, null);
 
           Produit p04 = new Produit("Spaghettis de légumes à la bolognaise",
-                  "spaghettis végétariens", 10.5F, null);
+                  "spaghettis végétariens", 10.5F, "Image/PlatSpaghettiLegumeBolognaise.jpg");
           
-          	Produit p007 = new Produit("Salade", "Accompagnement salade",0F,null);
+          	Produit p007 = new Produit("Salade", "Accompagnement salade",0F,"Image/AccSalade.jpg");
 
 	Produit p05 = new Produit("sole meunière", 
-		"reine de nos rivières", 11.35F, null);
+		"reine de nos rivières", 11.35F, "Image/PlatSoleMeuniere.jpg");
 	    Produit p051 = new Produit("pièce de sole", "composant sole meunière", 0F, null);
 
 	Produit p06 = new Produit("pizza reine","tomate, origan, mozzarella, jambon, champignon, "
-                + "tomates confites", 8.35F, null);
+                + "tomates confites", 8.35F, "Image/PlatPizzaReine.jpg");
 	Produit p07 = new Produit("pizza belle table","tomate, origan, mozzarella, "
-                + "jambon, capres,; poivron, mortadelle, champignon", 8.35F, null);
+                + "jambon, capres, poivron, mortadelle, champignon", 8.35F, "Image/PlatPizzaTable.jpg");
 	Produit p08 = new Produit("Burger de la table", 
-		"LE burger et ses frites maison ", 14.15F, null);		
+		"LE hamburger et ses frites maison ", 14.15F, "Image/PlatBurger.jpg");		
 	     Produit p081 = new Produit("Burger Maison", "compos. Burger", 0F,null);
-	Produit p09 = new Produit("Salade César", "salade, tomates confites, poulet", 8.9F, null);
-	Produit p10 = new Produit("Salade Chèvre", "salade, tomate, chèvre, lardons, crouton", 8.9F, null);
-	Produit p11 = new Produit("Salade Niçoise", "salade, tomate, thon, anchois, olives", 8.9F, null);
-	Produit p12 = new Produit("oeufs mayonnaise", "l'entrée idéale", 4.55F, null);
-	Produit p13 = new Produit("petite salade mixte", "l'entrée fraicheur", 4.95F, null);
-	Produit p14 = new Produit("avocat-thon", "l'entrée énergétique", 4.65F, null);
-	Produit p15 = new Produit("asperge et sa tranche de jambon", "l'entrée équilibre", 5.15F, null);
+	Produit p09 = new Produit("Salade César", "salade, tomates confites, poulet", 8.9F, "Image/SaladeCesar.jpg");
+	Produit p10 = new Produit("Salade Chèvre", "salade, tomate, chèvre, lardons, crouton", 8.9F, "Image/SaladeChevre.jpg");
+	Produit p11 = new Produit("Salade Niçoise", "salade, tomate, thon, anchois, olives", 8.9F, "Image/SaladeNicoise.jpg");
+	Produit p12 = new Produit("oeufs mayonnaise", "l'entrée idéale", 4.55F, "Image/EntOeufMayo.jpg");
+	Produit p13 = new Produit("petite salade mixte", "l'entrée fraicheur", 4.95F, "Image/EntPetiteSaladeMixte.jpg");
+	Produit p14 = new Produit("avocat-thon", "l'entrée énergétique", 4.65F, "Image/EntAvovatThon.jpg");
+	Produit p15 = new Produit("asperge et sa tranche de jambon", "l'entrée équilibre", 5.15F, "Image/EntAspergeJambon.jpg");
 
-	Produit p16 = new Produit("tarte tatin", "la douceur", 4.25F, null);
-	Produit p17 = new Produit("sablé chocolat", "le plaisir", 5.15F, null);
-	Produit p18 = new Produit("île flottante", "l'entrée énergétique", 5.95F, null);	
+	Produit p16 = new Produit("tarte tatin", "la douceur", 4.25F, "Image/DessTarteTatin.jpg");
+	Produit p17 = new Produit("sablé chocolat", "le plaisir", 5.15F, "Image/DessSableChocolat.jpg");
+	Produit p18 = new Produit("île flottante", "l'entrée énergétique", 5.95F, "Image/DessIleFlottante.jpg");	
 
-	Produit p30 = new Produit("carafe d'eau", "eau", 0F, null);
-	Produit p31 = new Produit("Evian", "eau plate", 1.84F, null);
-	Produit p32 = new Produit("St-Yorres", "eau gazeuse", 1.76F, null);
-	Produit p33 = new Produit("jus de pomme", "jus fruit", 2.2F, null);
-	Produit p34 = new Produit("jus de pêche", "jus fruit", 2.2F, null);
-	Produit p35 = new Produit("jus d'orange", "jus fruit", 2.2F, null);
-	Produit p36 = new Produit("virgin cola", "sodas", 2.3F, null);
-	Produit p37 = new Produit("fanta orange", "sodas", 2.3F, null);
-	Produit p38 = new Produit("fanta citron", "sodas", 2.3F, null);
-	Produit p39 = new Produit("ice tea", "sodas", 1.95F, null);
+	Produit p30 = new Produit("carafe d'eau", "eau", 0F, "Image/EauCarafe.jpg");
+	Produit p31 = new Produit("Evian", "eau plate", 1.84F, "Image/EauEvian.jpg");
+	Produit p32 = new Produit("St-Yorres", "eau gazeuse", 1.76F, "Image/EauStYorre.jpg");
+	Produit p33 = new Produit("jus de pomme", "jus fruit", 2.2F, "Image/BoissJusPomme.jpg");
+	Produit p34 = new Produit("jus de pêche", "jus fruit", 2.2F, "Image/BoissJusPeche.jpg");
+	Produit p35 = new Produit("jus d'orange", "jus fruit", 2.2F, "Image/BoissJusOrange.jpg");
+	Produit p36 = new Produit("virgin cola", "sodas", 2.3F, "Image/SodaVirginCola.jpg");
+	Produit p37 = new Produit("fanta orange", "sodas", 2.3F, "Image/SodaFantaOrange.jpg");
+	Produit p38 = new Produit("fanta citron", "sodas", 2.3F, "Image/SodaFantaCitron.jpg");
+	Produit p39 = new Produit("ice tea", "sodas", 1.95F, "Image/SodaIceTea.jpg");
 
-	Produit p40 = new Produit("café", "boisson chaude", 2.1F, null);
-	Produit p41 = new Produit("café double", "boisson chaude", 2.1F, null);
-	Produit p42 = new Produit("thé", "boisson chaude", 2.1F, null);
-	Produit p43 = new Produit("chocolat", "boisson chaude", 2.1F, null);
+	Produit p40 = new Produit("café", "boisson chaude", 2.1F, "Image/BoChaudCafe.jpg");
+	Produit p41 = new Produit("café double", "boisson chaude", 2.1F, "Image/BoChaudCafeDouble.jpg");
+	Produit p42 = new Produit("thé", "boisson chaude", 2.1F, "Image/BoChaudThe.jpg");
+	Produit p43 = new Produit("chocolat", "boisson chaude", 2.1F, "Image/BoChaudChocolat.jpg");
 
-	Produit p50 = new Produit("champagne", "mousseux blanc", 18.65F, null);
-	Produit p51 = new Produit("sancerre", "vallée de loire blanc", 18.65F, null);
-	Produit p52 = new Produit("Château Saint Roch", "Côtes du Rhône blanc", 19.65F, null);
-	Produit p53 = new Produit("chablis", "bourgogne blanc", 17.85F, null);
-	Produit p54 = new Produit("grave", "bordeau rouge", 16.85F, null);
-	Produit p55 = new Produit("pommerol", "bordeau rouge", 14.35F, null);
-	Produit p56 = new Produit("chinon", "vallée de loire rouge", 14.35F, null);
+	Produit p50 = new Produit("champagne", "mousseux blanc", 18.65F, "Image/VinChampagne.jpg");
+	Produit p51 = new Produit("sancerre", "vallée de loire blanc", 18.65F, "Image/VinSancerre.jpg");
+	Produit p52 = new Produit("Château Saint Roch", "Côtes du Rhône blanc", 19.65F, "Image/VinCoteRhoneBlanc.jpg");
+	Produit p53 = new Produit("chablis", "bourgogne blanc", 17.85F, "Image/VinChablis.jpg");
+	Produit p54 = new Produit("grave", "bordeau rouge", 16.85F, "Image/VinGrave.jpg");
+	Produit p55 = new Produit("pommerol", "bordeau rouge", 14.35F, "Image/VinPommerol.jpg");
+	Produit p56 = new Produit("chinon", "vallée de loire rouge", 14.35F, "Image/VinChinon.jpg");
 
-	Produit p60 = new Produit("Get27", "alcool", 6.65F, null);
-	Produit p61 = new Produit("whisky", "alcool", 6.65F, null);
-	Produit p62 = new Produit("vodka", "alcool", 6.65F, null);
-	Produit p63 = new Produit("martini", "alcool", 6.65F, null);
-	Produit p64 = new Produit("porto", "alcool", 6.65F, null);
-	Produit p65 = new Produit("cognac", "alcool", 6.65F, null);
-	Produit p66 = new Produit("armagnac", "alcool", 6.65F, null);
-	Produit p67 = new Produit("manzana", "liqueur", 6.65F, null);
-	Produit p68 = new Produit("mandarine impériale", "liqueur", 6.65F, null);
+	Produit p60 = new Produit("Get27", "alcool", 6.65F, "Image/AlcGet27.jpg");
+	Produit p61 = new Produit("whisky", "alcool", 6.65F, "Image/AlcWhisky.jpg");
+	Produit p62 = new Produit("vodka", "alcool", 6.65F, "Image/AlcVodka.jpg");
+	Produit p63 = new Produit("martini", "alcool", 6.65F, "Image/AlcMartini.jpg");
+	Produit p64 = new Produit("porto", "alcool", 6.65F, "Image/AlcPorto.jpg");
+	Produit p65 = new Produit("cognac", "alcool", 6.65F, "Image/AlcCognac.jpg");
+	Produit p66 = new Produit("armagnac", "alcool", 6.65F, "Image/AlcArmagnac.jpg");
+	Produit p67 = new Produit("manzana", "liqueur", 6.65F, "Image/AlcManzana.jpg");
+	Produit p68 = new Produit("mandarine impériale", "liqueur", 6.65F, "Image/AlcMandarineImperiale.jpg");
         
             //Produit p05 = new Produit("", null, prixHT, null);
 
@@ -362,6 +362,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           ca02.getCategorieCartes().add(cc011);
           ca02.getCategorieCartes().add(cc012);
           ca02.getCategorieCartes().add(cc013);
+          ca02.getCategorieCartes().add(cc014);
 
 //////////// CATEGORIEFORMULE -> FORMULE
         cfe01.setFormule(f01);

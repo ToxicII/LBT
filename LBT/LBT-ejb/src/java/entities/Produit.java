@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 /**
@@ -17,6 +19,14 @@ import javax.persistence.OneToMany;
  * @author Manuel_R_cdi113
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "entites.produit.selectAll",
+            query = "select p from Produit p order by p.categorieCarte" ),
+    @NamedQuery(name = "entites.produit.selectByRef",
+            query = "select p from Produit p where p.reference = :paramRef" ),
+    @NamedQuery(name = "entites.produit.selectByCategorie",
+            query = "select p from Produit p where p.categorieCarte.nom = :paramCateCarte order by p.nom" )
+})
 public class Produit implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -114,7 +124,17 @@ public class Produit implements Serializable {
     public void setPrixHT(float prixHT) {
         this.prixHT = prixHT;
     }
-
+    
+    public float getPrixTTC(){
+        float prixTTC;
+        try{
+            prixTTC = ((100 + tva.getTauxTVA()) / 100) * prixHT;
+            return prixTTC;
+        }catch(Exception ex){
+            return 0F;            
+        }
+    }
+    
     public String getImage() {
         return image;
     }
@@ -209,7 +229,7 @@ public class Produit implements Serializable {
 ////////////////////////    STRING       //////////////////////////
     @Override
     public String toString() {
-        return "Produit{" + "reference=" + reference + ", nom=" + nom + 
+        return "Produit{reference=" + reference + ", nom=" + nom + 
                 ", description=" + description + ", prixHT=" + prixHT + ", }";
     }
 ////////////////////////    STRING       //////////////////////////
