@@ -57,7 +57,7 @@ public class Produit implements Serializable {
         private Collection<CategorieFormule> categorieFormules;   
         @ManyToOne
         private TVA tva;
-        @OneToMany(mappedBy = "produit")
+        @ManyToMany(mappedBy = "produits")
         private Collection<Propriete> proprietes;    
         @ManyToOne
         private CategorieCarte categorieCarte;       

@@ -1,11 +1,14 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 /**
@@ -14,80 +17,90 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 public class Propriete implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(nullable=false)
-    private String nom;
-    @Column(nullable=false)
-    private String valeur;
-    private String unite;
-        //=========== Dependances ================================  
-        @ManyToOne
-        private Produit produit;      
-        //=========== Dependances ================================
+
+     private static final long serialVersionUID = 1L;
+     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
+     private Long id;
+     @Column(nullable = false)
+     private String nom;
+     @Column(nullable = false)
+     private String valeur;
+     private String unite;
+     //=========== Dependances ================================  
+     @ManyToMany
+     private Collection<Produit> produits;
+
+     //=========== Dependances ================================
 ////////////////////////    CONSTRUCT       ///////////////////////
-    public Propriete() {
-    }
 
-    public Propriete(String nom, String valeur, String unite) {
-        this.nom = nom;
-        this.valeur = valeur;
-        this.unite = unite;
-    }
+     public Propriete() {
+          produits = new ArrayList();
+     }
 
-    public Propriete(String nom, String valeur, String unite, Produit produit) {
-        this.nom = nom;
-        this.valeur = valeur;
-        this.unite = unite;
-        this.produit = produit;
-    }
+     public Propriete(String nom, String valeur, String unite) {
+          this();
+          this.nom = nom;
+          this.valeur = valeur;
+          this.unite = unite;
+     }
+
+     public Propriete(String nom, String valeur, String unite, Collection<Produit> produits) {
+          this.nom = nom;
+          this.valeur = valeur;
+          this.unite = unite;
+          this.produits = produits;
+     }
 ////////////////////////    CONSTRUCT       ///////////////////////
 ////////////////////////    GET SET      //////////////////////////
 
-    public Long getId() {
-        return id;
-    }
+     public Long getId() {
+          return id;
+     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }    
-    
-    public String getValeur() {
-        return valeur;
-    }
-    public void setValeur(String valeur) {
-        this.valeur = valeur;
-    }
+     public void setId(Long id) {
+          this.id = id;
+     }
 
-    public String getUnite() {
-        return unite;
-    }
-    public void setUnite(String unite) {
-        this.unite = unite;
-    }
+     public String getValeur() {
+          return valeur;
+     }
 
-    public Produit getProduit() {
-        return produit;
-    }
-    public void setProduit(Produit produit) {
-        this.produit = produit;
-    }
- 
-    public String getNom() {
-        return nom;
-    }
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+     public void setValeur(String valeur) {
+          this.valeur = valeur;
+     }
+
+     public String getUnite() {
+          return unite;
+     }
+
+     public void setUnite(String unite) {
+          this.unite = unite;
+     }
+
+     public Collection<Produit> getProduits() {
+          return produits;
+     }
+
+     public void setProduit(Collection<Produit> produits) {
+          this.produits = produits;
+     }
+
+     public String getNom() {
+          return nom;
+     }
+
+     public void setNom(String nom) {
+          this.nom = nom;
+     }
 ////////////////////////    GET SET      //////////////////////////
 ////////////////////////    STRING       //////////////////////////
-    @Override
-    public String toString() {
+
+     @Override
+     public String toString() {
 //        return "Propriete : " + nom + " ; " ;
-        return nom + " : " + valeur + " " + unite;
-    }
+          return nom + " : " + valeur + " " + unite;
+     }
 ////////////////////////    STRING       //////////////////////////
 //    @Override
 //    public int hashCode() {

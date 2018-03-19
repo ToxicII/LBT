@@ -307,14 +307,27 @@ public class CreationJeuTest implements CreationJeuTestLocal {
 //////////// PROMOTION
           Date d01 = new GregorianCalendar(2011, 1, 25, 14, 34, 20).getTime();
           Date d02 = new GregorianCalendar(2012, 6, 1, 23, 15, 45).getTime();
-          Date d03 = new GregorianCalendar(2018, 8, 2, 24, 16, 40).getTime();
-          Date d04 = new GregorianCalendar(2018, 8, 3, 24, 16, 40).getTime();
+          Date d03 = new GregorianCalendar(2018, 0, 1, 00, 00, 00).getTime();
+          Date d04 = new GregorianCalendar(2018, 6, 30, 00, 00, 00).getTime();
 
           Promotion prom01 = new Promotion(d01, d02, "Foire à la saucisse", 10f, null);
-          Promotion prom02 = new Promotion(d03, d04, "Hommage à Maite", 15f, null);
+          Promotion prom02 = new Promotion(d03, d04, "Plat du jour", 15f, null);
 
 //////////// PROPRIETE               
-          Propriete pPrdt001 = new Propriete("poid", "125", "grammes");
+          Propriete pPrdt001 = new Propriete("poid", "125", "grammes");          
+          Propriete pPrdt002 = new Propriete("volume", "33", "cl");          
+          Propriete pPrdt003 = new Propriete("volume", "25", "cl");
+          
+          Propriete pPrdt004 = new Propriete("taux alcool", "40", "%");
+          
+          Propriete pPrdt005 = new Propriete("année", "1992", "");
+          Propriete pPrdt006 = new Propriete("année", "2010", "");
+          Propriete pPrdt007 = new Propriete("année", "2006", "");
+          Propriete pPrdt008 = new Propriete("année", "2008", "");
+          Propriete pPrdt009 = new Propriete("année", "2015", "");
+          Propriete pPrdt0010 = new Propriete("année", "2013", "");
+          Propriete pPrdt0011 = new Propriete("année", "2012", "");
+                              
           /*Propriete pPrdt002 = new Propriete("cuisson", "saignant", null);
            Propriete pPrdt003 = new Propriete("cuisson", "à point", null);*/
 
@@ -381,7 +394,58 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           cfb02.setFormule(f02);
           cfb03.setFormule(f04);
 
-//////////// CATEGORIEFORMULE -> PRODUIT          
+//////////// CATEGORIEFORMULE -> PRODUIT   
+          cfe01.getProduits().add(p12);
+          cfe01.getProduits().add(p13);
+          
+          cfe02.getProduits().add(p13);
+          cfe02.getProduits().add(p14);
+          
+          cfe03.getProduits().add(p12);
+          cfe03.getProduits().add(p13);
+          cfe03.getProduits().add(p14);
+          
+          cfp01.getProduits().add(p01);
+          cfp01.getProduits().add(p06);
+          cfp01.getProduits().add(p07);
+          cfp01.getProduits().add(p08);
+          
+          cfp02.getProduits().add(p02);
+          cfp02.getProduits().add(p03);
+          cfp02.getProduits().add(p05);
+          cfp02.getProduits().add(p06);
+          
+          cfp03.getProduits().add(p01);
+          cfp03.getProduits().add(p03);
+          cfp03.getProduits().add(p05);
+          cfp03.getProduits().add(p08);
+          
+          cfp04.getProduits().add(p02);
+          cfp04.getProduits().add(p06);
+          cfp04.getProduits().add(p07);
+          
+          cfd01.getProduits().add(p16);
+          cfd01.getProduits().add(p17);
+          
+          cfd02.getProduits().add(p17);
+          cfd02.getProduits().add(p18);
+          
+          cfd03.getProduits().add(p16);
+          cfd03.getProduits().add(p17);
+          cfd03.getProduits().add(p18);
+          
+          cfb01.getProduits().add(p34);
+          cfb01.getProduits().add(p35);
+          cfb01.getProduits().add(p36);
+          
+          cfb02.getProduits().add(p37);
+          cfb02.getProduits().add(p38);
+          cfb02.getProduits().add(p36);
+          
+          cfb03.getProduits().add(p33);
+          cfb03.getProduits().add(p38);
+          cfb03.getProduits().add(p39);
+          
 //////////// COMMANDE -> EMPLACEMENT   
           c01.setEmplacement(e01);
           c02.setEmplacement(e02);
@@ -540,7 +604,45 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           p005.setCategorieCarte(cc014);
           p006.setCategorieCarte(cc014);
           p007.setCategorieCarte(cc014);            // ==> ajout Manu
-//////////// PRODUIT -> CHOIXCLIENT         
+          
+//////////// PRODUIT -> CHOIXCLIENT               
+          p02.getChoixClients().add(chc01);
+          p02.getChoixClients().add(chc02);
+          p02.getChoixClients().add(chc03);
+          p02.getChoixClients().add(chc04);
+          p02.getChoixClients().add(chc05);
+          p02.getChoixClients().add(chc06);
+          p02.getChoixClients().add(chc07);
+          p02.getChoixClients().add(chc08);
+          p02.getChoixClients().add(chc09);
+          p02.getChoixClients().add(chc010);
+          
+          p03.getChoixClients().add(chc01);
+          p03.getChoixClients().add(chc02);
+          p03.getChoixClients().add(chc03);
+          p03.getChoixClients().add(chc04);
+          p03.getChoixClients().add(chc05);
+          p03.getChoixClients().add(chc06);
+          p03.getChoixClients().add(chc07);
+          p03.getChoixClients().add(chc08);
+          p03.getChoixClients().add(chc09);
+          p03.getChoixClients().add(chc010);
+          
+          p08.getChoixClients().add(chc01);
+          p08.getChoixClients().add(chc02);
+          p08.getChoixClients().add(chc03);
+          p08.getChoixClients().add(chc04);
+          p08.getChoixClients().add(chc05);
+          p08.getChoixClients().add(chc06);
+          p08.getChoixClients().add(chc07);
+          p08.getChoixClients().add(chc08);
+          p08.getChoixClients().add(chc09);
+          p08.getChoixClients().add(chc010);
+          
+          p05.getChoixClients().add(chc07);
+          p05.getChoixClients().add(chc08);
+          p05.getChoixClients().add(chc09);
+          
 //////////// PRODUIT -> INGREDIENT          
           p011.getIngredients().add(i001);
           p011.getIngredients().add(i002);
@@ -611,8 +713,8 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           p17.getIngredients().add(i045);
           p18.getIngredients().add(i047);
           p18.getIngredients().add(i048); //  ==> ajout Manu
+          
 //////////// PRODUIT -> PARAMETRE          
-
           p01.getParametres().add(parP01);
           p02.getParametres().add(parP01);
           p03.getParametres().add(parP01);
@@ -665,6 +767,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           p66.getParametres().add(parP01);
           p67.getParametres().add(parP01);
           p68.getParametres().add(parP01);
+          
 //////////// PRODUIT -> PRODUIT         
           p01.getProduitEnfants().add(p011);
           p01.getProduitEnfants().add(p001);
@@ -755,17 +858,64 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           p66.setTva(tv02);
           p67.setTva(tv02);
           p68.setTva(tv02);   //  ==> ajout Manuel
-//////////// PROMOTION -> PRODUIT          
+          
+//////////// PROMOTION -> PRODUIT        
+          prom02.getProduits().add(p04);          
+          
 //////////// PROPRIETE -> PRODUIT          
           /*pPrdt001.setProduit(p01);
            pPrdt001.setProduit(p02);
            pPrdt001.setProduit(p03);*/
-          pPrdt001.setProduit(p02);
-
+          pPrdt001.getProduits().add(p02);
+          
+          pPrdt002.getProduits().add(p33);
+          pPrdt002.getProduits().add(p34);
+          pPrdt002.getProduits().add(p35);
+          pPrdt002.getProduits().add(p36);
+          pPrdt002.getProduits().add(p37);
+          pPrdt002.getProduits().add(p38);
+          pPrdt002.getProduits().add(p39);
+          
+          pPrdt003.getProduits().add(p50);
+          pPrdt003.getProduits().add(p51);
+          pPrdt003.getProduits().add(p52);
+          pPrdt003.getProduits().add(p53);
+          pPrdt003.getProduits().add(p54);
+          pPrdt003.getProduits().add(p55);
+          pPrdt003.getProduits().add(p56);          
+          pPrdt003.getProduits().add(p60);
+          pPrdt003.getProduits().add(p61);
+          pPrdt003.getProduits().add(p62);
+          pPrdt003.getProduits().add(p63);
+          pPrdt003.getProduits().add(p64);
+          pPrdt003.getProduits().add(p65);
+          pPrdt003.getProduits().add(p66);
+          pPrdt003.getProduits().add(p67);
+          pPrdt003.getProduits().add(p68);
+          
+          pPrdt004.getProduits().add(p60);
+          pPrdt004.getProduits().add(p61);
+          pPrdt004.getProduits().add(p62);
+          pPrdt004.getProduits().add(p63);
+          pPrdt004.getProduits().add(p64);
+          pPrdt004.getProduits().add(p65);
+          pPrdt004.getProduits().add(p66);
+          pPrdt004.getProduits().add(p67);
+          pPrdt004.getProduits().add(p68);
+          
+          pPrdt005.getProduits().add(p50);
+          pPrdt006.getProduits().add(p51);
+          pPrdt007.getProduits().add(p52);
+          pPrdt008.getProduits().add(p53);
+          pPrdt0010.getProduits().add(p54);
+          pPrdt0011.getProduits().add(p55);
+          pPrdt009.getProduits().add(p56);
+  
 
           /*pPrdt003.setProduit(p01);
            pPrdt003.setProduit(p02);
            pPrdt003.setProduit(p03);*/
+          
 //////////// REGLEMENT -> COMMANDE
           r01.setCommande(c01);
           r02.setCommande(c02);
@@ -1057,8 +1207,16 @@ public class CreationJeuTest implements CreationJeuTestLocal {
 
           // PROPRIETE
           em.persist(pPrdt001);
-          /*em.persist(pPrdt002);
-           em.persist(pPrdt003);*/
+          em.persist(pPrdt002);
+          em.persist(pPrdt003);
+          em.persist(pPrdt004);
+          em.persist(pPrdt005);
+          em.persist(pPrdt006);
+          em.persist(pPrdt007);
+          em.persist(pPrdt008);
+          em.persist(pPrdt009);
+          em.persist(pPrdt0010);
+          em.persist(pPrdt0011);
 
           // REGLEMENT
           em.persist(r01);
