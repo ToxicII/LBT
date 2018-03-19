@@ -1,0 +1,49 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17 mars 2018, 13:23:59
+    Author     : Manuel_PCB
+*/
+
+        table {
+            border-collapse: collapse;
+            width: 95%;
+            padding-left: 30px;     
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;   
+            min-height: 40px;  
+            max-height: 40px;    
+
+        }
+        tr {
+            min-height: 40px;  
+            max-height: 40px;    
+
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: inline;
+            height: 205px;
+            width: 100%;
+            padding-left: 30px;
+            overflow: hidden;
+            border: 1px solid #dddddd;
+            background-color: whitesmoke;
+        }
+        body{
+            padding-top:  210px;
+            padding-left: 30px;                    
+        }
+        img{
+            size: auto;
+            max-height: 140px;
+            max-width: 210px;
+        }

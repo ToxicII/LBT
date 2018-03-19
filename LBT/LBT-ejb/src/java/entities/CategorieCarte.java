@@ -6,6 +6,8 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 /**
@@ -13,6 +15,10 @@ import javax.persistence.OneToMany;
  * @author Manuel_cdi113
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "entites.categorieCarte.selectAllCategorie",
+            query = "select c from CategorieCarte c" ),
+})
 public class CategorieCarte implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
