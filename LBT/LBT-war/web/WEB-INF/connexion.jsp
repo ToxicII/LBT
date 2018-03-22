@@ -10,6 +10,10 @@
         <title>Connexion</title>
     </head>
     <body>
+        
+        <c:url var="frontJT" value="FrontController?section=jeuTest" />
+        <a href="${frontJT}">création du jeu de test</a><br><br> 
+        <p>${message}</p>
                
         <h1>Connectez vous !</h1>
         <div id="inputField" ></div>

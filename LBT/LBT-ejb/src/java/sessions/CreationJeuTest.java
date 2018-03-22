@@ -932,12 +932,12 @@ public class CreationJeuTest implements CreationJeuTestLocal {
 
 //////////// UTILISATEUR -> DROIT    
           u01.getDroits().add(dr01);
-          u01.getDroits().add(dr02);
+          u01.getDroits().add(dr03);
           u02.getDroits().add(dr01);
           u08.getDroits().add(dr01);
           u03.getDroits().add(dr02);
           u04.getDroits().add(dr02);
-          u05.getDroits().add(dr02);
+          u05.getDroits().add(dr03);
           u06.getDroits().add(dr01);
           u07.getDroits().add(dr03);
 

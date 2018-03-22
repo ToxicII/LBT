@@ -1,6 +1,9 @@
 package sessions;
 
+import entities.Droit;
 import entities.Utilisateur;
+import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -31,5 +34,17 @@ public class GestionUtilisateur implements GestionUtilisateurLocal {
             return null;
         }        
     }
+    
+    @Override
+    public List<Long> getTypeDroits(Utilisateur utilisateur){
+        
+        List<Long> dList = new ArrayList();
+        
+        for (Droit d : utilisateur.getDroits()){
+            dList.add(d.getTypeDroit());                    
+        }
+        
+        return dList;
+    } 
 
 }

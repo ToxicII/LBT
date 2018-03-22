@@ -19,6 +19,10 @@
             <param-name>connexion</param-name>
             <param-value>controller.secondaire.Connexion</param-value>
         </init-param>
+        <init-param>
+            <param-name>connexionControl</param-name>
+            <param-value>controller.secondaire.ConnexionControl</param-value>
+        </init-param>
     </servlet>
     <session-config>
         <session-timeout>
@@ -55,6 +59,12 @@
     </ejb-local-ref>
     <ejb-local-ref>
         <ejb-ref-name>GestionUtilisateur</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionUtilisateurLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionUtilisateur</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionUtilisateur1</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
         <local>sessions.GestionUtilisateurLocal</local>
         <ejb-link>LBT-ejb.jar#GestionUtilisateur</ejb-link>

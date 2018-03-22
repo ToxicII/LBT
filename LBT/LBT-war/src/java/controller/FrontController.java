@@ -2,6 +2,7 @@
 package controller;
 
 import controller.Interface.ControleurInterface;
+import entities.Utilisateur;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -51,11 +52,10 @@ public class FrontController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String prefixe = "/WEB-INF/";
-        String suffixe = ".jsp";
-        HttpSession session = request.getSession();
-        String section = request.getParameter("section");
+        String suffixe = ".jsp";        
         String page = "accueil";
-        
+        String section = request.getParameter("section");                
+                                
 //        if(session.getAttribute("gestionPanier") == null ){
 //            session.setAttribute("gestionPanier", lookupGestionPanierLocal());
 //        }
