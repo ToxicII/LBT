@@ -1,8 +1,12 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package controller.secondaire;
 
 import controller.Interface.ControleurInterface;
 import entities.CategorieCarte;
-import entities.Commande;
 import entities.Produit;
 import java.io.Serializable;
 import java.util.List;
@@ -19,30 +23,21 @@ import sessions.GestionProduitLocal;
 
 /**
  *
- * @author Manuel_R_cdi113
+ * @author cdi113
  */
-public class AfficherCarte implements ControleurInterface, Serializable {
-
-    @Override
+public class afficheOldCarteFull implements ControleurInterface, Serializable {
+    
     public String executer(HttpServletRequest request, HttpServletResponse response) {
         GestionProduitLocal gestionProduit = lookupGestionProduitLocal();
         GestionCategorieCarteLocal gestionCategorieCarte = lookupCategorieCarteLocal();
-        GestionCommandeLocal gestionCommande = lookupGestionCommandeLocal();
         List<CategorieCarte> lcc = gestionCategorieCarte.getCategoCarte();
         request.setAttribute("categorie", lcc);
         List<Produit> lp = gestionProduit.getAllProduits();    
         String stringRef = request.getParameter("tableSaisie");
-        int intRef =0;
-//        if(!stringRef.isEmpty() & !stringRef.equals("")){
-//            intRef = Integer.valueOf(stringRef );
-//        }
         System.out.println("valeur tableSaisie = " + stringRef);
         request.setAttribute("catalogue", lp);
-        request.getSession().setAttribute("NumTable", request.getParameter("tableSaisie") );
-        //Commande c =  gestionCommande.createCommande2(intRef);
-        //request.getSession().setAttribute("Commande",c); 
               
-        return "newCommClient";
+        return "creationDonnees";
     }
 
      private GestionProduitLocal lookupGestionProduitLocal() {
@@ -59,16 +54,6 @@ public class AfficherCarte implements ControleurInterface, Serializable {
           try {
                Context c = new InitialContext();
                return (GestionCategorieCarteLocal) c.lookup("java:global/LBT/LBT-ejb/GestionCategorieCarte!sessions.GestionCategorieCarteLocal");
-          } catch (NamingException ne) {
-               Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
-               throw new RuntimeException(ne);
-          }
-     }
-
-     private GestionCommandeLocal lookupGestionCommandeLocal() {
-          try {
-               Context c = new InitialContext();
-               return (GestionCommandeLocal) c.lookup("java:global/LBT/LBT-ejb/GestionCommande!sessions.GestionCommandeLocal");
           } catch (NamingException ne) {
                Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
                throw new RuntimeException(ne);

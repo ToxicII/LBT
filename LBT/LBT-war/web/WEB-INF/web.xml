@@ -27,6 +27,10 @@
             <param-name>AfficheMenu</param-name>
             <param-value>controller.secondaire.AfficheContenu</param-value>
         </init-param>
+        <init-param>
+            <param-name>afficheOld</param-name>
+            <param-value>controller.secondaire.afficheOldCarteFull</param-value>
+        </init-param>
     </servlet>
     <session-config>
         <session-timeout>

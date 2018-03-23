@@ -5,49 +5,22 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
     <section>
-        <div id="BandeauCarte">
-            <h1><i>La Carte</i></h1>      
-            <form  action="FrontController?section=ParseCatalogue" method="post">
-                <label>Catégorie Carte : </label>
-                <select name="categCarte">
-                    <c:forEach items="${categorie}" var="c">
-                        <c:if test="${c.nom == cateChoix}" >
-                            <option value = "${c.nom}" selected>${c.nom}</option>  
-                        </c:if>
-                        <c:if test="${!(c.nom == cateChoix)}">
-                            <option value = "${c.nom}" >${c.nom}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-                <input type='submit' name='CategoCarte' value='Affiner' />
-            </form> 
-                <p>
-            <table>
-                <thead>
-                    <tr>
-                        <th rowspan="3">Commande</th>
-                        <th rowspan="3">Image</th>
-                    </tr>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Description</th>
-                        <th>Dispopnibilite</th>
-                    </tr>
-                    <tr>
-                        <th>Composition</th>
-                        <th>Ingrédients</th>
-                        <th>PrixTTC</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
         <div id="BodyCarte">
             <table class="Carte">
                 <tbody>
-                    <c:forEach items="${catalogue}" var="p">
-                        <c:if test="${p.image!=null}">
+                    <c:forEach items="${catalogue2}" var="p">
+                        <%--${p.description}    <br />
+                        ${catalogue2}
+                        ${p.proprietes}     <br />
+                        ${p.image}          <br />
+                        ${p.parametres} <br /> --%>
+                        
+                        
+                        
+                        <c:if test="${p.image!=null}"> 
 
                                 <tr>
                                     <th rowspan="3"><i><a href="#">Ajouter</a></i>
@@ -60,12 +33,12 @@
                                         <c:forEach var="pp" items="${p.proprietes}">
                                             <p><label>${pp}</label></p>
                                         </c:forEach>     </td>
-                                    <td><c:forEach var="pa" items="${p.getParametres()}">
+                                    <td><c:forEach var="pa" items="${p.parametres}">
                                         <p><label>${pa.toString()}</label></p>
                                     </c:forEach></td>
                                 </tr>
                                 <tr>
-                                    <td><c:forEach var="pr" items="${p.getProduitEnfants()}">
+                                    <td><c:forEach var="pr" items="${p.produitEnfants}">
                                         <c:if test="${!pr.description.substring(0,10).equals('Accompagne')}">
                                             <p><label for="Compo">${pr.nom}</label></p>
                                         </c:if>
@@ -81,7 +54,7 @@
                                     <td><fmt:formatNumber minIntegerDigits="1" minFractionDigits="2"
                                           maxFractionDigits="2" value="${p.getPrixTTC()}"/> €</td>
                                 </tr>
-                        </c:if>
+                        </c:if> 
                     </c:forEach>
                 </tbody>
             </table>   

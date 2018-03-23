@@ -1,32 +1,4 @@
 1°)
-	les MappedBy modifiés sur 
-		emplacement/commande
-		produit/categorieFormule
-		carte/categorieCarte
-
-
-2°)
-	modif servlet pour accueil autre 
-	jeu d'essai
-
-3°) 	
-	modif propriete : si nom = id 
-	alors unicite !!
-	==> création d'un iD Long IDENTITY
-	
-4° !!!!!!!!!!!! )
-	ON N'A PAS DE PRODUIT_PROPRIETE
-	ni de PROPRIETE_PRODUIT !!!
-
-	ON N'A PAS DE COMMANDE_EMPLACEMENT
-	ni de EMPLACEMENT_COMMANDE !!!
-
-	ON N'A PAS DE COMMANDE_LIGNECOMMANDE
-	ni de LIGNECOMMANDE_COMMANDE !!!
-
-MALGRE MAPPEDBY !!!
-
-il serait logique de :
-basculer mes jeux d'essai 
-vers le bean du meme nom
+	NUMTABLE = session.setAttribute
+        Obj Serveur=session.setAttribute  
 

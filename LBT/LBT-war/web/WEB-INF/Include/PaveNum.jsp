@@ -29,7 +29,7 @@
                 <tr>
                     <th> <p id="Annul" onclick="effacerNum()"> Eff.   <p> </th>
                     <th> <p>  0  <p></th>
-                    <th> <p id="EnterTable" onclick="attribCommTable()">  Entrer  <p></th>
+                    <th> <a id="EnterTable" href="FrontController?section=Catalogue">  Entrer  </a></th>
                     <%--   ici il faut ; une saisie du n° de table puis 
                     créer commande et seulement alors ouvrir l'interface
                     client sur cette commande   --%>

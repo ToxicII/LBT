@@ -35,7 +35,7 @@ public class GestionCommande implements GestionCommandeLocal {
     }
     
     @Override
-    public Commande createCommande(int ref){
+    public Commande createCommande2(int ref){
         
         Commande c = new Commande();
         Query q01 = em.createNamedQuery("entities.Parametres.selectById");

@@ -52,6 +52,8 @@
                      
         <c:url var="frontCat" value="FrontController?section=AfficheMenu" />
         <c:import url="${frontCat}"/>
+        
+        
                     <footer>
                         
                     </footer>

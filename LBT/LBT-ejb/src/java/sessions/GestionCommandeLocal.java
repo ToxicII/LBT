@@ -21,6 +21,6 @@ public interface GestionCommandeLocal {
 
     public Commande addProduit(Commande commande, Long reference);
 
-    public Commande createCommande(int ref);
+    public Commande createCommande2(int ref);
     
 }
