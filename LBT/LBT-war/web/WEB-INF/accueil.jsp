@@ -13,7 +13,8 @@
          
         <c:url var="frontCat" value="FrontController?section=Catalogue" />
         <a href="${frontCat}">afficher catalogue</a><br><br>
-        <p>${messageCat}</p>
-        
+         
+        <c:url var="frontCommServ" value="FrontController?section=CommandeServeur" />
+        <a href="${frontCommServ}">NouvelleCommande</a><br><br>
     </body>
 </html>

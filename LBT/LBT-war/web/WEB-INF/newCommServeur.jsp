@@ -16,20 +16,19 @@
         <table>
             <tbody>
                 <tr>
-                    <th rowspan="3">Commande</th>
-                    <th rowspan="3">Image</th>
+                    <th> <a href="#">   Serveur  </a> </th>
                 </tr>
                 <tr>
-                    <th>Nom</th>
-                    <th>Description</th>
-                    <th>Dispopnibilite</th>
-                </tr>
-                <tr>
-                    <th>Composition</th>
-                    <th>Ingrédients</th>
-                    <th>PrixTTC</th>
+                    <th> <a href="#" id="CommClient" onclick="affichNotTable()">    Client   </a> </th>
+                    <%--   ici il faut ; une saisie du n° de table puis 
+                    créer commande et seulement alors ouvrir l'interface
+                    client sur cette commande   --%>
                 </tr>
             </tbody>
         </table>
+                <form id="noteTable">
+                    <%-- ici le notePad de NicoV --%>
+                </form>
     </body>
+    <script  src="/LBT-war/Js/manuJS01.js" type="text/javascript"></script>
 </html>

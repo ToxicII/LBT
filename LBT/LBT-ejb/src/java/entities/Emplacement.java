@@ -20,7 +20,11 @@ import javax.persistence.OneToMany;
 @NamedQueries({
     @NamedQuery(name = "entities.Emplacement.rechercheCommandeTable",
             query = "select c.id from Emplacement e join e.commandes c where "
-                    + "e.numero = :paramTableAFusionner and c.parametre <> 'reglee' "),
+                    + "e.numero = :paramTableAFusionner and c.parametre <> 'payée' "
+                    + "and c.parametre <> 'annulée' "),
+    @NamedQuery(name = "entities.Emplacement.rechercheTableById",
+            query = "select e from Emplacement e where "
+                    + "e.numero = :paramTable "),
 })
 public class Emplacement implements Serializable {
     private static final long serialVersionUID = 1L;    
