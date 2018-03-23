@@ -53,7 +53,7 @@ public class FrontController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String prefixe = "/WEB-INF/";
         String suffixe = ".jsp";        
-        String page = "accueil";
+        String page = "connexion";
         String section = request.getParameter("section");                
                                 
 //        if(session.getAttribute("gestionPanier") == null ){
