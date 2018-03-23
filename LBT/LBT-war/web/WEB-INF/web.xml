@@ -15,6 +15,18 @@
             <param-name>ParseCatalogue</param-name>
             <param-value>controller.secondaire.AfficherParseCarte</param-value>
         </init-param>
+        <init-param>
+            <param-name>CommandeServeur</param-name>
+            <param-value>controller.secondaire.NouvelleCommande</param-value>
+        </init-param>
+        <init-param>
+            <param-name>affichPave</param-name>
+            <param-value>controller.secondaire.AffichePave</param-value>
+        </init-param>
+        <init-param>
+            <param-name>AfficheMenu</param-name>
+            <param-value>controller.secondaire.AfficheContenu</param-value>
+        </init-param>
     </servlet>
     <session-config>
         <session-timeout>

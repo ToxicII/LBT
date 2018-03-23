@@ -2,6 +2,7 @@ package controller.secondaire;
 
 import controller.Interface.ControleurInterface;
 import entities.CategorieCarte;
+import entities.Commande;
 import entities.Produit;
 import java.io.Serializable;
 import java.util.List;
@@ -13,6 +14,7 @@ import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import sessions.GestionCategorieCarteLocal;
+import sessions.GestionCommandeLocal;
 import sessions.GestionProduitLocal;
 
 /**
@@ -21,16 +23,26 @@ import sessions.GestionProduitLocal;
  */
 public class AfficherCarte implements ControleurInterface, Serializable {
 
-     @Override
-     public String executer(HttpServletRequest request, HttpServletResponse response) {
-          GestionProduitLocal gestionProduit = lookupGestionProduitLocal();
-          GestionCategorieCarteLocal gestionCategorieCarte = lookupCategorieCarteLocal();
-          List<CategorieCarte> lcc = gestionCategorieCarte.getCategoCarte();
-          request.setAttribute("categorie", lcc);
-          List<Produit> lp = gestionProduit.getAllProduits();          
-          request.setAttribute("catalogue", lp);
-          return "creationDonnees";
-     }
+    @Override
+    public String executer(HttpServletRequest request, HttpServletResponse response) {
+        GestionProduitLocal gestionProduit = lookupGestionProduitLocal();
+        GestionCategorieCarteLocal gestionCategorieCarte = lookupCategorieCarteLocal();
+        GestionCommandeLocal gestionCommande = lookupGestionCommandeLocal();
+        List<CategorieCarte> lcc = gestionCategorieCarte.getCategoCarte();
+        request.setAttribute("categorie", lcc);
+        List<Produit> lp = gestionProduit.getAllProduits();    
+        String stringRef = request.getParameter("ref");
+        int intRef =0;
+        if(stringRef != null & !stringRef.equals("")){
+            intRef = Integer.valueOf(stringRef );
+        }
+        request.setAttribute("catalogue", lp);
+        request.getSession().setAttribute("NumTable", request.getParameter("ref") );
+        Commande c =  gestionCommande.createCommande(intRef);
+        request.getSession().setAttribute("Commande",c); 
+              
+        return "newCommClient";
+    }
 
      private GestionProduitLocal lookupGestionProduitLocal() {
           try {
@@ -52,4 +64,13 @@ public class AfficherCarte implements ControleurInterface, Serializable {
           }
      }
 
+     private GestionCommandeLocal lookupGestionCommandeLocal() {
+          try {
+               Context c = new InitialContext();
+               return (GestionCommandeLocal) c.lookup("java:global/LBT/LBT-ejb/GestionCommande!sessions.GestionCommandeLocal");
+          } catch (NamingException ne) {
+               Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+               throw new RuntimeException(ne);
+          }
+     }
 }

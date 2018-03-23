@@ -2,6 +2,7 @@
 package sessions;
 
 import entities.Commande;
+import entities.Emplacement;
 import entities.LigneCommande;
 import entities.Parametres;
 import entities.Produit;
@@ -30,6 +31,20 @@ public class GestionCommande implements GestionCommandeLocal {
         
         c.setParametre((Parametres)q01.getSingleResult());
         
+        return c;
+    }
+    
+    @Override
+    public Commande createCommande(int ref){
+        
+        Commande c = new Commande();
+        Query q01 = em.createNamedQuery("entities.Parametres.selectById");
+        q01.setParameter("id", 100);
+        c.setParametre((Parametres)q01.getSingleResult());
+        
+        Query q02 = em.createNamedQuery("entities.Emplacement.rechercheTableById");
+        q02.setParameter("paramTable", ref);
+        c.setEmplacement((Emplacement)q02.getSingleResult());
         return c;
     }
     
