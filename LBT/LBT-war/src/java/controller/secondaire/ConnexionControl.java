@@ -2,14 +2,12 @@ package controller.secondaire;
 
 import controller.Interface.ControleurInterface;
 import entities.Utilisateur;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.persistence.NoResultException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -24,28 +22,27 @@ public class ConnexionControl implements ControleurInterface {
           HttpSession session = request.getSession();
           String code = request.getParameter("id");
           Utilisateur utilisateur;
+          request.removeAttribute("message");
+          String action = request.getParameter("action");
+          //System.out.println("in connexionControl");
 
           if (code != null) {
-               try {
-                    utilisateur = gestionUtilisateur.getUtilisateur(code);
 
-                    if (utilisateur.getParametres().getId() != 200L) {
-                         request.setAttribute("message", "le code saisi est incorrect ou n'existe pas");
-                         return "connexion";
-                    }
-
-                    session.setAttribute("utilisateur", utilisateur);
-
-               } catch (NoResultException e) {
+               //System.out.println("in codeControl");               
+               utilisateur = gestionUtilisateur.getUtilisateur(code);
+               
+               if (utilisateur == null || utilisateur.getParametres().getId() != 200L) {                    
                     request.setAttribute("message", "le code saisi est incorrect ou n'existe pas");
                     return "connexion";
                }
+
+               session.setAttribute("utilisateur", utilisateur);
           }
 
           utilisateur = (Utilisateur) session.getAttribute("utilisateur");
 
           if (utilisateur != null) {
-               
+               //System.out.println("in utilisateur control");
                List<Long> dList = gestionUtilisateur.getTypeDroits(utilisateur);
 
                if (dList.contains(1L)) {
@@ -56,7 +53,7 @@ public class ConnexionControl implements ControleurInterface {
                     return "#####"; // page caissier
                }
           }
-
+                    
           return "connexion";
      }
 

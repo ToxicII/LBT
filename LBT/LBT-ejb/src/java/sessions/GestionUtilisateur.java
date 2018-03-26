@@ -2,7 +2,6 @@ package sessions;
 
 import entities.Droit;
 import entities.Utilisateur;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -23,14 +22,17 @@ public class GestionUtilisateur implements GestionUtilisateurLocal {
      }
 
      @Override
-     public Utilisateur getUtilisateur(String code) throws NoResultException{
+     public Utilisateur getUtilisateur(String code) {
 
           Query qr = em.createNamedQuery("entities.Utilisateur.selectByCode");
           qr.setParameter("code", code);
 
-          Utilisateur u = (Utilisateur) qr.getSingleResult();
-          return u;
-
+          try {
+               Utilisateur u = (Utilisateur) qr.getSingleResult();
+               return u;
+          } catch (NoResultException e) {               
+               return null;
+          }
      }
 
      @Override

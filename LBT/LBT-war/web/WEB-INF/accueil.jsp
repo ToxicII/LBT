@@ -15,8 +15,8 @@
         <a href="${frontCat}">afficher catalogue</a><br><br>
         <p>${messageCat}</p>
         
-        <c:url var="frontCo" value="FrontController?section=connexion" />
-        <a href="${frontCo}">création du jeu de test</a><br><br> 
+        <c:url var="frontCo" value="FrontController?section=connexionControl" />
+        <a href="${frontCo}">connexion</a><br><br> 
         
     </body>
 </html>

@@ -19,6 +19,10 @@
             <param-name>connexionControl</param-name>
             <param-value>controller.secondaire.ConnexionControl</param-value>
         </init-param>
+        <init-param>
+            <param-name>numPad</param-name>
+            <param-value>controller.secondaire.NumPad</param-value>
+        </init-param>
     </servlet>
     <session-config>
         <session-timeout>
