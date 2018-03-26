@@ -14,30 +14,30 @@ import sessions.GestionUtilisateurLocal;
 
 public class Connexion implements ControleurInterface {
 
-    @Override
-    public String executer(HttpServletRequest request, HttpServletResponse response) {
+     @Override
+     public String executer(HttpServletRequest request, HttpServletResponse response) {
+          /*
+          GestionUtilisateurLocal gestionUtilisateur = lookupGestionUtilisateurLocal();
 
-        GestionUtilisateurLocal gestionUtilisateur = lookupGestionUtilisateurLocal();
+          
+          Utilisateur u = gestionUtilisateur.getUtilisateur(code);
 
-        String code = request.getParameter("id");
-        Utilisateur u = gestionUtilisateur.getUtilisateur(code);
+          if (u != null) {
+               request.getSession().setAttribute("utilisateur", u);
+          }
 
-        if (u != null) {
-            request.getSession().setAttribute("utilisateur", u);
-        }
-        
-        request.setAttribute("redirect", true);
-        return "index.jsp";
-    }
+          request.setAttribute("redirect", true);*/
+          return "index.jsp";
+     }
 
-    private GestionUtilisateurLocal lookupGestionUtilisateurLocal() {
-        try {
-            Context c = new InitialContext();
-            return (GestionUtilisateurLocal) c.lookup("java:global/LBT/LBT-ejb/GestionUtilisateur!sessions.GestionUtilisateurLocal");
-        } catch (NamingException ne) {
-            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
-            throw new RuntimeException(ne);
-        }
-    }
+     private GestionUtilisateurLocal lookupGestionUtilisateurLocal() {
+          try {
+               Context c = new InitialContext();
+               return (GestionUtilisateurLocal) c.lookup("java:global/LBT/LBT-ejb/GestionUtilisateur!sessions.GestionUtilisateurLocal");
+          } catch (NamingException ne) {
+               Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+               throw new RuntimeException(ne);
+          }
+     }
 
 }

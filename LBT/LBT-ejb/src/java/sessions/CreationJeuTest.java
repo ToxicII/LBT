@@ -97,9 +97,9 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           Commande c05 = new Commande(d003);
 
 //////////// DROIT  
-          Droit dr01 = new Droit("service");
-          Droit dr02 = new Droit("cuisine");
-          Droit dr03 = new Droit("caisse");
+          Droit dr01 = new Droit(1L, "service");
+          Droit dr02 = new Droit(2L, "cuisine");
+          Droit dr03 = new Droit(3L, "caisse");
 
 //////////// EMPLACEMENT
           Emplacement e01 = new Emplacement(1L, "salle01");

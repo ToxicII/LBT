@@ -16,10 +16,6 @@
             <param-value>controller.secondaire.AfficherParseCarte</param-value>
         </init-param>
         <init-param>
-            <param-name>connexion</param-name>
-            <param-value>controller.secondaire.Connexion</param-value>
-        </init-param>
-        <init-param>
             <param-name>connexionControl</param-name>
             <param-value>controller.secondaire.ConnexionControl</param-value>
         </init-param>

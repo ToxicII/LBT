@@ -25,7 +25,7 @@
     </div>	
 
     <form action="FrontController" method="POST">
-        <input type="hidden" name="section" value="connexion" />
+        <input type="hidden" name="section" value="connexionControl" />
         <input id="idOut" type="hidden" name="id" value="" />							
         <input type="submit" id="okButton" class="key ok" value="OK" />						
     </form>	

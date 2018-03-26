@@ -6,8 +6,10 @@
 package sessions;
 
 import entities.Utilisateur;
+import java.sql.SQLException;
 import java.util.List;
 import javax.ejb.Local;
+import javax.persistence.NoResultException;
 
 /**
  *
@@ -16,7 +18,7 @@ import javax.ejb.Local;
 @Local
 public interface GestionUtilisateurLocal {
 
-    public Utilisateur getUtilisateur(String code);
+    public Utilisateur getUtilisateur(String code) throws NoResultException;
 
     public void persist(Object object);
 
