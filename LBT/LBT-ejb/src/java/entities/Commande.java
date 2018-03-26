@@ -10,12 +10,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "entities.Commande.selectById", 
+            query = "SELECT c FROM Commande c WHERE c.id = :id"),
+    @NamedQuery(name = "entities.Commande.selectByEmplacement",
+            query = "SELECT c FROM Commande c WHERE c.emplacement.numero = :numero AND c.parametre.id = :id"),
+    @NamedQuery(name = "entities.Commande.selectByParametre",
+            query = "SELECT c FROM Commande c WHERE c.parametre.id = :id"),
+})
 public class Commande implements Serializable {
 
     private static final long serialVersionUID = 1L;

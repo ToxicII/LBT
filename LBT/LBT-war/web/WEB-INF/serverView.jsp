@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Accueil</title>
+        <title>Service</title>
     </head>
     <body>
         
@@ -13,7 +13,7 @@
             <h1>Binevenue ${utilisateur.prenom} ${utilisateur.nom} !</h1>
         </nav>
         
-        <c:url var="frontNewC" value="FrontController?section=####" />
+        <c:url var="frontNewC" value="FrontController?section=newCView" />
         <a href="${frontNewC}">Nouvelle commande</a><br>
         
         <c:url var="frontCC" value="FrontController?section=####" />

@@ -23,6 +23,14 @@
             <param-name>numPad</param-name>
             <param-value>controller.secondaire.NumPad</param-value>
         </init-param>
+        <init-param>
+            <param-name>newCView</param-name>
+            <param-value>controller.secondaire.NewCommandeView</param-value>
+        </init-param>
+        <init-param>
+            <param-name>initCommande</param-name>
+            <param-value>controller.secondaire.InitCommande</param-value>
+        </init-param>
     </servlet>
     <session-config>
         <session-timeout>
@@ -68,5 +76,17 @@
         <ejb-ref-type>Session</ejb-ref-type>
         <local>sessions.GestionUtilisateurLocal</local>
         <ejb-link>LBT-ejb.jar#GestionUtilisateur</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionEmplacement1</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionEmplacementLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionEmplacement</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionCommande</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionCommandeLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionCommande</ejb-link>
     </ejb-local-ref>
 </web-app>

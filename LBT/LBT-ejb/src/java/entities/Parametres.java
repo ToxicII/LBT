@@ -33,12 +33,16 @@ public class Parametres implements Serializable {
 
      @OneToMany(mappedBy = "parametre")
      private Collection<Commande> commandes;
+     
+     @OneToMany(mappedBy = "parametre")
+     private Collection<LigneCommande> ligneCommandes;
 
      public Parametres() {
           utilisateurs = new ArrayList();
           emplacements = new ArrayList();
           produits = new ArrayList();
           commandes = new ArrayList();
+          ligneCommandes = new ArrayList();
      }
 
      public Parametres(Long id, String descriptionParametre) {
@@ -99,6 +103,14 @@ public class Parametres implements Serializable {
     public void setCommandes(Collection<Commande> commandes) {
         this.commandes = commandes;
     }
+
+    public Collection<LigneCommande> getLigneCommandes() {
+        return ligneCommandes;
+    }
+
+    public void setLigneCommandes(Collection<LigneCommande> ligneCommandes) {
+        this.ligneCommandes = ligneCommandes;
+    }        
           
 
 //    @Override
