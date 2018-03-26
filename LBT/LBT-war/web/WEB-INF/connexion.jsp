@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="Css/numPadStyle" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="Css/numPadStyle.css">
         <title>Connexion</title>
     </head>
     <body>                        

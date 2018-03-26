@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<link rel="Css/numPadStyle" type="text/css" href="style.css">
 
 <div id="inputField" ></div>
 
