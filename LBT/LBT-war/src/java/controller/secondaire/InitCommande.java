@@ -49,7 +49,7 @@ public class InitCommande implements ControleurInterface {
                 return "####"; //JSP CLIENT
             }
 
-            return "####"; //JSP SERVEUR
+            return "commandeServeur";
         }
         
         request.setAttribute("message", "Le numéro de table n'existe pas");

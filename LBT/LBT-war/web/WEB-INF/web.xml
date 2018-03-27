@@ -31,6 +31,14 @@
             <param-name>initCommande</param-name>
             <param-value>controller.secondaire.InitCommande</param-value>
         </init-param>
+        <init-param>
+            <param-name>serveurMenu</param-name>
+            <param-value>controller.secondaire.ServeurMenu</param-value>
+        </init-param>
+        <init-param>
+            <param-name>menuBar</param-name>
+            <param-value>controller.secondaire.MenuBar</param-value>
+        </init-param>
     </servlet>
     <session-config>
         <session-timeout>
@@ -88,5 +96,11 @@
         <ejb-ref-type>Session</ejb-ref-type>
         <local>sessions.GestionCommandeLocal</local>
         <ejb-link>LBT-ejb.jar#GestionCommande</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionProduit1</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionProduitLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionProduit</ejb-link>
     </ejb-local-ref>
 </web-app>
