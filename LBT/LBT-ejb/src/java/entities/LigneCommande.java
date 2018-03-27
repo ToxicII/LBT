@@ -45,6 +45,9 @@ public class LigneCommande implements Serializable {
     @ManyToMany
     private Collection<ChoixClient> choixClients;
     
+    @ManyToOne
+    private Parametres parametre;
+    
 
     public LigneCommande() {
         ligneCommandeEnfants = new ArrayList();
@@ -146,7 +149,14 @@ public class LigneCommande implements Serializable {
     public void setChoixClients(Collection<ChoixClient> choixClients) {
         this.choixClients = choixClients;
     }
-    
+
+    public Parametres getParametre() {
+        return parametre;
+    }
+
+    public void setParametre(Parametres parametre) {
+        this.parametre = parametre;
+    }           
     
       @Override
     public String toString() {

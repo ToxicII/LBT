@@ -2,7 +2,7 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>FrontController</servlet-name>
-        <servlet-class>controller.FrontController</servlet-class>   
+        <servlet-class>controller.FrontController</servlet-class>
         <init-param>
             <param-name>jeuTest</param-name>
             <param-value>controller.secondaire.CreerJeuTest</param-value>
@@ -14,6 +14,22 @@
         <init-param>
             <param-name>ParseCatalogue</param-name>
             <param-value>controller.secondaire.AfficherParseCarte</param-value>
+        </init-param>
+        <init-param>
+            <param-name>connexionControl</param-name>
+            <param-value>controller.secondaire.ConnexionControl</param-value>
+        </init-param>
+        <init-param>
+            <param-name>numPad</param-name>
+            <param-value>controller.secondaire.NumPad</param-value>
+        </init-param>
+        <init-param>
+            <param-name>newCView</param-name>
+            <param-value>controller.secondaire.NewCommandeView</param-value>
+        </init-param>
+        <init-param>
+            <param-name>initCommande</param-name>
+            <param-value>controller.secondaire.InitCommande</param-value>
         </init-param>
     </servlet>
     <session-config>
@@ -30,23 +46,47 @@
         <ejb-ref-type>Session</ejb-ref-type>
         <local>sessions.CreationJeuTestLocal</local>
         <ejb-link>LBT-ejb.jar#CreationJeuTest</ejb-link>
-    </ejb-local-ref>  
+    </ejb-local-ref>
     <ejb-local-ref>
         <ejb-ref-name>GestionCategorieCarte</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
         <local>sessions.GestionCategorieCarteLocal</local>
         <ejb-link>LBT-ejb.jar#GestionCategorieCarte</ejb-link>
-    </ejb-local-ref>  
+    </ejb-local-ref>
     <ejb-local-ref>
         <ejb-ref-name>GestionEmplacement</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
         <local>sessions.GestionEmplacementLocal</local>
         <ejb-link>LBT-ejb.jar#GestionEmplacement</ejb-link>
-    </ejb-local-ref>  
+    </ejb-local-ref>
     <ejb-local-ref>
         <ejb-ref-name>GestionProduit</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
         <local>sessions.GestionProduitLocal</local>
         <ejb-link>LBT-ejb.jar#GestionProduit</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionUtilisateur</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionUtilisateurLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionUtilisateur</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionUtilisateur1</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionUtilisateurLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionUtilisateur</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionEmplacement1</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionEmplacementLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionEmplacement</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionCommande</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionCommandeLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionCommande</ejb-link>
     </ejb-local-ref>
 </web-app>

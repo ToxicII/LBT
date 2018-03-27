@@ -97,9 +97,9 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           Commande c05 = new Commande(d003);
 
 //////////// DROIT  
-          Droit dr01 = new Droit("service");
-          Droit dr02 = new Droit("cuisine");
-          Droit dr03 = new Droit("caisse");
+          Droit dr01 = new Droit(1L, "service");
+          Droit dr02 = new Droit(2L, "cuisine");
+          Droit dr03 = new Droit(3L, "caisse");
 
 //////////// EMPLACEMENT
           Emplacement e01 = new Emplacement(1L, "salle01");
@@ -192,6 +192,7 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           Ingredient i047 = new Ingredient("oeuf en neige", "dessert");
           Ingredient i048 = new Ingredient("crème anglaise", "crème dessert");
           Ingredient i049 = new Ingredient("Steack façon bouchère", "base burger");
+          
 //////////// LIGNECOMMANDE
           LigneCommande lc01 = new LigneCommande(1, 10, 10);
           LigneCommande lc02 = new LigneCommande(2, 15, 10);
@@ -204,15 +205,20 @@ public class CreationJeuTest implements CreationJeuTestLocal {
 //////////// PARAMETRE  
           Parametres parP01 = new Parametres(1L, "disponible");
           Parametres parP02 = new Parametres(2L, "indisponible");
-          Parametres parC01 = new Parametres(100L, "panier");
-          Parametres parC02 = new Parametres(101L, "validée");
-          Parametres parC03 = new Parametres(102L, "payée");
-          Parametres parC04 = new Parametres(103L, "annulée");
+          Parametres parC01 = new Parametres(100L, "en cours");          
+          Parametres parC02 = new Parametres(102L, "payée");
+          Parametres parC03 = new Parametres(103L, "annulée");
           Parametres parU01 = new Parametres(200L, "employé");
           Parametres parU02 = new Parametres(201L, "licencié");
           Parametres parU03 = new Parametres(202L, "démissionaire");
           Parametres parE01 = new Parametres(300L, "ocuppée");
           Parametres parE02 = new Parametres(301L, "libre");
+          Parametres parLC01 = new Parametres(400L, "panier");
+          Parametres parLC05 = new Parametres(401L, "validé");
+          Parametres parLC02 = new Parametres(402L, "en cours de préparation");
+          Parametres parLC03 = new Parametres(403L, "prêt à servir");
+          Parametres parLC04 = new Parametres(404L, "annulé");
+          
 
 //////////// PRODUIT          
           Produit p01 = new Produit("Magret de canard",
@@ -454,11 +460,11 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           c05.setEmplacement(e05);
 
 //////////// COMMANDE -> PARAMETRE     
-          c01.setParametre(parC01);
+          c01.setParametre(parC02);
           c02.setParametre(parC02);
-          c03.setParametre(parC03);
+          c03.setParametre(parC02);
           c04.setParametre(parC03);
-          c05.setParametre(parC04);
+          c05.setParametre(parC03);
 
 //////////// EMPLACEMENT -> PARAMETRE 
           e01.setParametre(parE01);
@@ -932,12 +938,12 @@ public class CreationJeuTest implements CreationJeuTestLocal {
 
 //////////// UTILISATEUR -> DROIT    
           u01.getDroits().add(dr01);
-          u01.getDroits().add(dr02);
+          u01.getDroits().add(dr03);
           u02.getDroits().add(dr01);
           u08.getDroits().add(dr01);
           u03.getDroits().add(dr02);
           u04.getDroits().add(dr02);
-          u05.getDroits().add(dr02);
+          u05.getDroits().add(dr03);
           u06.getDroits().add(dr01);
           u07.getDroits().add(dr03);
 
@@ -1131,13 +1137,17 @@ public class CreationJeuTest implements CreationJeuTestLocal {
           em.persist(parP02);
           em.persist(parC01);
           em.persist(parC02);
-          em.persist(parC03);
-          em.persist(parC04);
+          em.persist(parC03);          
           em.persist(parU01);
           em.persist(parU02);
           em.persist(parU03);
           em.persist(parE01);
           em.persist(parE02);
+          em.persist(parLC01);
+          em.persist(parLC02);
+          em.persist(parLC03);
+          em.persist(parLC04);
+          em.persist(parLC05);
 
           // PRODUIT                    
           em.persist(p01);

@@ -6,6 +6,8 @@
 package sessions;
 
 import entities.Commande;
+import entities.Emplacement;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -15,10 +17,16 @@ import javax.ejb.Local;
 @Local
 public interface GestionCommandeLocal {
 
-    public Commande createCommande();
+    public Commande createCommande(Emplacement emplacement);
 
     public void persist(Object object);
 
     public Commande addProduit(Commande commande, Long reference);
+
+    public Commande getCommandeById(Long id);
+
+    public Commande getCommandeECByEmplacement(Long numero);
+
+    public List<Commande> getCommandesEC();
     
 }

@@ -5,8 +5,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
@@ -14,8 +12,8 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Droit implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+    @Id    
     private Long typeDroit;
     private String descriptionDroit;
 
@@ -26,8 +24,9 @@ public class Droit implements Serializable {
         utilisateurs = new ArrayList();
     }
 
-    public Droit(String descripDroit) {
-        this();        
+    public Droit(Long typeDroit, String descripDroit) {
+        this();      
+        this.typeDroit = typeDroit;
         this.descriptionDroit = descripDroit;
     }
 

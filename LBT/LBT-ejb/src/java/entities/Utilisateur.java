@@ -7,8 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "entities.Utilisateur.selectByCode", 
+            query = "SELECT u FROM Utilisateur u WHERE u.code = :code"),
+})
 public class Utilisateur implements Serializable {
 
      private static final long serialVersionUID = 1L;

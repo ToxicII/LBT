@@ -7,6 +7,7 @@ package sessions;
 
 import entities.Emplacement;
 import javax.ejb.Local;
+import javax.persistence.NoResultException;
 
 /**
  *
@@ -18,5 +19,7 @@ public interface GestionEmplacementLocal {
     public void attribuerTable(Emplacement table);
 
     public void fusionnerTable(Emplacement table);  
+
+    public Emplacement getEmplacementByNumero(String numero);
     
 }

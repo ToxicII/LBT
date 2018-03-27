@@ -12,7 +12,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 
 /**
@@ -51,11 +50,10 @@ public class FrontController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String prefixe = "/WEB-INF/";
-        String suffixe = ".jsp";
-        HttpSession session = request.getSession();
-        String section = request.getParameter("section");
-        String page = "accueil";
-        
+        String suffixe = ".jsp";        
+        String page = "connexion";
+        String section = request.getParameter("section");                
+                                
 //        if(session.getAttribute("gestionPanier") == null ){
 //            session.setAttribute("gestionPanier", lookupGestionPanierLocal());
 //        }
