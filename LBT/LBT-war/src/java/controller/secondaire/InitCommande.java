@@ -40,8 +40,8 @@ public class InitCommande implements ControleurInterface {
                 
         if (e != null) {
             
-            Commande commande = gestionCommande.createCommande(e);
-            session.setAttribute("commande", commande); 
+            /*Commande commande = gestionCommande.createCommande(e);
+            session.setAttribute("commande", commande); */
             
             if (actor != null) {
                 

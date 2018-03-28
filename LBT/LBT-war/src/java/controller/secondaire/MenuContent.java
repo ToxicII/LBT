@@ -1,7 +1,8 @@
+
 package controller.secondaire;
 
 import controller.Interface.ControleurInterface;
-import entities.CategorieCarte;
+import entities.Produit;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,19 +11,26 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import sessions.GestionProduitLocal;
 
-public class MenuBar implements ControleurInterface {
+public class MenuContent implements ControleurInterface{
+     
 
      @Override
      public String executer(HttpServletRequest request, HttpServletResponse response) {
-          GestionProduitLocal gestionProduit = lookupGestionProduitLocal();
+         GestionProduitLocal gestionProduit = lookupGestionProduitLocal();
+          HttpSession session = request.getSession();
+         String cat = request.getParameter("cat");
+         List<Produit> pList = gestionProduit.getCategorieProduits(cat);
           
-          List<CategorieCarte> lcc = gestionProduit.getCategorieCartesEC();
-          List<Formules> 
-          request.setAttribute("categorieCartes", lcc);
-          System.out.println(lcc);
-          return "menuBar";
+         request.setAttribute("produits", pList);
+         
+         if (session.getAttribute("emplacement") != null){
+              return "####"; //PAGE CLIENT
+         }
+         
+         return "commandeServeur";          
      }
 
      private GestionProduitLocal lookupGestionProduitLocal() {
@@ -34,5 +42,5 @@ public class MenuBar implements ControleurInterface {
                throw new RuntimeException(ne);
           }
      }
-
+     
 }

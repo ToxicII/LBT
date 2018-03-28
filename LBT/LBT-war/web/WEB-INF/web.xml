@@ -39,6 +39,10 @@
             <param-name>menuBar</param-name>
             <param-value>controller.secondaire.MenuBar</param-value>
         </init-param>
+        <init-param>
+            <param-name>menuContent</param-name>
+            <param-value>controller.secondaire.MenuContent</param-value>
+        </init-param>
     </servlet>
     <session-config>
         <session-timeout>
@@ -99,6 +103,12 @@
     </ejb-local-ref>
     <ejb-local-ref>
         <ejb-ref-name>GestionProduit1</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionProduitLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionProduit</ejb-link>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionProduit2</ejb-ref-name>
         <ejb-ref-type>Session</ejb-ref-type>
         <local>sessions.GestionProduitLocal</local>
         <ejb-link>LBT-ejb.jar#GestionProduit</ejb-link>
