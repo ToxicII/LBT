@@ -5,6 +5,8 @@
  */
 package sessions;
 
+import entities.Formule;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -13,5 +15,7 @@ import javax.ejb.Local;
  */
 @Local
 public interface GestionFormuleLocal {
+
+     public List<Formule> getFormulesEC();
      
 }

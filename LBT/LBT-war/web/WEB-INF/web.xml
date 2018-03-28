@@ -113,4 +113,10 @@
         <local>sessions.GestionProduitLocal</local>
         <ejb-link>LBT-ejb.jar#GestionProduit</ejb-link>
     </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>GestionFormule</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessions.GestionFormuleLocal</local>
+        <ejb-link>LBT-ejb.jar#GestionFormule</ejb-link>
+    </ejb-local-ref>
 </web-app>
