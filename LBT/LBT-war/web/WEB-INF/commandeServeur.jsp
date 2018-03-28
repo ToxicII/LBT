@@ -12,8 +12,8 @@
         <c:url var="frontMB" value="FrontController?section=menuBar" />
         <c:import url="${frontMB}" />
         
-        <c:url var="frontMS" value="FrontController?section=serveurMenu" />
-        <c:import url="${frontMS}" />
+        <%--<c:url var="frontMS" value="FrontController?section=serveurMenu" />
+        <c:import url="${frontMS}" />--%>
         
        <%-- <c:url var="frontLCV" value="FrontController?section=listView" />
         <c:import url="${frontLCV}" /> --%>
