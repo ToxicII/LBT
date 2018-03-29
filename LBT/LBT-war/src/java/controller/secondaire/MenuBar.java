@@ -23,8 +23,9 @@ public class MenuBar implements ControleurInterface {
           GestionFormuleLocal gestionFormule = lookupGestionFormuleLocal();
           
           List<CategorieCarte> lcc = gestionProduit.getCategorieCartesEC();
-          List<Formule> fList = gestionFormule.getFormulesEC();
-          request.setAttribute("categorieCartes", lcc);
+          List<Formule> fList = gestionFormule.getFormulesEC();                              
+          request.setAttribute("categorieCartes", lcc);    
+          request.setAttribute("formules", fList);    
           System.out.println(lcc);
           return "menuBar";
      }

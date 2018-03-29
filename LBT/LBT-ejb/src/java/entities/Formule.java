@@ -19,7 +19,8 @@ import javax.persistence.TemporalType;
 @Entity
 @NamedQueries({
      @NamedQuery(name = "entities.Formule.selectCurrentFormules",
-             query = "SELECT f FROM Formule f WHERE "                     
+             query = "SELECT f FROM Formule f WHERE "
+                     //+ "f.heureFin > CURRENT_TIME "                     
                      + "f.jourDebut <= :currentD AND "
                      + "f.jourFin >= :currentF"),
 })
