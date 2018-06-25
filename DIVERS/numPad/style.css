@@ -1,0 +1,20 @@
+#row4 button, #okButton{
+	display: inline-block;
+}	
+
+.key{	
+	width: 50px;
+	height: 30px;	
+	margin: 2px;	
+}
+
+#numPad {
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+	
+}

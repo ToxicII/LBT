@@ -1,0 +1,313 @@
+//////////// PARAMETRE  
+          Parametres parP01 = new Parametres(1L, "disponible");
+          Parametres parP02 = new Parametres(2L, "indisponible");
+
+
+	Produit p007 = new Produit("Salade", "Accompagnement salade",0F,null);
+
+	produit p05 = new Produit("sole meunière", 
+		"reine de nos rivières", 11.35F, null);
+	    Produit p051 = new Produit("pièce de sole", "composant sole meunière", 0F, null);
+		
+                
+                p05.getProduitEnfants().add(p051);
+                p05.getProduitEnfants().add(p001);
+                p05.getProduitEnfants().add(p002);
+                p05.getProduitEnfants().add(p003);
+                p05.getProduitEnfants().add(p004);
+                p05.getProduitEnfants().add(p005);
+                p05.getProduitEnfants().add(p006);
+
+		Ingredient i015 = new Ingredient ("pièce de sole", "poisson");
+		Ingrédient i016 = new Ingredient ( "sauce meunière" , "sauce");
+
+		p051.getIngredients().add(i015);
+                p051.getIngredients().add(i016);
+
+	produit p06 = new Produit("pizza reine","tomate, origan,  
+		mozzarella, jambon, champignon, tomates confites", 8.35F, null);
+		
+		Ingredient i017 = new Ingredient ("base tomate", "base pizza");
+		Ingrédient i018 = new Ingredient ("origan", "base pizza");
+		Ingrédient i019 = new Ingredient ("mozzarella, "fromage");
+		Ingrédient i020 = new Ingredient ("jambon", "acc. pizza");
+		Ingrédient i021 = new Ingredient ("capres", "acc. pizza");
+		Ingrédient i022 = new Ingredient ("champignon", "acc. pizza");
+		Ingrédient i023 = new Ingredient ("artichaud", "acc. pizza");
+		Ingrédient i024 = new Ingredient ("poivron", "acc. pizza");
+		Ingrédient i025 = new Ingredient ("mortadelle", "acc. pizza");
+		Ingrédient i026 = new Ingredient ("tomates confites", "acc. pizza");
+		Ingrédient i027 = new Ingredient ("tomates", "tranches");
+		Ingrédient i028 = new Ingredient ("salade", "accomp.");
+		Ingrédient i029 = new Ingredient ("cornichon", "accomp.");
+		Ingrédient i030 = new Ingredient ("ketchup", "sauce");
+		Ingrédient i031 = new Ingredient ("moutarde", "sauce");
+		Ingrédient i032 = new Ingredient ("conté", "tranche");
+
+		Ingrédient i033 = new Ingredient ("blanc de poulet", "acc. salade");
+		Ingrédient i034 = new Ingredient ("crouton", "acc. salade");
+		Ingrédient i035 = new Ingredient ("chèvre", "acc. salade");
+		Ingrédient i036 = new Ingredient ("lardon", "acc. salade");
+		Ingrédient i037 = new Ingredient ("thon", "acc. salade");
+		Ingrédient i038 = new Ingredient ("olives", "acc. salade");
+		Ingrédient i039 = new Ingredient ("anchois", "acc. salade");
+		Ingrédient i040 = new Ingredient ("oeufs", "acc. salade");
+		Ingrédient i041 = new Ingredient ("avocat", "acc. salade");
+		Ingrédient i042 = new Ingredient ("asperge", "acc. salade");
+		Ingrédient i043 = new Ingredient ("chocolat", "dessert");
+		Ingrédient i044 = new Ingredient ("pomme", "dessert");
+		Ingrédient i045 = new Ingredient ("pate sablé", "dessert");
+		Ingrédient i046 = new Ingredient ("pate feuillettée", "dessert");
+		Ingrédient i047 = new Ingredient ("oeuf en neige", "dessert");
+		Ingrédient i048 = new Ingredient ("crème anglaise", "crème dessert");
+
+		p06.getIngredients().add(i017);
+		p06.getIngredients().add(i018);
+		p06.getIngredients().add(i019);
+		p06.getIngredients().add(i020);
+		p06.getIngredients().add(i022);
+
+	produit p07 = new Produit("pizza belle table","tomate, origan,  
+		mozzarella, jambon, capres, poivron, 
+		mortadelle, champignon", 8.35F, null);
+		
+		p07.getIngredients().add(i017);
+		p07.getIngredients().add(i018);
+		p07.getIngredients().add(i019);
+		p07.getIngredients().add(i020);
+		p07.getIngredients().add(i021);
+		p07.getIngredients().add(i022);
+		p07.getIngredients().add(i024);
+		p07.getIngredients().add(i025);
+		p07.getIngredients().add(i026);
+
+
+	Produit p08 = new Produit("Burget de la table", 
+		"LE burger et ses frites maison ", 14.15F, null);
+		
+	     Produit p081 = new Produit("Burger Maison", "compos. Burger", 0F,null");
+
+		Ingredient i027 = new Ingredient ("Steack façon bouchère", "base burger");
+
+		p081.getIngredients().add(i011);
+		p081.getIngredients().add(i027);
+		p081.getIngredients().add(i028);
+		p081.getIngredients().add(i029);
+		p081.getIngredients().add(i030);
+		p081.getIngredients().add(i031);
+		p081.getIngredients().add(i032);
+
+		p08.getProduitEnfants().add(p081);
+		p08.getProduitEnfants().add(p001);
+		p08.getProduitEnfants().add(p007);
+	
+
+	Produit p09 = new Produit("Salade César", "salade, tomates confites, poulet", 8.9F, null);
+		p09.getIngredients().add(i026);
+		p09.getIngredients().add(i028);
+		p09.getIngredients().add(i033);
+		p09.getIngredients().add(i034);
+
+	Produit p10 = new Produit("Salade Chèvre", "salade, tomate, chèvre, lardons, crouton", 8.9F, null);
+		p10.getIngredients().add(i027);
+		p10.getIngredients().add(i028);
+		p10.getIngredients().add(i034);
+		p10.getIngredients().add(i035);
+		p10.getIngredients().add(i036);
+
+	Produit p11 = new Produit("Salade Niçoise", "salade, tomate, thon, anchois, olives", 8.9F, null);
+		p11.getIngredients().add(i027);
+		p11.getIngredients().add(i028);
+		p11.getIngredients().add(i037);
+		p11.getIngredients().add(i038);
+		p11.getIngredients().add(i039);
+
+
+	P01.getParametres().add(parP01);
+		P011.getParametres().add(parP01);
+	P02.getParametres().add(parP01);
+		P021.getParametres().add(parP01);
+	P03.getParametres().add(parP01);
+		P031.getParametres().add(parP01);
+
+				P04.getParametres().add(parP02);
+
+	P05.getParametres().add(parP01);
+		P051.getParametres().add(parP01);
+
+				P06.getParametres().add(parP02);
+
+	P07.getParametres().add(parP01);
+	P08.getParametres().add(parP01);
+				P09.getParametres().add(parP02);
+	P10.getParametres().add(parP01);
+	P11.getParametres().add(parP01);
+
+	P12.getParametres().add(parP01);
+	P13.getParametres().add(parP01);
+	P14.getParametres().add(parP01);
+	P15.getParametres().add(parP01);
+	P16.getParametres().add(parP01);
+	P17.getParametres().add(parP01);
+	P18.getParametres().add(parP01);
+	
+
+
+	Produit p12 = new Produit("oeufs mayonnaise", "l'entrée idéale", 4.55F, null);
+		p12.getIngredients().add(i040);
+		p12.getIngredients().add(i028);
+	Produit p13 = new Produit("petite salade mixte", "l'entrée fraicheur", 4.95F, null);
+		p13.getIngredients().add(i027);
+		p13.getIngredients().add(i028);
+	Produit p14 = new Produit("avocat-thon", "l'entrée énergétique", 4.65F, null);
+		p14.getIngredients().add(i037);
+		p14.getIngredients().add(i041);
+	Produit p15 = new Produit("asperge et sa tranche de jambon", "l'entrée équilibre", 5.15F, null);
+		p15.getIngredients().add(i020);
+		p15.getIngredients().add(i042);
+
+	Produit p16 = new Produit("tarte tatin", "la douceur", 4.25F, null);
+		p16.getIngredients().add(i044);
+		p16.getIngredients().add(i046);
+	Produit p17 = new Produit("sablé chocolat", "le plaisir", 5.15F, null);
+		p17.getIngredients().add(i043);
+		p17.getIngredients().add(i045);
+	Produit p18 = new Produit("île flottante", "l'entrée énergétique", 5.95F, null);
+		p18.getIngredients().add(i047);
+		p18.getIngredients().add(i048);
+	
+
+	Produit p30 = new Produit("carafe d'eau", "eau", 0F, null);
+	Produit p31 = new Produit("Evian", "eau plate", 1.84F, null);
+	Produit p32 = new Produit("St-Yorres", "eau gazeuse", 1.76F, null);
+	Produit p33 = new Produit("jus de pomme", "jus fruit", 2.2F, null);
+	Produit p34 = new Produit("jus de pêche", "jus fruit", 2.2F, null);
+	Produit p35 = new Produit("jus d'orange", "jus fruit", 2.2F, null);
+	Produit p36 = new Produit("virgin cola", "sodas", 2.3F, null);
+	Produit p37 = new Produit("fanta orange", "sodas", 2.3F, null);
+	Produit p38 = new Produit("fanta citron", "sodas", 2.3F, null);
+	Produit p39 = new Produit("ice tea", "sodas", 1.95F, null);
+
+	Produit p40 = new Produit("café", "boisson chaude", 2.1F, null);
+	Produit p41 = new Produit("café double", "boisson chaude", 2.1F, null);
+	Produit p42 = new Produit("thé", "boisson chaude", 2.1F, null);
+	Produit p43 = new Produit("chocolat", "boisson chaude", 2.1F, null);
+
+	Produit p50 = new Produit("champagne", "mousseux blanc", 18.65F, null);
+	Produit p51 = new Produit("sancerre", "vallée de loire blanc", 18.65F, null);
+	Produit p52 = new Produit("Château Saint Roch", "Côtes du Rhône blanc", 19.65F, null);
+	Produit p53 = new Produit("chablis", "bourgogne blanc", 17.85F, null);
+	Produit p54 = new Produit("grave", "bordeau rouge", 16.85F, null);
+	Produit p55 = new Produit("pommerol", "bordeau rouge", 14.35F, null);
+	Produit p56 = new Produit("chinon", "vallée de loire rouge", 14.35F, null);
+
+	Produit p60 = new Produit("Get27", "alcool", 6.65F, null);
+	Produit p61 = new Produit("whisky", "alcool", 6.65F, null);
+	Produit p62 = new Produit("vodka", "alcool", 6.65F, null);
+	Produit p63 = new Produit("martini", "alcool", 6.65F, null);
+	Produit p64 = new Produit("porto", "alcool", 6.65F, null);
+	Produit p65 = new Produit("cognac", "alcool", 6.65F, null);
+	Produit p66 = new Produit("armagnac", "alcool", 6.65F, null);
+	Produit p67 = new Produit("manzana", "liqueur", 6.65F, null);
+	Produit p68 = new Produit("mandarine impériale", "liqueur", 6.65F, null);
+
+
+
+p01.getParametres().add(parP01);
+p02.getParametres().add(parP01);
+p03.getParametres().add(parP01);
+	p04.getParametres().add(parP02);
+p05.getParametres().add(parP01);
+	p06.getParametres().add(parP02);
+p07.getParametres().add(parP01);
+	p08.getParametres().add(parP01);
+p09.getParametres().add(parP02);
+p10.getParametres().add(parP01);
+p11.getParametres().add(parP01);
+p12.getParametres().add(parP01);
+p13.getParametres().add(parP01);
+p14.getParametres().add(parP01);
+p15.getParametres().add(parP01);
+p16.getParametres().add(parP01);
+p17.getParametres().add(parP01);
+p18.getParametres().add(parP01);
+
+p30.getParametres().add(parP01);
+p31.getParametres().add(parP01);
+p32.getParametres().add(parP01);
+p33.getParametres().add(parP01);
+p34.getParametres().add(parP01);
+p35.getParametres().add(parP01);
+p36.getParametres().add(parP01);
+p37.getParametres().add(parP01);
+p38.getParametres().add(parP01);
+p39.getParametres().add(parP01);
+
+p40.getParametres().add(parP01);
+p41.getParametres().add(parP01);
+p42.getParametres().add(parP01);
+p43.getParametres().add(parP01);
+
+p50.getParametres().add(parP01);
+p51.getParametres().add(parP01);
+p52.getParametres().add(parP01);
+p53.getParametres().add(parP01);
+p54.getParametres().add(parP01);
+p55.getParametres().add(parP01);
+p56.getParametres().add(parP01);
+
+p60.getParametres().add(parP01);
+p61.getParametres().add(parP01);
+p62.getParametres().add(parP01);
+p63.getParametres().add(parP01);
+p64.getParametres().add(parP01);
+p65.getParametres().add(parP01);
+p66.getParametres().add(parP01);
+p67.getParametres().add(parP01);
+p68.getParametres().add(parP01);
+
+
+// CATEGORIECARTE -> PRODUIT
+
+// 1 ou 2 PROPRIETE -> PRODUIT
+
+// Voir autres dépendances
+
+-------------------------------------------------------------
+
+// choixclient
+
+// categorieFormule
+
+// promotions -> produit
+
+// ligneCo -> produit
+
+// ligneCo -> formule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
