@@ -12,6 +12,7 @@ drop table FORMULE
 drop table INGREDIENT
 drop table LIGNECOMMANDE
 drop table LIGNECOMMANDE_INGREDIENT
+drop table LIGNECOMMANDE_CHOIXCLIENT
 drop table PARAMETRES
 drop table PRODUIT
 drop table PRODUIT_CHOIXCLIENT
@@ -21,6 +22,7 @@ drop table PRODUIT_PRODUIT
 drop table PROMOTION
 drop table PROMOTION_PRODUIT
 drop table PROPRIETE
+drop table PROPRIETE_PRODUIT
 drop table REGLEMENT
 drop table TVA
 drop table TYPEREGLEMENT
