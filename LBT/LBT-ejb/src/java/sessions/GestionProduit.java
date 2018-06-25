@@ -57,5 +57,12 @@ public class GestionProduit implements GestionProduitLocal {
         lp = qr.getResultList();
         return lp;
     }
+    
+     @Override
+    public List<CategorieCarte> getCategorieCartesEC(){
+         Query qr = em.createNamedQuery("entities.CategorieCarte.selectByCurrentCarte");         
+         List<CategorieCarte> lcc = qr.getResultList();
+         return lcc;
+    }
 
 }

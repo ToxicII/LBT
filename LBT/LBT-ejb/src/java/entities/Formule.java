@@ -10,11 +10,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+@NamedQueries({
+     @NamedQuery(name = "entities.Formule.selectCurrentFormules",
+             query = "SELECT f FROM Formule f WHERE "
+                     //+ "f.heureFin > CURRENT_TIME "                     
+                     + "f.jourDebut <= :currentD AND "
+                     + "f.jourFin >= :currentF"),
+})
 public class Formule implements Serializable {
 
      private static final long serialVersionUID = 1L;

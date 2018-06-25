@@ -22,5 +22,7 @@ public interface GestionProduitLocal {
     public List<Produit> getAllProduits();    
 
     public List<Produit> getCategorieProduits(String categorieCarte);
+
+     public List<CategorieCarte> getCategorieCartesEC();
     
 }

@@ -40,8 +40,8 @@ public class InitCommande implements ControleurInterface {
                 
         if (e != null) {
             
-            Commande commande = gestionCommande.createCommande(e);
-            session.setAttribute("commande", commande); 
+            /*Commande commande = gestionCommande.createCommande(e);
+            session.setAttribute("commande", commande); */
             
             if (actor != null) {
                 
@@ -49,7 +49,7 @@ public class InitCommande implements ControleurInterface {
                 return "####"; //JSP CLIENT
             }
 
-            return "####"; //JSP SERVEUR
+            return "commandeServeur";
         }
         
         request.setAttribute("message", "Le numéro de table n'existe pas");

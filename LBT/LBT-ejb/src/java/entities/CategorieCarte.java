@@ -18,6 +18,8 @@ import javax.persistence.OneToMany;
 @NamedQueries({
     @NamedQuery(name = "entites.categorieCarte.selectAllCategorie",
             query = "select c from CategorieCarte c" ),
+     @NamedQuery(name = "entities.CategorieCarte.selectByCurrentCarte",
+             query = "SELECT c from CategorieCarte c JOIN c.cartes ca WHERE ca.dateFin > CURRENT_DATE"),
 })
 public class CategorieCarte implements Serializable {
     private static final long serialVersionUID = 1L;

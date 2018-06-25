@@ -30,6 +30,7 @@
         <input id="idOut" type="hidden" name="id" value="" />							
         <input type="submit" id="okButton" class="key ok" value="OK" />						
     </form>	
+    
 </div> 		
 
 <script src="JS/numPad.js"></script>
